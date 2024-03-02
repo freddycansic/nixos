@@ -53,7 +53,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -132,11 +132,11 @@
     zsh
 
     # Hyprland
-    eww
-    mako
-    xdg-desktop-portal-gtk
-    swww
-    rofi-wayland
+    # eww
+    # mako
+    # xdg-desktop-portal-gtk
+    # swww
+    # rofi-wayland
   ];
 
   # Hyprland
@@ -146,10 +146,10 @@
     xwayland.enable = true;
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  };
+  # xdg.portal = {
+  # enable = true;
+  # extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  # };
 
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
