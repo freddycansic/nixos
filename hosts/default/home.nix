@@ -44,6 +44,7 @@
     pkgs.kitty
     pkgs.qtile
     pkgs.zsh
+    pkgs.bitwarden
   ];
 
   programs.brave = {
