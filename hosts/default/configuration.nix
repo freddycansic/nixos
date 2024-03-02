@@ -14,7 +14,7 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.nixPath = ["/home/freddy/nixos/path"];
+  # nix.nixPath = ["/home/freddy/nixos/path"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -92,7 +92,7 @@
     isNormalUser = true;
     description = "Freddy Cansick";
     extraGroups = ["networkmanager" "wheel"];
-    # shell = pkgs.zsh;
+    shell = pkgs.zsh;
     packages = with pkgs; [
       #  thunderbird
     ];
@@ -134,6 +134,8 @@
     git
     zsh
   ];
+
+  programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

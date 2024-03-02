@@ -40,17 +40,11 @@
     pkgs.woeusb
     pkgs.brave
     pkgs.kitty
-    pkgs.qtile
     pkgs.bitwarden
+    pkgs.psst
   ];
 
-  programs.brave = {
-    enable = true;
-  };
-
-  programs.zsh = {
-    enable = true;
-  };
+  programs.brave.enable = true;
 
   programs.kitty = {
     enable = true;
@@ -58,6 +52,7 @@
       name = "firacode";
     };
     shellIntegration.enableZshIntegration = true;
+    extraConfig = "enabled_layouts tall";
   };
 
   programs.git = {
@@ -355,7 +350,6 @@
   #  /etc/profiles/per-user/freddy/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "hx";
     XDG_RUNTIME_DIR = "/run/user/$(id -u)";
   };
 
