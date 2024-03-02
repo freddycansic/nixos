@@ -37,13 +37,10 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
-    pkgs.git
-    pkgs.helix
     pkgs.woeusb
     pkgs.brave
     pkgs.kitty
     pkgs.qtile
-    pkgs.zsh
     pkgs.bitwarden
   ];
 
