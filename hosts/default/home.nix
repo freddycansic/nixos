@@ -54,7 +54,6 @@
     shellIntegration.enableZshIntegration = true;
     extraConfig = "
       enabled_layouts tall
-      font_family \"firacode\"
       confirm_os_window_close 0
     ";
   };
