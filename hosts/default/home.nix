@@ -48,9 +48,6 @@
 
   programs.kitty = {
     enable = true;
-    # font = {
-    # name = "firacode";
-    # };
     shellIntegration.enableZshIntegration = true;
     extraConfig = "
       enabled_layouts tall
@@ -66,6 +63,7 @@
       init.defaultBranch = "master";
       pull.rebase = true;
       push.autoSetupRemote = true;
+      commit.gpgsign = true;
     };
   };
 
