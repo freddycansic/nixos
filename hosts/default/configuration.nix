@@ -130,7 +130,7 @@
     zsh
     wireshark
     inetutils # ftp, ifconfig, etc
-
+    util-linux
     openvpn3
 
     # Hyprland
