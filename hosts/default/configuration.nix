@@ -74,10 +74,22 @@
   hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
+
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+
     pulse.enable = true;
     # jack.enable = true;
+
+    # extraConfig.pipewire = {
+    # "10-clock-rate" = {
+    # "context.properties" = {
+    # "default.clock.rate" = 44100;
+    # };
+    # };
+    # };
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -117,7 +129,6 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
