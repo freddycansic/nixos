@@ -42,6 +42,7 @@
     pkgs.kitty
     pkgs.bitwarden
     pkgs.psst
+    pkgs.zoxide
   ];
 
   programs.brave.enable = true;
