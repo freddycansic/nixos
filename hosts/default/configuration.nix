@@ -132,6 +132,7 @@
     git
     zsh
     wireshark
+    inetutils # ftp, ifconfig, etc
 
     # Hyprland
     # eww
