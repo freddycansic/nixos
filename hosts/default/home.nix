@@ -70,11 +70,15 @@
 
   programs.zoxide = {
     enable = true;
+    enableFishIntegration = false;
+    enableNushellIntegration = false;
     enableZshIntegration = true;
-    # options = [
-    # "--cmd"
-    # "cd"
-    # ];
+    enableBashIntegration = true;
+    options = [
+      "--cmd"
+      "zsh"
+      "cd"
+    ];
   };
 
   programs.helix = {
