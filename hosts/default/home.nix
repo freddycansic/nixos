@@ -68,15 +68,16 @@
     };
   };
 
+  programs.zsh.enable = true;
+
   programs.zoxide = {
     enable = true;
     enableFishIntegration = false;
     enableNushellIntegration = false;
+    enableBashIntegration = false;
     enableZshIntegration = true;
-    enableBashIntegration = true;
     options = [
       "--cmd"
-      "zsh"
       "cd"
     ];
   };
