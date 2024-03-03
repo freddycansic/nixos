@@ -43,6 +43,7 @@
     pkgs.bitwarden
     pkgs.psst
     pkgs.zoxide
+    pkgs.nethogs
   ];
 
   programs.brave.enable = true;

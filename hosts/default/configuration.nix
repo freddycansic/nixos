@@ -90,7 +90,7 @@
   users.users.freddy = {
     isNormalUser = true;
     description = "Freddy Cansick";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "wireshark"];
     shell = pkgs.zsh;
     packages = with pkgs; [
       #  thunderbird
