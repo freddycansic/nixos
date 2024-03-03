@@ -130,6 +130,7 @@
     helix
     git
     zsh
+    wireshark
 
     # Hyprland
     # eww
