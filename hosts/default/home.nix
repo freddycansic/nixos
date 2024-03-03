@@ -44,8 +44,6 @@
     pkgs.psst
     pkgs.zoxide
     pkgs.nethogs
-    pkgs.openvpn
-    pkgs.openresolv
   ];
 
   programs.brave.enable = true;

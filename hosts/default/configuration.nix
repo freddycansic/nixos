@@ -131,6 +131,8 @@
     wireshark
     inetutils # ftp, ifconfig, etc
 
+    openvpn3
+
     # Hyprland
     # eww
     # mako
@@ -140,6 +142,7 @@
   ];
 
   programs.wireshark.enable = true;
+  programs.openvpn3.enable = true;
 
   # Hyprland
   programs.hyprland = {
