@@ -45,6 +45,7 @@
     pkgs.zoxide
     pkgs.nethogs
     pkgs.protonvpn-gui
+    pkgs.protonvpn-cli
   ];
 
   programs.brave.enable = true;
