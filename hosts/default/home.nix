@@ -43,9 +43,12 @@
     pkgs.bitwarden
     pkgs.psst
     pkgs.zoxide
+    pkgs.wireshark
   ];
 
+  # programs.wireshark.enable = true;
   programs.brave.enable = true;
+  programs.zsh.enable = true;
 
   programs.kitty = {
     enable = true;
@@ -67,8 +70,6 @@
       commit.gpgsign = true;
     };
   };
-
-  programs.zsh.enable = true;
 
   programs.zoxide = {
     enable = true;
@@ -303,6 +304,7 @@
         };
       };
     };
+
     settings = {
       theme = "gruvbox_original_dark_medium";
 
