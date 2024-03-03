@@ -43,10 +43,8 @@
     pkgs.bitwarden
     pkgs.psst
     pkgs.zoxide
-    pkgs.wireshark
   ];
 
-  # programs.wireshark.enable = true;
   programs.brave.enable = true;
   programs.zsh.enable = true;
 

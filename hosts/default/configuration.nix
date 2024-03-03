@@ -139,6 +139,8 @@
     # rofi-wayland
   ];
 
+  programs.wireshark.enable = true;
+
   # Hyprland
   programs.hyprland = {
     enable = true;
