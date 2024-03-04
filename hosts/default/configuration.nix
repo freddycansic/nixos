@@ -143,6 +143,7 @@
     inetutils # ftp, ifconfig, etc
     util-linux
     openvpn3
+    easyeffects
 
     # Hyprland
     # eww
