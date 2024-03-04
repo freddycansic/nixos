@@ -133,28 +133,30 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    wget
-    unzip
-    alejandra
-    helix
-    git
-    zsh
-    wireshark
-    inetutils # ftp, ifconfig, etc
-    util-linux
-    openvpn3
-    easyeffects
-    gcc
-    gnumake
-    ruby
+  environment.systemPackages = [
+    pkgs.wget
+    pkgs.unzip
+    pkgs.alejandra
+    pkgs.helix
+    pkgs.git
+    pkgs.zsh
+    pkgs.wireshark
+    pkgs.inetutils # ftp, ifconfig, etc
+    pkgs.util-linux
+    pkgs.openvpn3
+    pkgs.easyeffects
+    pkgs.gcc
+    pkgs.gnumake
 
-    zlib
-    libffi
-    openssl
-    libedit
-    libnotify
-    readline
+    inputs.nixpkgs-ruby.packages.x86_64-linux."ruby-3.2.2"
+
+    # Libraries
+    pkgs.zlib
+    pkgs.libffi
+    pkgs.openssl
+    pkgs.libedit
+    pkgs.libnotify
+    pkgs.readline
 
     # Hyprland
     # eww
