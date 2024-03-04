@@ -46,6 +46,7 @@
     pkgs.nethogs
     pkgs.jetbrains.idea-ultimate
     pkgs.rbenv
+    pkgs.gcc
   ];
 
   programs.brave.enable = true;
