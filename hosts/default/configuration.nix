@@ -147,6 +147,7 @@
     easyeffects
     gcc
     gnumake
+    ruby
 
     zlib
     libffi
