@@ -135,7 +135,6 @@
     wget
     unzip
     alejandra
-    libnotify
     helix
     git
     zsh
@@ -146,7 +145,13 @@
     easyeffects
     gcc
     gnumake
+
     zlib
+    libffi
+    openssl
+    libedit
+    libnotify
+    readline
 
     # Hyprland
     # eww
