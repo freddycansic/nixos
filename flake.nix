@@ -8,11 +8,14 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs-ruby.url = "github:bobvanderlinden/nixpkgs-ruby";
   };
 
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-ruby,
     ...
   } @ inputs: let
     system = "x86_64-linux";
