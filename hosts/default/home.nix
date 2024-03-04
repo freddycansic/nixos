@@ -51,6 +51,24 @@
   programs.brave.enable = true;
   programs.zsh.enable = true;
 
+  programs.rbenv = {
+    enable = true;
+    enableFishIntegration = false;
+    enableBashIntegration = false;
+    enableZshIntegration = true;
+    plugins = [
+      {
+        name = "ruby-build";
+        src = pkgs.fetchFromGitHub {
+          owner = "rbenv";
+          repo = "ruby-build";
+          rev = "v20240221";
+          hash = "sha256-3FJr/yR/hGlMMyJID0w/yyaSqVFwP8YoM9FMYco5y3Y=";
+        };
+      }
+    ];
+  };
+
   programs.kitty = {
     enable = true;
     shellIntegration.enableZshIntegration = true;
