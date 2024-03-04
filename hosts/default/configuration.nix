@@ -144,6 +144,9 @@
     util-linux
     openvpn3
     easyeffects
+    gcc
+    gnumake
+    zlib
 
     # Hyprland
     # eww
