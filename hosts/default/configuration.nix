@@ -55,6 +55,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  services.logind.extraConfig = "RuntimeDirectorySize=4G";
+
   # Configure keymap in X11
   services.xserver = {
     layout = "gb";
