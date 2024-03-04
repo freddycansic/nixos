@@ -45,6 +45,7 @@
     pkgs.zoxide
     pkgs.nethogs
     pkgs.jetbrains.idea-ultimate
+    pkgs.rbenv
   ];
 
   programs.brave.enable = true;
