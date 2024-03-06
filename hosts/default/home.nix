@@ -374,6 +374,12 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
+      "$mod" = "SUPER";
+      bind = [
+        "$mod, P, exec, rofi -show run"
+        "$mod, Enter, exec, kitty"
+      ];
+
       general = {
         gaps_in = 0;
         gaps_out = 0;
