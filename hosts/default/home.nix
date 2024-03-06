@@ -377,7 +377,7 @@
       "$mod" = "SUPER";
       bind = [
         "$mod, P, exec, rofi -show run"
-        "$mod, Enter, exec, kitty"
+        "$mod, Return, exec, kitty"
       ];
 
       general = {
