@@ -147,6 +147,7 @@
     pkgs.easyeffects
     pkgs.gcc
     pkgs.gnumake
+    pkgs.wev # display keypresses
 
     inputs.nixpkgs-ruby.packages.x86_64-linux."ruby-3.2.2"
 
