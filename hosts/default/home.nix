@@ -17,13 +17,7 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -50,24 +44,6 @@
 
   programs.brave.enable = true;
   programs.zsh.enable = true;
-
-  programs.rbenv = {
-    enable = true;
-    enableFishIntegration = false;
-    enableBashIntegration = false;
-    enableZshIntegration = true;
-    plugins = [
-      {
-        name = "ruby-build";
-        src = pkgs.fetchFromGitHub {
-          owner = "rbenv";
-          repo = "ruby-build";
-          rev = "v20240221";
-          hash = "sha256-3FJr/yR/hGlMMyJID0w/yyaSqVFwP8YoM9FMYco5y3Y=";
-        };
-      }
-    ];
-  };
 
   programs.kitty = {
     enable = true;
@@ -398,8 +374,11 @@
         gaps_in = 0;
         gaps_out = 0;
         border_size = 2;
-        monitor = "DP-2,1920x1080@144,0x0,1";
       };
+
+      monitor = "DP-2,1920x1080@144,0x0,1";
+
+      windowrulev2 = "noanim noinitialfocus,floating:1,class:^(jetbrains-.*),title:^(win\\d*)";
     };
   };
 
