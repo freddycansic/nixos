@@ -334,6 +334,13 @@
     };
   };
 
+  services.gammastep = {
+    enable = true;
+    latitude = 52.219223;
+    longitude = -1.19701;
+    tray = true;
+  };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
