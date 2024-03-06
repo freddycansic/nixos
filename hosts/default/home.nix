@@ -42,6 +42,7 @@
     pkgs.gradle
   ];
 
+  programs.home-manager.enable = true;
   programs.brave.enable = true;
   programs.zsh.enable = true;
 
@@ -332,6 +333,12 @@
     };
   };
 
+  services.redshift = {
+    enable = true;
+    latitude = 52.4394;
+    longitude = -0.7931;
+  };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -402,10 +409,5 @@
   #
   home.sessionVariables = {
     XDG_RUNTIME_DIR = "/run/user/$(id -u)";
-  };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager = {
-    enable = true;
   };
 }
