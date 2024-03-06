@@ -53,7 +53,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
 
   services.logind.extraConfig = "RuntimeDirectorySize=4G";
 
@@ -124,12 +124,12 @@
   ];
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "freddy";
+  # services.xserver.displayManager.autoLogin.enable = true;
+  # services.xserver.displayManager.autoLogin.user = "freddy";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
+  # systemd.services."getty@tty1".enable = false;
+  # systemd.services."autovt@tty1".enable = false;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -159,11 +159,11 @@
     pkgs.readline
 
     # Hyprland
-    # eww
-    # mako
-    # xdg-desktop-portal-gtk
-    # swww
-    # rofi-wayland
+    pkgs.eww
+    pkgs.mako
+    pkgs.xdg-desktop-portal-gtk
+    pkgs.swww
+    pkgs.rofi-wayland
   ];
 
   programs.wireshark.enable = true;
@@ -176,10 +176,10 @@
     xwayland.enable = true;
   };
 
-  # xdg.portal = {
-  # enable = true;
-  # extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  # };
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  };
 
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
