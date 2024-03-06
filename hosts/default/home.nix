@@ -40,6 +40,7 @@
     pkgs.nethogs
     pkgs.jetbrains.idea-ultimate
     pkgs.gradle
+    pkgs.gammastep
   ];
 
   programs.home-manager.enable = true;
@@ -331,12 +332,6 @@
         P = "paste_after";
       };
     };
-  };
-
-  services.redshift = {
-    enable = true;
-    latitude = 52.4394;
-    longitude = -0.7931;
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
