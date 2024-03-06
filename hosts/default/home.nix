@@ -378,6 +378,7 @@
       bind = [
         "$mod, P, exec, rofi -show run"
         "$mod, Return, exec, kitty"
+        "$mod, Q, killactive"
       ];
 
       general = {
