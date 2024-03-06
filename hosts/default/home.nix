@@ -399,6 +399,8 @@
         gaps_out = 0;
         border_size = 2;
       };
+
+      monitor = "DP-2,1920x1080@144,0x0,1";
     };
   };
 
