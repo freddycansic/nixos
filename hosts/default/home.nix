@@ -378,7 +378,7 @@
 
       monitor = "DP-2,1920x1080@144,0x0,1";
 
-      windowrulev2 = "noanim noinitialfocus,floating:1,class:^(jetbrains-.*),title:^(win\\d*)";
+      windowrulev2 = "noanim,floating:1,class:^(jetbrains-.*),title:^(win\\d*)";
     };
   };
 
