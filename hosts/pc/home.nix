@@ -31,7 +31,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.discord
-    pkgs.woeusb
     pkgs.brave
     pkgs.kitty
     pkgs.bitwarden
