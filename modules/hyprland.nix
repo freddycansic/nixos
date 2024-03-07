@@ -7,6 +7,7 @@
         "$mod, P, exec, rofi -show run"
         "$mod, Return, exec, kitty"
         "$mod, Q, killactive"
+        "$mod, F, fullscreen"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
