@@ -18,16 +18,16 @@
     ...
   }: {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
-          ./configuration.nix
+          ./hosts/pc/configuration.nix
           inputs.home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.freddy = import ./home.nix;
+            home-manager.users.freddy = import ./hosts/pc/home.nix;
           }
         ];
       };
