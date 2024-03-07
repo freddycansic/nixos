@@ -21,6 +21,16 @@
         "$mod SHIFT, 4, movetoworkspace, 4"
         "$mod SHIFT, 5, movetoworkspace, 5"
         "$mod SHIFT, 6, movetoworkspace, 6"
+
+        "$mod SHIFT, left, movewindow, l"
+        "$mod SHIFT, right, movewindow, right"
+        "$mod SHIFT, up, movewindow, u"
+        "$mod SHIFT, down, movewindow, d"
+
+        "$mod CTRL, left, resizeactive, -20 0"
+        "$mod CTRL, right, resizeactive, 20 0"
+        "$mod CTRL, up, resizeactive, 0 -20"
+        "$mod CTRL, down, resizeactive, 0 20"
       ];
 
       general = {
