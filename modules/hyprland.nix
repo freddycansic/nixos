@@ -34,6 +34,8 @@
       windowrulev2 = [
         "noanim,floating:1,class:^(jetbrains-.*),title:^(win\\d+)"
         "noinitialfocus,floating:1,class:^(jetbrains-.*),title:^(win\\d+)"
+
+        "noborder,onworkspace:1"
       ];
     };
   };
