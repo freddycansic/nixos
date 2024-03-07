@@ -15,9 +15,9 @@ git diff -U0 **/*.nix
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch --flake /home/freddy/nixos#default
+sudo nixos-rebuild switch --flake .
 # Get current generation metadata
-current=$(nixos-rebuild list-generations --flake /home/freddy/nixos#default | grep current | sed 's/\*$//')
+current=$(nixos-rebuild list-generations --flake . | grep current | sed 's/\*$//')
 
 # Commit all changes witih the generation metadata
 git commit -am "$current"
