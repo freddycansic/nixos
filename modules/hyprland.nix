@@ -27,15 +27,18 @@
         gaps_in = 0;
         gaps_out = 0;
         border_size = 2;
+        layout = "master";
       };
 
-      monitor = "DP-2,1920x1080@144,0x0,1";
+      master = {
+        no_gaps_when_only = 1;
+      };
+
+      monitor = ",preferred,auto,auto";
 
       windowrulev2 = [
         "noanim,floating:1,class:^(jetbrains-.*),title:^(win\\d+)"
         "noinitialfocus,floating:1,class:^(jetbrains-.*),title:^(win\\d+)"
-
-        "noborder,onworkspace:1"
       ];
     };
   };
