@@ -22,6 +22,11 @@
         "$mod SHIFT, 5, movetoworkspace, 5"
         "$mod SHIFT, 6, movetoworkspace, 6"
 
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+
         "$mod SHIFT, left, movewindow, l"
         "$mod SHIFT, right, movewindow, right"
         "$mod SHIFT, up, movewindow, u"
@@ -49,6 +54,18 @@
       windowrulev2 = [
         "noanim,floating:1,class:^(jetbrains-.*),title:^(win\\d+)"
         "noinitialfocus,floating:1,class:^(jetbrains-.*),title:^(win\\d+)"
+        "windowdance,class:^(jetbrains-.*)$,floating:1"
+        # Fix splash screen showing in weird places and prevent annoying focus takeovers
+        "center,class:^(jetbrains-.*)$,title:^(splash)$,floating:1"
+        "nofocus,class:^(jetbrains-.*)$,title:^(splash)$,floating:1"
+        "noborder,class:^(jetbrains-.*)$,title:^(splash)$,floating:1"
+
+        # Center popups/find windows
+        "center,class:^(jetbrains-.*)$,title:^( )$,floating:1"
+        "stayfocused,class:^(jetbrains-.*)$,title:^( )$,floating:1"
+        "noborder,class:^(jetbrains-.*)$,title:^( )$,floating:1"
+        # Disable window flicker when autocomplete or tooltips appear
+        "nofocus,class:^(jetbrains-.*)$,title:^(win.*)$,floating:1"
       ];
     };
   };
