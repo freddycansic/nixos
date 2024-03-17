@@ -33,7 +33,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.swww
-    pkgs.eww
+    pkgs.eww-wayland
     pkgs.rofi-wayland
 
     pkgs.discord
