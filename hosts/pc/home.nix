@@ -42,6 +42,7 @@
     pkgs.jetbrains.idea-ultimate
     pkgs.gradle
     pkgs.gammastep
+    pkgs.obsidian
   ];
 
   programs.home-manager.enable = true;

@@ -28,7 +28,7 @@
         "$mod, down, movefocus, d"
 
         "$mod SHIFT, left, movewindow, l"
-        "$mod SHIFT, right, movewindow, right"
+        "$mod SHIFT, right, movewindow, r"
         "$mod SHIFT, up, movewindow, u"
         "$mod SHIFT, down, movewindow, d"
 

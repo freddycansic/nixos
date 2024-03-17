@@ -125,6 +125,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+
   environment.systemPackages = [
     pkgs.wget
     pkgs.unzip
