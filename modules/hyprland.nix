@@ -4,7 +4,7 @@
     settings = {
       "$mod" = "SUPER";
       bind = [
-        "$mod, P, exec, rofi -show run"
+        "$mod, P, exec, rofi -show drun -show-icons"
         "$mod, Return, exec, kitty"
         "$mod, Q, killactive"
         "$mod, F, fullscreen"
