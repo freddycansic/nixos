@@ -36,16 +36,19 @@
     pkgs.eww-wayland
     pkgs.rofi-wayland
 
+    pkgs.wlsunset
+
+    pkgs.nethogs
+    pkgs.btop
+    pkgs.zoxide
+    pkgs.gradle
+
     pkgs.discord
     pkgs.brave
     pkgs.kitty
     pkgs.bitwarden
     pkgs.psst
-    pkgs.zoxide
-    pkgs.nethogs
     pkgs.jetbrains.idea-ultimate
-    pkgs.gradle
-    pkgs.gammastep
     pkgs.obsidian
   ];
 
@@ -86,12 +89,11 @@
     ];
   };
 
-  services.gammastep = {
-    enable = true;
-    latitude = 52.219223;
-    longitude = -1.19701;
-    tray = true;
-  };
+  # services.wlsunset = {
+  #   enable = true;
+  #   latitude = 52.219223;
+  #   longitude = -1.19701;
+  # };
 
   xdg.desktopEntries.obsidian = {
     name = "Obsidian";
