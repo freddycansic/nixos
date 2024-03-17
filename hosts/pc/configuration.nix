@@ -148,11 +148,8 @@
     pkgs.readline
 
     # Hyprland
-    pkgs.eww
     pkgs.mako
     pkgs.xdg-desktop-portal-gtk
-    pkgs.swww
-    pkgs.rofi-wayland
   ];
 
   programs.wireshark.enable = true;

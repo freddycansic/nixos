@@ -32,6 +32,10 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    pkgs.swww
+    pkgs.eww
+    pkgs.rofi-wayland
+
     pkgs.discord
     pkgs.brave
     pkgs.kitty
