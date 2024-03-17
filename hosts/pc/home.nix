@@ -89,11 +89,11 @@
     ];
   };
 
-  # services.wlsunset = {
-  #   enable = true;
-  #   latitude = 52.219223;
-  #   longitude = -1.19701;
-  # };
+  services.wlsunset = {
+    enable = true;
+    latitude = "52.2";
+    longitude = "-1.2";
+  };
 
   xdg.desktopEntries.obsidian = {
     name = "Obsidian";
