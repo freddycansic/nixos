@@ -84,14 +84,6 @@
     pulse.enable = true;
     # jack.enable = true;
 
-    # extraConfig.pipewire = {
-    # "10-clock-rate" = {
-    # "context.properties" = {
-    # "default.clock.rate" = 44100;
-    # };
-    # };
-    # };
-
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
@@ -184,7 +176,15 @@
   };
 
   hardware = {
-    opengl.enable = true;
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+      extraPackages = [
+        pkgs.mesa_drivers
+      ];
+    };
+
     nvidia.modesetting.enable = true;
   };
 
