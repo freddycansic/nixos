@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   home.packages = [pkgs.eww-wayland];
 
-  programs.eww = {
-    enable = true;
-    configDir = ../../modules/eww;
-  };
+  # programs.eww-wayland = {
+  # enable = true;
+  # configDir = ../../modules/eww;
+  # };
 }
