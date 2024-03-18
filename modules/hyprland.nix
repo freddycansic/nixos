@@ -54,9 +54,9 @@
         no_gaps_when_only = 1;
       };
 
-      animation = {
-        windows = 0;
-      };
+      animation = [
+        "windows,0"
+      ];
 
       monitor = ",preferred,auto,auto";
 
