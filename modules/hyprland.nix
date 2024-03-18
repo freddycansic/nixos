@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       exec-once = [
-        "eww daemon -c ../eww/"
+        "eww open bar -c ../eww/"
       ];
 
       "$mod" = "SUPER";
@@ -53,6 +53,8 @@
       master = {
         no_gaps_when_only = 1;
       };
+
+      animation = 0;
 
       monitor = ",preferred,auto,auto";
 
