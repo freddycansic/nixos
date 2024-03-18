@@ -14,7 +14,7 @@
         soft-wrap.enable = true;
         search.smart-case = false;
         color-modes = true;
-        statusline.primary-selection-length = true;
+        # statusline.primary-selection-length = true;
       };
 
       keys.select = {
