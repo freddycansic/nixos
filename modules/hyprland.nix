@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       exec-once = [
-        "eww open bar -c ../eww/"
+        "eww open bar"
       ];
 
       "$mod" = "SUPER";
