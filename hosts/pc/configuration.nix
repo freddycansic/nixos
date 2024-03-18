@@ -164,11 +164,18 @@
   programs.wireshark.enable = true;
   programs.openvpn3.enable = true;
 
-  # Hyprland
   programs.hyprland = {
     enable = true;
     enableNvidiaPatches = true;
     xwayland.enable = true;
+  };
+
+  programs.zsh = {
+    enable = true;
+    ohMyZsh = {
+      enable = true;
+      plugins = [];
+    };
   };
 
   xdg.portal = {
@@ -195,8 +202,6 @@
   };
 
   programs.gnupg.agent.enable = true;
-
-  programs.zsh.enable = true;
 
   programs.java = {
     enable = true;
