@@ -119,4 +119,8 @@
   home.sessionVariables = {
     XDG_RUNTIME_DIR = "/run/user/$(id -u)";
   };
+
+  home.sessionPath = [
+    "~/.local/share/gem/ruby/3.2.0/bin/"
+  ];
 }
