@@ -22,6 +22,7 @@
     pkgs.btop
     pkgs.zoxide
     pkgs.gradle
+    pkgs.zsh-powerlevel10k
 
     pkgs.discord
     pkgs.brave
