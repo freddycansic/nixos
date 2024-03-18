@@ -6,6 +6,39 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
+
+    settings = {
+      theme = "gruvbox_original_dark_medium";
+
+      editor = {
+        soft-wrap.enable = true;
+        search.smart-case = false;
+        color-modes = true;
+        statusline.primary-selection-length = true;
+      };
+
+      keys.select = {
+        y = "yank_to_clipboard";
+      };
+
+      keys.normal = {
+        # Use system clipboard by default
+        # Swap around p and P commands
+        p = "paste_clipboard_before";
+        P = "paste_clipboard_after";
+
+        y = "yank_to_clipboard";
+
+        d = ["yank_to_clipboard" "delete_selection"];
+      };
+
+      keys.normal.space = {
+        y = "yank";
+        p = "paste_before";
+        P = "paste_after";
+      };
+    };
+
     themes = {
       gruvbox_original_dark_medium = let
         bg0 = "#282828";
@@ -222,37 +255,6 @@
             style = "curl";
           };
         };
-      };
-    };
-
-    settings = {
-      theme = "gruvbox_original_dark_medium";
-
-      editor = {
-        soft-wrap.enable = true;
-        search.smart-case = false;
-        color-modes = true;
-      };
-
-      keys.select = {
-        y = "yank_to_clipboard";
-      };
-
-      keys.normal = {
-        # Use system clipboard by default
-        # Swap around p and P commands
-        p = "paste_clipboard_before";
-        P = "paste_clipboard_after";
-
-        y = "yank_to_clipboard";
-
-        d = ["yank_to_clipboard" "delete_selection"];
-      };
-
-      keys.normal.space = {
-        y = "yank";
-        p = "paste_before";
-        P = "paste_after";
       };
     };
   };

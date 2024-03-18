@@ -10,28 +10,9 @@
   home.username = "freddy";
   home.homeDirectory = "/home/freddy";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "23.11";
 
   home.packages = [
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
     pkgs.swww
     pkgs.eww-wayland
     pkgs.rofi-wayland
@@ -45,7 +26,6 @@
 
     pkgs.discord
     pkgs.brave
-    pkgs.kitty
     pkgs.bitwarden
     pkgs.psst
     pkgs.jetbrains.idea-ultimate
@@ -55,15 +35,6 @@
   programs.home-manager.enable = true;
   programs.brave.enable = true;
   programs.zsh.enable = true;
-
-  programs.kitty = {
-    enable = true;
-    shellIntegration.enableZshIntegration = true;
-    extraConfig = "
-      enabled_layouts tall
-      confirm_os_window_close 0
-    ";
-  };
 
   programs.git = {
     enable = true;
