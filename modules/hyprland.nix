@@ -1,8 +1,13 @@
-{...}: {
+{pkgs, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
+      exec-once = [
+        "eww daemon -c ../eww/"
+      ];
+
       "$mod" = "SUPER";
+
       bind = [
         "$mod, P, exec, rofi -show drun -show-icons"
         "$mod, Return, exec, kitty"
