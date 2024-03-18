@@ -7,7 +7,11 @@ set -e
 pushd /home/freddy/nixos/
 
 # Autoformat your nix files
-sudo alejandra . >/dev/null 
+if alejandra_output=$(sudo alejandra .); then
+  :
+else
+  echo $alejandra_output
+fi
 
 # Shows your changes
 git diff -U0 **/*.nix
