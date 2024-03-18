@@ -7,9 +7,9 @@ set -e
 pushd /home/freddy/nixos/
 
 # Autoformat your nix files
-if alejandra_output=$(sudo alejandra .); then
-  :
-else
+alejandra_output=$(sudo alejandra . 2>&1)
+
+if [ $? -ne 0 ]; then
   echo $alejandra_output
 fi
 
