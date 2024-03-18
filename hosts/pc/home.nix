@@ -41,11 +41,11 @@
       {
         name = "powerlevel10k";
         src = pkgs.zsh-powerlevel10k;
-        file = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
     ];
     initExtra = ''
-      source ~/.p10k.zsh
+      source ${../../modules/zsh/.p10k.zsh}
     '';
   };
 
@@ -98,7 +98,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    ".p10k.zsh".source = ../../modules/zsh/.p10k.zsh;
+    # ".p10k.zsh".source = ../../modules/zsh/.p10k.zsh;
   };
 
   # Home Manager can also manage your environment variables through
