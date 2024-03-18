@@ -15,8 +15,13 @@
         search.smart-case = false;
         color-modes = true;
         file-picker.hidden = false;
-        statusline = [
-          "primary-selection-length"
+        statusline.right = [
+          "primary-selection-length" # Show length of selection
+          "diagnostics"
+          "selections"
+          "register"
+          "position"
+          "file-encoding"
         ];
       };
 
