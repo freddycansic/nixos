@@ -1,8 +1,8 @@
-{config, ...}: {
-  home.file = {
-    "${config.xdg.configHome}/eww" = {
-      source = ../../modules/eww;
-      recursive = true;
-    };
+{pkgs, ...}: {
+  home.packages = [pkgs.eww-wayland];
+
+  programs.eww = {
+    enable = true;
+    configDir = ../../modules/eww;
   };
 }

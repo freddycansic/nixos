@@ -14,7 +14,6 @@
 
   home.packages = [
     pkgs.swww
-    pkgs.eww-wayland
     pkgs.rofi-wayland
 
     pkgs.wlsunset
