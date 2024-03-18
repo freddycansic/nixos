@@ -170,13 +170,7 @@
     xwayland.enable = true;
   };
 
-  programs.zsh = {
-    enable = true;
-    ohMyZsh = {
-      enable = true;
-      plugins = [];
-    };
-  };
+  programs.zsh.enable = true;
 
   xdg.portal = {
     enable = true;

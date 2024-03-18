@@ -33,7 +33,19 @@
 
   programs.home-manager.enable = true;
   programs.brave.enable = true;
-  programs.zsh.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+      }
+    ];
+    initExtra = ''
+      source ~/.p10k.zsh
+    '';
+  };
 
   programs.git = {
     enable = true;
@@ -83,6 +95,8 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    ".p10k.zsh".source = ../../modules/zsh/.p10k.zsh;
   };
 
   # Home Manager can also manage your environment variables through
