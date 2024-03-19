@@ -147,7 +147,7 @@
     pkgs.gnumake
     pkgs.wev # display keypresses
     pkgs.python3
-    pkgs.shutter
+    pkgs.grimblast
 
     inputs.nixpkgs-ruby.packages.x86_64-linux."ruby-3.2.2"
 
