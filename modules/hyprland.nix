@@ -55,7 +55,7 @@
       };
 
       animation = [
-        "windows,0"
+        "global,0"
       ];
 
       monitor = ",preferred,auto,auto";
