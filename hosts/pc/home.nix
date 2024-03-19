@@ -23,6 +23,7 @@
     pkgs.zoxide
     pkgs.gradle
     pkgs.zsh-powerlevel10k
+    pkgs.rustup
 
     pkgs.discord
     pkgs.brave
@@ -30,7 +31,7 @@
     pkgs.psst
     pkgs.jetbrains.idea-ultimate
     pkgs.obsidian
-    pkgs.rustup
+    pkgs.gimp
   ];
 
   programs.home-manager.enable = true;
