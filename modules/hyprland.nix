@@ -52,6 +52,7 @@
 
       master = {
         no_gaps_when_only = 1;
+        new_is_master = false;
       };
 
       animation = [
