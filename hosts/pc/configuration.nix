@@ -143,6 +143,7 @@
     pkgs.openvpn3
     pkgs.easyeffects
     pkgs.gcc
+    pkgs.cmake
     pkgs.gnumake
     pkgs.wev # display keypresses
 
@@ -155,6 +156,7 @@
     pkgs.libedit
     pkgs.libnotify
     pkgs.readline
+    pkgs.shaderc
 
     # Hyprland
     pkgs.mako
