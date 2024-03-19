@@ -31,7 +31,6 @@
     pkgs.jetbrains.idea-ultimate
     pkgs.obsidian
     pkgs.rustup
-    pkgs.perl
   ];
 
   programs.home-manager.enable = true;
@@ -80,6 +79,8 @@
     latitude = "52.2";
     longitude = "-1.2";
   };
+
+  services.flameshot.enable = true;
 
   xdg.desktopEntries.obsidian = {
     name = "Obsidian";
