@@ -31,6 +31,7 @@
     pkgs.jetbrains.idea-ultimate
     pkgs.obsidian
     pkgs.rustup
+    pkgs.perl
   ];
 
   programs.home-manager.enable = true;
