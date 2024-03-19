@@ -30,7 +30,7 @@
     pkgs.psst
     pkgs.jetbrains.idea-ultimate
     pkgs.obsidian
-    pkgs.cargo
+    pkgs.rustup
   ];
 
   programs.home-manager.enable = true;
