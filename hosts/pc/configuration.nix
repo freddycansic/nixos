@@ -159,6 +159,9 @@
     pkgs.libnotify
     pkgs.readline
     pkgs.shaderc
+    pkgs.libGL
+    pkgs.libxkbcommon
+    pkgs.wayland
 
     # Hyprland
     pkgs.mako
@@ -175,6 +178,12 @@
   };
 
   programs.zsh.enable = true;
+
+  programs.nix-ld = {
+    enable = true;
+    # Add missing dynamic libraries for unpackaged programs here
+    libraries = [];
+  };
 
   xdg.portal = {
     enable = true;
