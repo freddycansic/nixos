@@ -201,7 +201,13 @@
       pkgs.wayland
       pkgs.libxkbcommon
       pkgs.fontconfig
+      pkgs.vulkan-headers
+      pkgs.vulkan-loader
+      pkgs.vulkan-validation-layers
+      pkgs.vulkan-tools
     ]}";
+    VULKAN_SDK = "${pkgs.vulkan-headers}";
+    VK_LAYER_PATH = "${pkgs.vulkan-validation-layers}/share/vulkan/explicit_layer.d";
   };
 
   hardware = {
