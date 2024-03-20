@@ -163,6 +163,9 @@
     pkgs.libGL
     pkgs.libxkbcommon
     pkgs.fontconfig
+    pkgs.vulkan-headers
+    pkgs.vulkan-loader
+    pkgs.vulkan-validation-layers
 
     # Hyprland
     pkgs.mako
