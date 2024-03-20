@@ -5,6 +5,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   imports = [
@@ -161,7 +162,7 @@
     pkgs.shaderc
     pkgs.libGL
     pkgs.libxkbcommon
-    pkgs.wayland
+    pkgs.fontconfig
 
     # Hyprland
     pkgs.mako
@@ -193,6 +194,11 @@
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
+    LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${lib.makeLibraryPath [
+      pkgs.wayland
+      pkgs.libxkbcommon
+      pkgs.fontconfig
+    ]}";
   };
 
   hardware = {
