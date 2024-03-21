@@ -220,7 +220,14 @@
       ];
     };
 
-    nvidia.modesetting.enable = true;
+    nvidia = {
+      modesetting.enable = true;
+
+      prime = {
+        sync.enable = true;
+        nvidiaBusId = "PCI:10:00:0";
+      };
+    };
   };
 
   programs.gnupg.agent.enable = true;
