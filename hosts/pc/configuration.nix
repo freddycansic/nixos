@@ -205,6 +205,7 @@
       pkgs.vulkan-loader
       pkgs.vulkan-validation-layers
       pkgs.vulkan-tools
+      pkgs.zlib
     ]}";
     VULKAN_SDK = "${pkgs.vulkan-headers}";
     VK_LAYER_PATH = "${pkgs.vulkan-validation-layers}/share/vulkan/explicit_layer.d";
