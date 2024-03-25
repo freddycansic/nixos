@@ -34,6 +34,7 @@
     pkgs.jetbrains.rust-rover
     pkgs.obsidian
     pkgs.gimp
+    pkgs.vscode
   ];
 
   programs.home-manager.enable = true;
