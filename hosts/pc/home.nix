@@ -31,6 +31,7 @@
     pkgs.bitwarden
     pkgs.psst
     pkgs.jetbrains.idea-ultimate
+    pkgs.jetbrains.rust-rover
     pkgs.obsidian
     pkgs.gimp
   ];
