@@ -24,6 +24,7 @@
     pkgs.gradle
     pkgs.zsh-powerlevel10k
     pkgs.rustup
+    pkgs.lldb
 
     pkgs.discord
     pkgs.brave
