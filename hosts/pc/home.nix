@@ -34,8 +34,15 @@
     pkgs.jetbrains.rust-rover
     pkgs.obsidian
     pkgs.gimp
-    pkgs.vscode
+    # pkgs.vscode
   ];
+
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+    extensions = with pkgs.vscode-extensions; [
+    ];
+  };
 
   programs.home-manager.enable = true;
   programs.brave.enable = true;
