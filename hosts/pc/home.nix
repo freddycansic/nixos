@@ -34,13 +34,15 @@
     pkgs.jetbrains.rust-rover
     pkgs.obsidian
     pkgs.gimp
-    # pkgs.vscode
+    # pkgs.vscode-extensions
   ];
 
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
+      vadimcn.vscode-lldb
+      rust-lang.rust-analyzer
     ];
   };
 
@@ -96,11 +98,6 @@
   xdg.desktopEntries.obsidian = {
     name = "Obsidian";
     exec = "obsidian --disable-gpu";
-  };
-
-  xdg.desktopEntries.vscode = {
-    name = "VSCode";
-    exec = "env -u WAYLAND_DISPLAY vscodium";
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
