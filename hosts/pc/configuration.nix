@@ -189,6 +189,15 @@
     libraries = [];
   };
 
+  location = {
+    latitude = 52.2;
+    longitude = -1.2;
+  };
+
+  services.redshift = {
+    enable = true;
+  };
+
   xdg.portal = {
     enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
