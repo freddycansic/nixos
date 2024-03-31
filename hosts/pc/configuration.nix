@@ -148,7 +148,6 @@
     pkgs.gnumake
     pkgs.wev # display keypresses
     pkgs.python3
-    # pkgs.grimblast
 
     inputs.nixpkgs-ruby.packages.x86_64-linux."ruby-3.2.2"
 
@@ -167,8 +166,9 @@
     pkgs.vulkan-loader
     pkgs.vulkan-validation-layers
 
-    # Hyprland
     # pkgs.mako
+    pkgs.dunst
+    pkgs.dunst
     pkgs.xdg-desktop-portal-gtk
   ];
 
@@ -198,11 +198,11 @@
     enable = true;
   };
 
-  xdg.portal = {
-    enable = true;
-    config.common.default = "*";
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   config.common.default = "*";
+  #   extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  # };
 
   environment.sessionVariables = {
     # WLR_NO_HARDWARE_CURSORS = "1";
