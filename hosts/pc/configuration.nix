@@ -57,12 +57,12 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    # services.xserver.desktopManager.gnome.enable = true;
+    windowManager.leftwm.enable = true;
+  };
 
   services.logind.extraConfig = "RuntimeDirectorySize=4G";
 
@@ -120,7 +120,6 @@
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "freddy";
-  services.xserver.windowManager.leftwm.enable = true;
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   # systemd.services."getty@tty1".enable = false;
@@ -149,7 +148,7 @@
     pkgs.gnumake
     pkgs.wev # display keypresses
     pkgs.python3
-    pkgs.grimblast
+    # pkgs.grimblast
 
     inputs.nixpkgs-ruby.packages.x86_64-linux."ruby-3.2.2"
 
@@ -169,7 +168,7 @@
     pkgs.vulkan-validation-layers
 
     # Hyprland
-    pkgs.mako
+    # pkgs.mako
     pkgs.xdg-desktop-portal-gtk
   ];
 

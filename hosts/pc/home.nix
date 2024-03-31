@@ -13,11 +13,6 @@
   home.stateVersion = "23.11";
 
   home.packages = [
-    pkgs.swww
-    pkgs.rofi-wayland
-
-    pkgs.wlsunset
-
     pkgs.nethogs
     pkgs.btop
     pkgs.zoxide
@@ -25,6 +20,7 @@
     pkgs.zsh-powerlevel10k
     pkgs.rustup
     pkgs.lldb
+    pkgs.dmenu
 
     pkgs.discord
     pkgs.brave
@@ -34,7 +30,6 @@
     pkgs.jetbrains.rust-rover
     pkgs.obsidian
     pkgs.gimp
-    # pkgs.vscode-extensions
   ];
 
   programs.vscode = {
