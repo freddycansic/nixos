@@ -13,6 +13,8 @@
   home.stateVersion = "23.11";
 
   home.packages = [
+    pkgs.leftwm
+
     pkgs.nethogs
     pkgs.btop
     pkgs.zoxide
