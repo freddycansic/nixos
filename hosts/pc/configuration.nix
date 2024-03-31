@@ -190,6 +190,7 @@
   };
 
   location = {
+    provider = "manual";
     latitude = 52.2;
     longitude = -1.2;
   };
