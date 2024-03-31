@@ -1,5 +1,0 @@
-{...}: {
-  # programs.leftwm = {
-  # enable = true;
-  # };
-}
