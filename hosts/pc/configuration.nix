@@ -120,6 +120,7 @@
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "freddy";
+  services.xserver.windowManager.leftwm.enable = true;
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   # systemd.services."getty@tty1".enable = false;
@@ -175,11 +176,11 @@
   programs.wireshark.enable = true;
   programs.openvpn3.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    enableNvidiaPatches = true;
-    xwayland.enable = true;
-  };
+  # programs.hyprland = {
+  #   enable = true;
+  #   enableNvidiaPatches = true;
+  #   xwayland.enable = true;
+  # };
 
   programs.zsh.enable = true;
 
@@ -195,8 +196,8 @@
   };
 
   environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
+    # WLR_NO_HARDWARE_CURSORS = "1";
+    # NIXOS_OZONE_WL = "1";
     LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${lib.makeLibraryPath [
       pkgs.wayland
       pkgs.libxkbcommon
