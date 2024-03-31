@@ -62,6 +62,7 @@
     displayManager.gdm.enable = true;
     # services.xserver.desktopManager.gnome.enable = true;
     windowManager.leftwm.enable = true;
+    deviceSection = ''Option "TearFree" "true"'';
   };
 
   services.logind.extraConfig = "RuntimeDirectorySize=4G";
