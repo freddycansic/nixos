@@ -6,6 +6,7 @@
   pkgs,
   inputs,
   lib,
+  options,
   ...
 }: {
   imports = [
@@ -186,20 +187,22 @@
   programs.nix-ld = {
     enable = true;
     # Add missing dynamic libraries for unpackaged programs here
-    libraries = [
-      pkgs.wayland
-      pkgs.libxkbcommon
-      pkgs.fontconfig
-      pkgs.vulkan-headers
-      pkgs.vulkan-loader
-      pkgs.vulkan-validation-layers
-      pkgs.vulkan-tools
-      pkgs.zlib
-      pkgs.xorg.libX11
-      pkgs.xorg.libXcursor
-      pkgs.xorg.libxcb
-      pkgs.xorg.libXi
-    ];
+    libraries =
+      options.programs.nix-ld.libraries.default
+      ++ [
+        pkgs.wayland
+        pkgs.libxkbcommon
+        pkgs.fontconfig
+        pkgs.vulkan-headers
+        pkgs.vulkan-loader
+        pkgs.vulkan-validation-layers
+        pkgs.vulkan-tools
+        pkgs.zlib
+        pkgs.xorg.libX11
+        pkgs.xorg.libXcursor
+        pkgs.xorg.libxcb
+        pkgs.xorg.libXi
+      ];
   };
 
   location = {

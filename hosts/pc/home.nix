@@ -24,7 +24,11 @@
     pkgs.zsh-powerlevel10k
     pkgs.rustup
     pkgs.lldb
-    pkgs.dmenu
+
+    # (pkgs.writeShellScriptBin "cargo" ''
+    #   export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+    #   exec ${pkgs.rustup}/bin/cargo "$@"
+    # '')
 
     pkgs.discord
     pkgs.brave
