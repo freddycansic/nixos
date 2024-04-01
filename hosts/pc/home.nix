@@ -25,11 +25,6 @@
     pkgs.rustup
     pkgs.lldb
 
-    # (pkgs.writeShellScriptBin "cargo" ''
-    #   export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
-    #   exec ${pkgs.rustup}/bin/cargo "$@"
-    # '')
-
     pkgs.discord
     pkgs.brave
     pkgs.bitwarden
