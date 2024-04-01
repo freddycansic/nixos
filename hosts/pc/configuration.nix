@@ -62,7 +62,7 @@
     displayManager.gdm.enable = true;
     # services.xserver.desktopManager.gnome.enable = true;
     windowManager.leftwm.enable = true;
-    deviceSection = ''Option "TearFree" "true"'';
+    # deviceSection = ''Option "TearFree" "true"'';
   };
 
   services.logind.extraConfig = "RuntimeDirectorySize=4G";
@@ -199,11 +199,11 @@
     enable = true;
   };
 
-  # xdg.portal = {
-  #   enable = true;
-  #   config.common.default = "*";
-  #   extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  # };
+  xdg.portal = {
+    enable = true;
+    config.common.default = "*";
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  };
 
   environment.sessionVariables = {
     # WLR_NO_HARDWARE_CURSORS = "1";
