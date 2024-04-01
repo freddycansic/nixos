@@ -14,6 +14,7 @@
 
   home.packages = [
     pkgs.leftwm
+    pkgs.rofi
 
     pkgs.nethogs
     pkgs.btop
