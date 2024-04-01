@@ -63,7 +63,6 @@
     displayManager.gdm.enable = true;
     # services.xserver.desktopManager.gnome.enable = true;
     windowManager.leftwm.enable = true;
-    # deviceSection = ''Option "TearFree" "true"'';
   };
 
   services.logind.extraConfig = "RuntimeDirectorySize=4G";
@@ -104,14 +103,12 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.freddy = {
     isNormalUser = true;
     description = "Freddy Cansick";
     extraGroups = ["networkmanager" "wheel" "wireshark"];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      #  thunderbird
     ];
   };
 
@@ -184,6 +181,13 @@
 
   programs.zsh.enable = true;
 
+  programs.gnupg.agent.enable = true;
+
+  programs.java = {
+    enable = true;
+    package = pkgs.openjdk17;
+  };
+
   programs.nix-ld = {
     enable = true;
     # Add missing dynamic libraries for unpackaged programs here
@@ -215,6 +219,15 @@
     enable = true;
   };
 
+  systemd.user.services.refresh-rate = {
+    description = "Set the refresh rate to 144";
+    serviceConfig.PassEnvironment = "DISPLAY";
+    script = ''
+      xrandr --output DP-0 --mode 1920x1080 --rate 144
+    '';
+    wantedBy = ["multi-user.target"]; # Run script after login
+  };
+
   xdg.portal = {
     enable = true;
     config.common.default = "*";
@@ -224,20 +237,6 @@
   environment.sessionVariables = {
     # WLR_NO_HARDWARE_CURSORS = "1";
     # NIXOS_OZONE_WL = "1";
-    # LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${lib.makeLibraryPath [
-    # pkgs.wayland
-    # pkgs.libxkbcommon
-    # pkgs.fontconfig
-    # pkgs.vulkan-headers
-    # pkgs.vulkan-loader
-    # pkgs.vulkan-validation-layers
-    # pkgs.vulkan-tools
-    # pkgs.zlib
-    # pkgs.xorg.libX11
-    # pkgs.xorg.libXcursor
-    # pkgs.xorg.libxcb
-    # pkgs.xorg.libXi
-    # ]}";
     VULKAN_SDK = "${pkgs.vulkan-headers}";
     VK_LAYER_PATH = "${pkgs.vulkan-validation-layers}/share/vulkan/explicit_layer.d";
   };
@@ -261,13 +260,6 @@
   };
 
   services.xserver.videoDrivers = ["nvidia"];
-
-  programs.gnupg.agent.enable = true;
-
-  programs.java = {
-    enable = true;
-    package = pkgs.openjdk17;
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
