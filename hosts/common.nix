@@ -8,6 +8,6 @@
     # ../modules/hyprland.nix
     ../modules/leftwm/leftwm.nix
     ../modules/kitty.nix
-    ../modules/eww/eww.nix
+    # ../modules/eww/eww.nix
   ];
 }
