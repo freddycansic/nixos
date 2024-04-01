@@ -233,8 +233,9 @@
     };
 
     nvidia = {
-      modesetting.enable = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
+      modesetting.enable = true;
+      forceFullCompositionPipeline = true; # Vsync?
       nvidiaSettings = true;
     };
   };
