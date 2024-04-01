@@ -169,7 +169,6 @@
 
     # pkgs.mako
     pkgs.dunst
-    pkgs.dunst
     pkgs.xdg-desktop-portal-gtk
   ];
 
