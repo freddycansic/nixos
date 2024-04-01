@@ -15,6 +15,7 @@
   home.packages = [
     pkgs.leftwm
     pkgs.rofi
+    pkgs.polybar
 
     pkgs.nethogs
     pkgs.btop
@@ -85,18 +86,7 @@
     ];
   };
 
-  services.wlsunset = {
-    enable = true;
-    latitude = "52.2";
-    longitude = "-1.2";
-  };
-
   services.flameshot.enable = true;
-
-  xdg.desktopEntries.obsidian = {
-    name = "Obsidian";
-    exec = "obsidian --disable-gpu";
-  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
