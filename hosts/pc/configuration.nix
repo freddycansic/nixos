@@ -186,7 +186,20 @@
   programs.nix-ld = {
     enable = true;
     # Add missing dynamic libraries for unpackaged programs here
-    libraries = [];
+    libraries = [
+      pkgs.wayland
+      pkgs.libxkbcommon
+      pkgs.fontconfig
+      pkgs.vulkan-headers
+      pkgs.vulkan-loader
+      pkgs.vulkan-validation-layers
+      pkgs.vulkan-tools
+      pkgs.zlib
+      pkgs.xorg.libX11
+      pkgs.xorg.libXcursor
+      pkgs.xorg.libxcb
+      pkgs.xorg.libXi
+    ];
   };
 
   location = {
@@ -208,20 +221,20 @@
   environment.sessionVariables = {
     # WLR_NO_HARDWARE_CURSORS = "1";
     # NIXOS_OZONE_WL = "1";
-    LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${lib.makeLibraryPath [
-      pkgs.wayland
-      pkgs.libxkbcommon
-      pkgs.fontconfig
-      pkgs.vulkan-headers
-      pkgs.vulkan-loader
-      pkgs.vulkan-validation-layers
-      pkgs.vulkan-tools
-      pkgs.zlib
-      pkgs.xorg.libX11
-      pkgs.xorg.libXcursor
-      pkgs.xorg.libxcb
-      pkgs.xorg.libXi
-    ]}";
+    # LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${lib.makeLibraryPath [
+    # pkgs.wayland
+    # pkgs.libxkbcommon
+    # pkgs.fontconfig
+    # pkgs.vulkan-headers
+    # pkgs.vulkan-loader
+    # pkgs.vulkan-validation-layers
+    # pkgs.vulkan-tools
+    # pkgs.zlib
+    # pkgs.xorg.libX11
+    # pkgs.xorg.libXcursor
+    # pkgs.xorg.libxcb
+    # pkgs.xorg.libXi
+    # ]}";
     VULKAN_SDK = "${pkgs.vulkan-headers}";
     VK_LAYER_PATH = "${pkgs.vulkan-validation-layers}/share/vulkan/explicit_layer.d";
   };
