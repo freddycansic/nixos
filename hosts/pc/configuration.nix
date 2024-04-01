@@ -71,11 +71,11 @@
   # Configure keymap in X11
   services.xserver = {
     layout = "gb";
-    xkbVariant = "extd";
+    xkbVariant = "mac";
   };
 
   # Configure console keymap
-  console.keyMap = "uk";
+  console.useXkbConfig = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
