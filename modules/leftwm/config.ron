@@ -64,7 +64,7 @@
         (command: Execute, value: "kitty", modifier: ["modkey"], key: "Return"),
         (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
-        // (command: ToggleFullScreen, value: "", modifer: ["modkey"], key: "f"),
+        (command: ToggleFullScreen, modifer: ["modkey"], key: "f"),
     
         (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "Up"),
         (command: MoveWindowDown, value: "", modifier: ["modkey", "Shift"], key: "Down"),
