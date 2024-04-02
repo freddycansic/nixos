@@ -71,8 +71,10 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "gb";
-    xkb.variant = "mac";
+    xkb = {
+      layout = "gb";
+      variant = "mac";
+    };
   };
 
   # Configure console keymap
