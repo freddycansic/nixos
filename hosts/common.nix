@@ -9,5 +9,6 @@
     ../modules/leftwm/leftwm.nix
     ../modules/kitty.nix
     # ../modules/eww/eww.nix
+    ../modules/nvim/nvim.nix
   ];
 }
