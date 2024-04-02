@@ -63,7 +63,7 @@
       }
     ];
     initExtra = ''
-      source ${../../modules/zsh/.p10k.zsh}
+      source ${../../modules/zsh/p10k.zsh}
     '';
   };
 

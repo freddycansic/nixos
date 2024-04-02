@@ -15,6 +15,8 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  nix.package = pkgs.nixVersions.unstable;
+
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     auto-optimise-store = true;
