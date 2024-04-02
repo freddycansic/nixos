@@ -14,6 +14,9 @@
 
   home.packages = [
     pkgs.leftwm
+    pkgs.polybar
+    pkgs.rofi
+
     pkgs.nethogs
     pkgs.btop
     pkgs.zoxide
