@@ -14,9 +14,6 @@
 
   home.packages = [
     pkgs.leftwm
-    pkgs.rofi
-    pkgs.polybar
-
     pkgs.nethogs
     pkgs.btop
     pkgs.zoxide
@@ -37,6 +34,8 @@
 
   programs.neovim = {
     enable = true;
+    viAlias = true;
+    vimAlias = true;
   };
 
   programs.vscode = {
