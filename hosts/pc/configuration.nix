@@ -148,6 +148,8 @@
     pkgs.wev # display keypresses
     pkgs.fd
     pkgs.xclip
+    pkgs.vim
+    pkgs.neovim
 
     pkgs.python3
     inputs.nixpkgs-ruby.packages.x86_64-linux."ruby-3.2.2"

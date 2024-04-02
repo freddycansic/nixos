@@ -35,6 +35,10 @@
     pkgs.gimp
   ];
 
+  programs.neovim = {
+    enable = true;
+  };
+
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
