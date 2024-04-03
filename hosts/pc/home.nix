@@ -24,6 +24,7 @@
     pkgs.zsh-powerlevel10k
     pkgs.rustup
     pkgs.lldb
+    pkgs.ripgrep
 
     pkgs.discord
     pkgs.brave
