@@ -70,7 +70,7 @@ if [ -x "$(command -v feh)" ]; then
 fi
 
 #set the theme.toml config
-leftwm-command "LoadTheme $SCRIPTPATH/theme.toml"
+leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
 #boot polybar based on the number of monitors found
 if [ -x "$(command -v polybar)" ]; then
