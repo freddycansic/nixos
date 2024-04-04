@@ -25,6 +25,7 @@
     pkgs.rustup
     pkgs.lldb
     pkgs.ripgrep
+    pkgs.linuxPackages_latest.perf
 
     pkgs.discord
     pkgs.brave
