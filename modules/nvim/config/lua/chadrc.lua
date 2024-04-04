@@ -6,7 +6,15 @@ local M = {}
 
 M.ui = {
 	theme = "gruvbox",
+ 
+  tabufline = {
+    enabled = false,
+  },
 
+  statusline = {
+    theme = "vscode_colored",
+    order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "cursor" },
+  },
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
