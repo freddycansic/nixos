@@ -1,7 +1,7 @@
 #![enable(implicit_some)]
 (
     border_width: 0,
-    margin: 2,
+    margin: 0,
     workspace_margin: None,
     default_width: None,
     default_height: None,
