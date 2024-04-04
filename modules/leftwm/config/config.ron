@@ -59,6 +59,7 @@
     sloppy_mouse_follows_focus: true,
     reposition_cursor_on_resize: true,
     auto_derive_workspaces: false,
+    single_window_border: false,
     keybind: [
         (command: Execute, value: "rofi -show run", modifier: ["modkey"], key: "p"),
         (command: Execute, value: "kitty", modifier: ["modkey"], key: "Return"),

@@ -10,5 +10,4 @@
     focused_border_color: "#a3be8c",
     floating_border_color: "#88c0d0",
     on_new_window: None,
-    single_window_border: false,
 )
