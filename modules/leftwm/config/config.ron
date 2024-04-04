@@ -49,7 +49,7 @@
         (name: "Kitty", value: "kitty", x: 860, y: 390, height: 300, width: 200),
     ],
     window_rules: [
-        (window_name: "winit window", spawn_floating: true)
+        (window_class: "vulkano-teapot", spawn_floating: true)
     ],
     disable_current_tag_swap: false,
     disable_tile_drag: false,
