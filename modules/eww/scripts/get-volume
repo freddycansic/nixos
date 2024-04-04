@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-amixer | grep Playback | grep % -m 1 | awk '{print substr($5, 2, length($5) - 2)}'

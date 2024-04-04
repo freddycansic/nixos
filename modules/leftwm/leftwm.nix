@@ -1,3 +1,3 @@
 {...}: {
-  xdg.configFile."leftwm/config.ron".source = ./config.ron;
+  xdg.configFile."leftwm".source = ./config;
 }

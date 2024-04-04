@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ../modules/helix.nix
+    # ../modules/helix.nix
     # ../modules/hyprland.nix
     ../modules/leftwm/leftwm.nix
     ../modules/kitty.nix
