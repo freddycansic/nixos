@@ -2,7 +2,7 @@
 (
     border_width: 1,
     margin: 2,
-    workspace_margin: 0,
+    workspace_margin: None,
     default_width: None,
     default_height: None,
     gutter: None,
