@@ -231,10 +231,10 @@
     description = "Set the refresh rate to 144";
     serviceConfig = {
       Type = "oneshot";
-      PassEnvironment = "DISPLAY";
+      # PassEnvironment = "DISPLAY";
       ExecStart = "xrandr --output DP-0 --mode 1920x1080 --rate 144";
     };
-    wantedBy = ["multi-user.target"]; # Run script after login
+    wantedBy = ["default.target"]; # Run script after login
   };
 
   # systemd.user.services.apply-nvidia-settings = {
