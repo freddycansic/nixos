@@ -214,6 +214,7 @@
         pkgs.xorg.libXcursor
         pkgs.xorg.libxcb
         pkgs.xorg.libXi
+        pkgs.xorg.libXrandr
       ];
   };
 
