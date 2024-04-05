@@ -154,6 +154,7 @@
     pkgs.xclip
     pkgs.vim
     pkgs.neovim
+    pkgs.gpu-screen-recorder
 
     pkgs.python3
     inputs.nixpkgs-ruby.packages.x86_64-linux."ruby-3.2.2"
@@ -177,6 +178,15 @@
     pkgs.dunst
     pkgs.xdg-desktop-portal-gtk
   ];
+
+  security.wrappers = {
+    gpu-screen-recorder = {
+      owner = "root";
+      group = "video";
+      capabilities = "cap_sys_nice+ep";
+      source = "${pkgs.gpu-screen-recorder}/bin/gpu-screen-recorder";
+    };
+  };
 
   programs.wireshark.enable = true;
   programs.openvpn3.enable = true;
@@ -215,6 +225,7 @@
         pkgs.xorg.libxcb
         pkgs.xorg.libXi
         pkgs.xorg.libXrandr
+        config.boot.kernelPackages.nvidiaPackages.stable
       ];
   };
 

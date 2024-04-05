@@ -27,7 +27,6 @@
     pkgs.ripgrep
     pkgs.linuxPackages_latest.perf
     pkgs.autorandr
-    pkgs.gpu-screen-recorder
 
     pkgs.discord
     pkgs.brave
