@@ -27,6 +27,7 @@
     pkgs.ripgrep
     pkgs.linuxPackages_latest.perf
     pkgs.autorandr
+    pkgs.gpu-screen-recorder
 
     pkgs.discord
     pkgs.brave
@@ -113,23 +114,6 @@
   };
 
   services.flameshot.enable = true;
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-
-    # ".p10k.zsh".source = ../../modules/zsh/.p10k.zsh;
-  };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
