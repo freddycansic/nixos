@@ -113,6 +113,13 @@
     ];
   };
 
+  xsession = {
+    enable = true;
+    initExtra = ''
+      autorandr --load desktop
+    '';
+  };
+
   services.flameshot.enable = true;
 
   # Home Manager can also manage your environment variables through
