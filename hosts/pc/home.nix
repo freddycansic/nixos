@@ -28,6 +28,7 @@
     pkgs.linuxPackages_latest.perf
     pkgs.autorandr
     pkgs.simplescreenrecorder
+    pkgs.sqlite
 
     pkgs.discord
     pkgs.brave
