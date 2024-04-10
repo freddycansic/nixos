@@ -1,21 +1,20 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = 'BufWritePre', -- uncomment for format on save
     config = function()
       require "configs.conform"
     end,
   },
 
   -- These are some examples, uncomment them if you want to see them work!
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   config = function()
-  --     require("nvchad.configs.lspconfig").defaults()
-  --     require "configs.lspconfig"
-  --   end,
-  -- },
-  --
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("nvchad.configs.lspconfig").defaults()
+      require "configs.lspconfig"
+    end,
+  },
   {
    	"williamboman/mason.nvim",
    	opts = {
@@ -46,29 +45,16 @@ return {
   {
     "mfussenegger/nvim-dap",
   },
-  -- {
-  --   "saekli/crates.nvim",
-  --   ft = {"rust", "toml"},
-  --   config = function(_, opts)
-  --     local crates = require('crates')
-  --     crates.setup(opts)
-  --     crates.show()
-  --   end,
-  -- },
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   opts = {
-  --     name = "crates"
-  --   }
-  -- }
-  --
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "hrsh7th/nvim-cmp",
+  },
+  {
+  	"nvim-treesitter/nvim-treesitter",
+  	opts = {
+  		ensure_installed = {
+  			"vim", "lua", "vimdoc",
+       "html", "css"
+  		},
+  	},
+  },
 }
