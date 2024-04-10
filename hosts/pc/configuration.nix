@@ -225,9 +225,9 @@
     longitude = -1.2;
   };
 
-  services.redshift = {
-    enable = true;
-  };
+  services.redshift.enable = true;
+
+  services.gnome3.gnome-keyring.enable = true;
 
   xdg.portal = {
     enable = true;
