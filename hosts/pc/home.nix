@@ -100,6 +100,8 @@
       pull.rebase = true;
       push.autoSetupRemote = true;
       commit.gpgsign = true;
+      user.signingKey = "F2754989FFE3B06E";
+      gpg.program = "${pkgs.gnupg}/bin/gpg";
     };
   };
 
