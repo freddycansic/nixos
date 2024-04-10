@@ -37,6 +37,7 @@
     pkgs.jetbrains.rust-rover
     pkgs.obsidian
     pkgs.gimp
+    pkgs.openfortivpn
   ];
 
   programs.neovim = {
