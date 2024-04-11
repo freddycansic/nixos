@@ -63,8 +63,8 @@
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    # windowManager.leftwm.enable = true;
+    # desktopManager.gnome.enable = true;
+    windowManager.leftwm.enable = true;
   };
 
   services.logind.extraConfig = "RuntimeDirectorySize=4G";
@@ -229,11 +229,11 @@
 
   services.gnome.gnome-keyring.enable = true;
 
-  # xdg.portal = {
-  #   enable = true;
-  #   config.common.default = "*";
-  #   extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  # };
+  xdg.portal = {
+    enable = true;
+    config.common.default = "*";
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  };
 
   environment.sessionVariables = {
     # WLR_NO_HARDWARE_CURSORS = "1";
