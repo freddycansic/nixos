@@ -32,6 +32,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelParams = [
+    "erf_event_paranoid=1"
+    "kptr_restrict=0"
+  ];
+
   networking.hostName = "pc";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
