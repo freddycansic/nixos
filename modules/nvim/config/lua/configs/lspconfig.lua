@@ -5,7 +5,13 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
-lspconfig.solargraph.setup{}
+lspconfig.solargraph.setup{
+  settings = {
+    solargraph = {
+      diagnostics = false
+    }
+  }
+}
 
 -- lspconfig.rust_analyzer.setup({
 --   on_attach = on_attach,
