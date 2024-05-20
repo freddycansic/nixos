@@ -8,7 +8,7 @@ local util = require "lspconfig/util"
 lspconfig.solargraph.setup{
   settings = {
     solargraph = {
-      diagnostics = false
+      -- diagnostics = false
     }
   }
 }

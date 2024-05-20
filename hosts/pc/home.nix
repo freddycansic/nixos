@@ -33,7 +33,7 @@
     pkgs.discord
     pkgs.brave
     pkgs.bitwarden
-    pkgs.psst
+    pkgs.spotube
     pkgs.jetbrains.idea-ultimate
     pkgs.jetbrains.rust-rover
     pkgs.obsidian
