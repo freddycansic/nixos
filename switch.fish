@@ -10,13 +10,6 @@ set host $argv[1]
 
 pushd /home/freddy/nixos/
 
-git diff --quiet
-if test $status -eq 0
-    echo "No changes detected, exiting."
-    popd
-    exit 0
-end
-
 # Autoformat nix files
 alejandra . &>/dev/null
 if test $status -ne 0
