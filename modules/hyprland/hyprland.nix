@@ -11,10 +11,6 @@
   environment.systemPackages = [
     pkgs.kitty # default terminal for hyprland
 
-    pkgs.mako # notification daemon
-
-    pkgs.libnotify # dependency for notification daemons
-
     pkgs.wofi # run menu
   ];
 

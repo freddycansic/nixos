@@ -17,6 +17,7 @@
   fonts.packages = [
     pkgs.nerd-fonts.fira-code
     inputs.sf-mono-nerd-font.packages.${pkgs.stdenv.hostPlatform.system}.default
+    pkgs.nixd # nix language server
   ];
 
   programs.git = {
