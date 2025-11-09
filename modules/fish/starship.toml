@@ -1,0 +1,80 @@
+format = """
+$cmd_duration\
+$directory\
+$fill\
+$git_branch\
+$git_state\
+$git_status\
+$line_break\
+$python\
+$username@\
+$hostname\
+$character\
+"""
+
+palette = 'gruvbox_dark'
+
+[username]
+show_always = true
+style_user = "fg:color_green"
+style_root = "fg:color_fg0 bg:color_red"
+format = '[$user]($style)'
+
+[hostname]
+style = "fg:color_green"
+format = "[$ssh_symbol$hostname]($style)"
+ssh_only = false
+
+[directory]
+style = "color_blue"
+format = "[$read_only]($read_only_style)[$path]($style)"
+truncation_length = 10
+read_only = " "
+
+[character]
+success_symbol = "[ ❯](color_purple)"
+error_symbol = "[ ❯](color_red)"
+vimcmd_symbol = "[ ❮](green)"
+
+[git_branch]
+format = "[$symbol $branch]($style)"
+style = "color_yellow"
+symbol = ""
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "color_purple"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "color_yellow"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
+
+[fill]
+symbol = " "
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
