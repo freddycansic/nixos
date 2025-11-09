@@ -14,6 +14,7 @@
     pkgs.alejandra # nix formatter
     pkgs.psmisc # includes killall
     pkgs.nixd # nix language server
+    pkgs.networkmanager_dmenu
   ];
 
   fonts.packages = [
@@ -62,7 +63,16 @@
 
     programs.fzf.enable = true;
 
-    programs.alacritty.enable = true;
+    programs.alacritty = {
+      enable = true;
+      theme = "one_dark";
+      settings = {
+        padding = {
+          x = 3;
+          y = 3;
+        };
+      };
+    };
 
     programs.fastfetch = {
       enable = true;
