@@ -13,6 +13,8 @@
     pkgs.kitty # default terminal for hyprland
 
     pkgs.wofi # run menu
+
+    pkgs.hyprcursor
   ];
 
   xdg.portal = {
