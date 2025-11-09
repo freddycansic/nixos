@@ -13,9 +13,9 @@
       enable = true;
       userSettings = {
         ui_font_size = 16;
-        ui_font_family = "SF Mono";
+        ui_font_family = "SFMono Nerd Font";
         buffer_font_size = 13;
-        buffer_font_family = "SF Mono";
+        buffer_font_family = "SFMono Nerd Font";
         theme = {
           mode = "light";
           light = "One Light";

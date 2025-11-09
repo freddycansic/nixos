@@ -18,7 +18,7 @@
           height = 24;
           spacing = 5;
 
-          "modules-left" = ["hyprland/workspaces" "custom/platform-profile" "temperature"];
+          "modules-left" = ["hyprland/workspaces" "custom/platform-profile"];
           "modules-center" = ["clock"];
           "modules-right" = ["wireplumber" "battery" "hyprland/language" "idle_inhibitor" "network" "bluetooth" "tray"];
 
@@ -60,10 +60,6 @@
           memory = {
             interval = 30;
             format = "\uf4bc  {used:0.1f}G";
-          };
-
-          temperature = {
-            format = "{temperatureC}°C";
           };
 
           network = {
@@ -124,7 +120,7 @@
         @define-color background #000000;
 
         * {
-            font-family: JetBrainsMono Nerd Font;
+            font-family: SFMono Nerd Font;
             font-size: 17px;
             padding: 0;
             margin: 0;
