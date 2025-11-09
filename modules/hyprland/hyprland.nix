@@ -112,15 +112,6 @@
           };
         };
 
-        # gestures = {
-        #   workspace_swipe = false;
-        # };
-
-        # device = {
-        #   name = "epic-mouse-v1";
-        #   sensitivity = -0.5;
-        # };
-
         debug = {
           disable_logs = false;
         };
@@ -133,8 +124,7 @@
           "$mainMod, M, exit,"
           "$mainMod, E, exec, $fileManager"
           "$mainMod, V, togglefloating,"
-          "$mainMod, R, exec, $menu"
-          "$mainMod, P, pseudo,"
+          "$mainMod, P, exec, $menu"
           "$mainMod, J, togglesplit,"
 
           "$mainMod, left, movefocus, l"
