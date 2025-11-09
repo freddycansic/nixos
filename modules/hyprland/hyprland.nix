@@ -27,6 +27,11 @@
   };
 
   home-manager.users.freddy = {
+    home.file."${config.users.users.freddy.home}/.local/share/icons/Bibata-Modern-Ice" = {
+      source = ./Bibata-Modern-Ice;
+      recursive = true;
+    };
+
     wayland.windowManager.hyprland = {
       enable = true;
 
@@ -45,6 +50,7 @@
         env = [
           "XCURSOR_SIZE,24"
           "HYPRCURSOR_SIZE,24"
+          "HYPRCURSOR_THEME,Bibata-Modern-Ice"
         ];
 
         general = {
