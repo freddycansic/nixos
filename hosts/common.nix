@@ -8,13 +8,13 @@
     ../modules/hyprland/hyprland.nix
     ../modules/fish/fish.nix
     ../modules/zed.nix
+    ../modules/networkmanager-dmenu/networkmanager-dmenu.nix
   ];
 
   environment.systemPackages = [
     pkgs.alejandra # nix formatter
     pkgs.psmisc # includes killall
     pkgs.nixd # nix language server
-    pkgs.networkmanager_dmenu
   ];
 
   fonts.packages = [
