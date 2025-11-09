@@ -67,9 +67,11 @@
       enable = true;
       theme = "one_dark";
       settings = {
-        padding = {
-          x = 3;
-          y = 3;
+        window = {
+          padding = {
+            x = 3;
+            y = 3;
+          };
         };
       };
     };
