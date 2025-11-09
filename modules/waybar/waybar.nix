@@ -5,8 +5,6 @@
   ...
 }: {
   home-manager.users.freddy = {
-    home.file.".config/waybar/platform_profile.fish".source = ./platform_profile.fish;
-
     programs.waybar = {
       enable = true;
       systemd.enableDebug = true;
@@ -18,17 +16,13 @@
           height = 24;
           spacing = 5;
 
-          "modules-left" = ["hyprland/workspaces" "custom/platform-profile"];
+          "modules-left" = ["hyprland/workspaces"];
           "modules-center" = ["clock"];
           "modules-right" = ["wireplumber" "battery" "hyprland/language" "idle_inhibitor" "network" "bluetooth" "tray"];
 
           "hyprland/workspaces" = {
             format = "<span size='larger'>{icon}</span>";
             "on-click" = "activate";
-            "format-icons" = {
-              active = "\uf444";
-              default = "\uf4c3";
-            };
             "icon-size" = 10;
             "sort-by-number" = true;
             "persistent-workspaces" = {
@@ -51,10 +45,17 @@
           };
 
           battery = {
-            bat = "BAT1";
-            interval = 60;
-            format = "{icon}  {capacity}%";
-            "format-icons" = ["\uf244" "\uf243" "\uf242" "\uf241" "\uf240"];
+            states = {
+              warning = 30;
+              critical = 15;
+            };
+            # format-discharging = "{capacity}% {icon}";
+            # format-charging = "{capacity}% {icon}";
+            format = "{capacity}% {icon}";
+            format-icons = {
+              default = ["󱊡" "󱊢" "󱊣"];
+              charging = ["󱊤" "󱊥" "󱊦"];
+            };
           };
 
           memory = {
@@ -89,19 +90,6 @@
           tray = {
             "icon-size" = 16;
             spacing = 16;
-          };
-
-          "custom/platform-profile" = {
-            format = "{icon} ";
-            exec = "~/.config/waybar/platform_profile.fish";
-            "return-type" = "json";
-            "restart-interval" = 1;
-            "format-icons" = {
-              quiet = "\udb80\udf2a";
-              balanced = "\udb80\ude10";
-              performance = "\uf427";
-              default = "?";
-            };
           };
 
           idle_inhibitor = {
