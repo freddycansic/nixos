@@ -18,9 +18,6 @@ if test $status -ne 0
     exit 1
 end
 
-echo "Enter optional commit message (press Enter to skip):"
-read -l description
-
 nh os switch . -H $host
 
 if test $status -ne 0
@@ -32,11 +29,15 @@ set info (nh os info | grep current)
 set message (echo $info | cut -d' ' -f1) # just the generation
 set metadata (echo $info | cut -d' ' -f3- | string trim) # timestamp, nix version, kernel version
 
+echo "Enter optional commit message (press Enter to skip):"
+read -l description
+
 if test -n "$description"
     set message "$message - $description"\n\n"$metadata"
 end
 
-git commit -am "$message"
+git add .
+git commit -m "$message"
 
 # Back to where you were
 popd
