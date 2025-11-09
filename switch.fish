@@ -25,21 +25,25 @@ if test $status -ne 0
     exit 1
 end
 
-nh os switch . -H $host --ask
+echo "Enter optional commit message (press Enter to skip):"
+read -l description
+
+nh os switch . -H $host
 
 if test $status -ne 0
     echo "Failed to rebuild"
     exit 1
 end
 
-# Get current generation metadata
 set info (nh os info | grep current)
-set info (echo $info | sed -e 's/[[:space:]]*$//') # trim trailing whitespace
-set info (echo $info | sed 's/(current)//') # remove "(current)"
-set current (echo $info | sed 's/[[:space:]]\+/ - /g') # replace whitespace with " - "
+set message (echo $line | cut -d' ' -f1) # just the generation
+set metadata (echo $line | cut -d' ' -f3-) # timestamp, nix version, kernel version
 
-# Commit changes with generation metadata
-git commit -am "$current"
+if test -n "$description"
+    set message "$current - $description"
+end
+
+git commit -am "$message"
 
 # Back to where you were
 popd

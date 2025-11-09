@@ -51,7 +51,7 @@
           Rust = {
             language_servers = ["rust-analyzer"];
             code_actions_on_format = {
-              source.organiseImports = true;
+              organiseImports = true;
             };
           };
           Haml = {
