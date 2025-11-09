@@ -13,7 +13,6 @@
         {
           layer = "top";
           position = "top";
-          height = 24;
           spacing = 5;
 
           "modules-left" = ["hyprland/workspaces"];
@@ -21,9 +20,7 @@
           "modules-right" = ["wireplumber" "battery" "network" "bluetooth" "tray"];
 
           "hyprland/workspaces" = {
-            format = "<span size='larger'>{icon}</span>";
             "on-click" = "activate";
-            "icon-size" = 10;
             "sort-by-number" = true;
             "persistent-workspaces" = {
               "1" = [];
@@ -35,7 +32,7 @@
           };
 
           clock = {
-            format = "{:%d.%m.%Y | %H:%M}";
+            format = "{%H:%M} | :%d/%m/%Y";
             tooltip-format = "<tt><small>{calendar}</small></tt>";
             calendar = {
               mode = "year";
