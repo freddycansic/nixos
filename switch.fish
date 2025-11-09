@@ -36,11 +36,11 @@ if test $status -ne 0
 end
 
 set info (nh os info | grep current)
-set message (echo $line | cut -d' ' -f1) # just the generation
-set metadata (echo $line | cut -d' ' -f3-) # timestamp, nix version, kernel version
+set message (echo $info | cut -d' ' -f1) # just the generation
+set metadata (echo $info | cut -d' ' -f3- | string trim) # timestamp, nix version, kernel version
 
 if test -n "$description"
-    set message "$current - $description"
+    set message "$message - $description"\n\n"$metadata"
 end
 
 git commit -am "$message"
