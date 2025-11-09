@@ -45,7 +45,7 @@
           };
 
           wireplumber = {
-            format = "\udb81\udd7e  {volume}%";
+            format = " {volume}%";
             "max-volume" = 100;
             "scroll-step" = 5;
           };
@@ -121,7 +121,7 @@
 
         * {
             font-family: SFMono Nerd Font;
-            font-size: 17px;
+            font-size: 14px;
             padding: 0;
             margin: 0;
         }
