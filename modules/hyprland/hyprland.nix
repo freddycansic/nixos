@@ -55,29 +55,8 @@
           "col.inactive_border" = "rgba(595959aa)";
           resize_on_border = false;
           allow_tearing = false;
-          layout = "dwindle";
+          layout = "master";
         };
-
-        # decoration = {
-        #   rounding = 10;
-        #   rounding_power = 2;
-        #   active_opacity = 1.0;
-        #   inactive_opacity = 1.0;
-
-        #   shadow = {
-        #     enabled = true;
-        #     range = 4;
-        #     render_power = 3;
-        #     color = "rgba(1a1a1aee)";
-        #   };
-
-        #   blur = {
-        #     enabled = true;
-        #     size = 3;
-        #     passes = 1;
-        #     vibrancy = 0.1696;
-        #   };
-        # };
 
         animations = {
           enabled = "yes, please :)";
@@ -110,13 +89,8 @@
           ];
         };
 
-        dwindle = {
-          pseudotile = true;
-          preserve_split = true;
-        };
-
         master = {
-          new_status = "master";
+          new_status = "slave";
         };
 
         misc = {
@@ -221,6 +195,8 @@
         windowrule = [
           "suppressevent maximize, class:.*"
           "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+
+          "noborder, onworkspace:w[t1]" # no border when there's only one window
         ];
       };
     };

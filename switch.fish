@@ -34,6 +34,8 @@ read -l description
 
 if test -n "$description"
     set message "$message - $description"\n\n"$metadata"
+else
+    set message "$message"\n\n"$metadata"
 end
 
 git add .

@@ -37,7 +37,7 @@
             calendar = {
               mode = "year";
               mode-mon-col = 3;
-              weeks-pos = "right";
+              weeks-pos = ""; # do not show weeks
               on-scroll = 1;
               format = {
                 "months" = "<span color='#ffead3'><b>{}</b></span>";
