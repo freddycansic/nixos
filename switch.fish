@@ -21,19 +21,16 @@ if test $status -eq 0
 end
 
 # Autoformat nix files
-set alejandra_output (alejandra .)
+set alejandra_output (alejandra . ^&1) # capture both stderr and stdout
 if test $status -ne 0
     echo $alejandra_output
     echo "formatting failed!"
     exit 1
 end
 
-# Show your changes
-git diff -U0 '*.nix'
-
 echo "NixOS Rebuilding..."
 
-nh os switch . -H $host
+nh os switch . -H $host --diff auto
 
 if test $status -ne 0
     echo "Failed to rebuild"
