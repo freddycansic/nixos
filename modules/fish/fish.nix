@@ -15,6 +15,8 @@
   };
 
   home-manager.users.freddy = {
+    xdg.configFile."starship.toml".source = ./starship.toml;
+
     programs.fish = {
       enable = true;
       interactiveShellInit = ''
@@ -29,7 +31,6 @@
     programs.starship = {
       enable = true;
       enableFishIntegration = true;
-      configPath = "${builtins.toString ./.}/starship.toml";
     };
   };
 }
