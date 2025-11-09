@@ -6,6 +6,7 @@
 }: {
   imports = [
     ../waybar.nix
+    ../mako.nix
   ];
 
   environment.systemPackages = [
