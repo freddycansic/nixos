@@ -12,15 +12,19 @@
         exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
       fi
     '';
-    # TODO move to fish config not bash
-    shellAliases = {
-      logout = "loginctl kill-user $USER";
-      l = "ls -la";
-    };
   };
 
   home-manager.users.freddy = {
-    programs.fish.enable = true;
+    programs.fish = {
+      enable = true;
+      interactiveShellInit = ''
+        fastfetch
+      '';
+      shellAliases = {
+        logout = "loginctl kill-user $USER";
+        l = "ls -la";
+      };
+    };
 
     programs.starship = {
       enable = true;
