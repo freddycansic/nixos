@@ -18,7 +18,7 @@
 
           "modules-left" = ["hyprland/workspaces"];
           "modules-center" = ["clock"];
-          "modules-right" = ["wireplumber" "battery" "hyprland/language" "idle_inhibitor" "network" "bluetooth" "tray"];
+          "modules-right" = ["wireplumber" "battery" "network" "bluetooth" "tray"];
 
           "hyprland/workspaces" = {
             format = "<span size='larger'>{icon}</span>";
@@ -60,44 +60,32 @@
 
           memory = {
             interval = 30;
-            format = "\uf4bc  {used:0.1f}G";
+            format = "  {used:0.1f}G";
           };
 
           network = {
             format = "";
-            "format-ethernet" = "\udb83\udc9d";
+            "format-ethernet" = "󰈀";
             "format-wifi" = "{icon}";
-            "format-disconnected" = "\udb83\udc9c";
-            "format-icons" = ["\udb82\udd2f" "\udb82\udd1f" "\udb82\udd22" "\udb82\udd25" "\udb82\udd28"];
+            "format-disconnected" = "󰤮";
+            "format-icons" = ["󰤟" "󰤢" "󰤥" "󰤨"];
             "tooltip-format-wifi" = "{essid} ({signalStrength}%)";
             "tooltip-format-ethernet" = "{ifname}";
             "tooltip-format-disconnected" = "Disconnected";
           };
 
           bluetooth = {
-            format = "\udb80\udcaf";
-            "format-disabled" = "\udb80\udcb2";
-            "format-connected" = "\udb80\udcb1";
+            format = ""; # do not show when disconnected
+            "format-disabled" = "󰂲";
+            "format-connected" = "󰂯";
             "tooltip-format" = "{controller_alias}\t{controller_address}";
             "tooltip-format-connected" = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
             "tooltip-format-enumerate-connected" = "{device_alias}\t{device_address}";
           };
 
-          "hyprland/language" = {
-            format = "{short}";
-          };
-
           tray = {
             "icon-size" = 16;
             spacing = 16;
-          };
-
-          idle_inhibitor = {
-            format = "{icon}";
-            "format-icons" = {
-              activated = "\udb80\udd76";
-              deactivated = "\udb83\udfaa";
-            };
           };
         }
       ];
