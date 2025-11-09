@@ -4,6 +4,10 @@
   lib,
   ...
 }: {
+  environment.systemPackages = [
+    pkgs.vulkan-tools # dependency of zed
+  ];
+
   home-manager.users.freddy = {
     programs.zed-editor = {
       enable = true;
@@ -78,7 +82,6 @@
               use_bundler = true;
             };
           };
-          rust-analyzer = {};
         };
       };
     };

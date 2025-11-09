@@ -433,6 +433,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1719317636,
+        "narHash": "sha256-bu0xbu2Z6DDzA9LGV81yJunIti6r7tjUImeR8orAL/I=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9c513fc6fb75142f6aec6b7545cb8af2236b80f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -460,7 +476,26 @@
       "inputs": {
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "sf-mono-nerd-font": "sf-mono-nerd-font"
+      }
+    },
+    "sf-mono-nerd-font": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1719443792,
+        "narHash": "sha256-P7HuAeZRpdoCRJ6XwbMfQjZCbmTcVUEaueNQ1/I8Rfo=",
+        "owner": "austinliuigi",
+        "repo": "sf-mono-nerd-font",
+        "rev": "eb66a7869c1d2277e047f39a9b9f7794b4570c1e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "austinliuigi",
+        "repo": "sf-mono-nerd-font",
+        "type": "github"
       }
     },
     "systems": {

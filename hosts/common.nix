@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -11,6 +12,11 @@
 
   environment.systemPackages = [
     pkgs.alejandra # nix formatter
+  ];
+
+  fonts.packages = [
+    pkgs.nerd-fonts.fira-code
+    inputs.sf-mono-nerd-font.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.git = {
@@ -31,7 +37,6 @@
     home.packages = [
       pkgs.brave
       pkgs.meld
-      pkgs.zed-editor
       pkgs.bitwarden-desktop
     ];
 

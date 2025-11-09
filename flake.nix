@@ -10,6 +10,8 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    sf-mono-nerd-font.url = "github:austinliuigi/sf-mono-nerd-font";
   };
 
   outputs = {
