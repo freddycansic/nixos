@@ -32,7 +32,8 @@
         name = "Freddy Cansick";
         email = "93549743+freddycansic@users.noreply.github.com";
       };
-      push = {autoSetupRemote = true;};
+      push.autoSetupRemote = true;
+      pull.rebase = true;
     };
   };
 
