@@ -26,16 +26,16 @@ if test $status -ne 0
 end
 
 set info (nh os info | grep current)
-set message (echo $info | cut -d' ' -f1) # just the generation
-set metadata (echo $info | cut -d' ' -f3- | string trim) # timestamp, nix version, kernel version
+set timestamp (echo $info | cut -d' ' -f5-6 | string trim) # timestamp
+set metadata (echo $info | cut -d' ' -f7- | string trim) # nix version, kernel version
 
 echo "Enter optional commit message (press Enter to skip):"
 read -l description
 
 if test -n "$description"
-    set message "$message - $description"\n\n"$metadata"
+    set message "$timestamp - $description"\n\n"$metadata"
 else
-    set message "$message"\n\n"$metadata"
+    set message "$timestamp"\n\n"$metadata"
 end
 
 git add .
