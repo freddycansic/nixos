@@ -5,10 +5,10 @@
   ...
 }: {
   imports = [
-    ../modules/hyprland/hyprland.nix
     ../modules/fish/fish.nix
     ../modules/zed.nix
     ../modules/networkmanager-dmenu/networkmanager-dmenu.nix
+    ../modules/hyprland/hyprland.nix
   ];
 
   environment.systemPackages = [

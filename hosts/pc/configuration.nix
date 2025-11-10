@@ -14,6 +14,11 @@
     ../common.nix
   ];
 
+  hyprland = {
+    enable = true;
+    kb_layout = "us";
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
