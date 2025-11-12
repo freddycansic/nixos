@@ -16,6 +16,7 @@
     pkgs.psmisc # includes killall
     pkgs.nixd # nix language server
     pkgs.spotify
+    pkgs.tree
   ];
 
   fonts.packages = [
