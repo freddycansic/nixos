@@ -15,6 +15,8 @@
     };
   };
 
+  services.xserver.updateDbusEnvironment = true;
+
   home-manager.users.freddy = {
     home.file."${config.users.users.freddy.home}/.config/systemd/user.conf".text = ''
       [Manager]

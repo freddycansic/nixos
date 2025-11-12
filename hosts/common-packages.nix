@@ -15,6 +15,7 @@
     pkgs.alejandra # nix formatter
     pkgs.psmisc # includes killall
     pkgs.nixd # nix language server
+    pkgs.spotify
   ];
 
   fonts.packages = [
