@@ -11,6 +11,8 @@
     ../modules/hyprland/hyprland.nix
   ];
 
+  hyprland.enable = true;
+
   environment.systemPackages = [
     pkgs.alejandra # nix formatter
     pkgs.psmisc # includes killall
