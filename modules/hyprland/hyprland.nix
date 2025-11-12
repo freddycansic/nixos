@@ -23,6 +23,11 @@
         default = "eDP-1, 1920x1080@60, 0x0, 1";
         description = "monitor used by hyprland";
       };
+      sensitivity = lib.mkOption {
+        type = lib.types.float;
+        default = "0.0";
+        description = "mouse sensitivity";
+      };
     };
   };
 
@@ -151,7 +156,7 @@
             kb_options = "";
             kb_rules = "";
             follow_mouse = 1;
-            sensitivity = 0;
+            sensitivity = config.hyprland.sensitivity;
 
             touchpad = {
               natural_scroll = false;
