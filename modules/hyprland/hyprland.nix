@@ -18,6 +18,11 @@
         default = "gb";
         description = "keyboard layout used by hyprland";
       };
+      monitor = lib.mkOption {
+        type = lib.types.str;
+        default = "eDP-1, 1920x1080@60, 0x0, 1";
+        description = "monitor used by hyprland";
+      };
     };
   };
 
@@ -75,7 +80,7 @@
             "mako &"
           ];
 
-          monitor = "eDP-1, 1920x1080@60, 0x0, 1";
+          monitor = config.hyprland.monitor;
 
           "$terminal" = "alacritty";
           "$fileManager" = "dolphin";
