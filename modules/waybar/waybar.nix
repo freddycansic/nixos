@@ -120,7 +120,7 @@
 
         #workspaces button {
             color: @foreground;
-            padding-left: 0.7em;
+            padding: 0 0.07rem 0 0.25rem;
         }
 
         #workspaces button.empty {
