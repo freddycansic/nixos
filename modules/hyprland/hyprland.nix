@@ -8,6 +8,7 @@
   imports = [
     ../waybar/waybar.nix
     ../mako.nix
+    ./xdg-portal.nix
   ];
 
   options = {
@@ -39,16 +40,6 @@
 
       pkgs.hyprcursor
     ];
-
-    xdg.portal = {
-      enable = true;
-      extraPortals = [pkgs.xdg-desktop-portal-gtk];
-      config = {
-        hyprland = {
-          default = ["hyprland" "gtk"];
-        };
-      };
-    };
 
     programs.hyprland = {
       enable = true;
