@@ -44,26 +44,6 @@
       pkgs.bitwarden-desktop
     ];
 
-    programs.vim = {
-      enable = true;
-    };
-
-    programs.nh = {
-      enable = true;
-      clean = {
-        enable = true;
-        extraArgs = "--keep-since 4d --keep 3";
-      };
-    };
-
-    programs.zed-editor = {
-      enable = true;
-    };
-
-    programs.fd.enable = true;
-
-    programs.fzf.enable = true;
-
     programs.alacritty = {
       enable = true;
       theme = "one_dark";
@@ -113,6 +93,28 @@
           }
         ];
       };
+    };
+
+    programs.fd.enable = true;
+
+    programs.fzf.enable = true;
+
+    programs.ncspot.enable = true;
+
+    programs.nh = {
+      enable = true;
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 4d --keep 3";
+      };
+    };
+
+    programs.vim = {
+      enable = true;
+    };
+
+    programs.zed-editor = {
+      enable = true;
     };
   };
 }
