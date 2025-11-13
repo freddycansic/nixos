@@ -35,10 +35,9 @@
   config = lib.mkIf config.hyprland.enable {
     environment.systemPackages = [
       pkgs.kitty # default terminal for hyprland
-
       pkgs.wofi # run menu
-
       pkgs.hyprcursor
+      pkgs.hyprshot
     ];
 
     programs.hyprland = {
@@ -70,6 +69,14 @@
               gamma = 0.8;
             }
           ];
+        };
+      };
+
+      services.hyprpaper = {
+        enable = true;
+        settings = {
+          ipc = "on"; # makes it look better
+          # preload = [ builtins.toPath ./wallpaper/ ];
         };
       };
 
@@ -138,6 +145,7 @@
           };
 
           master = {
+            mfact = 0.5;
             new_status = "slave";
           };
 
@@ -174,6 +182,8 @@
             "$mainMod, V, togglefloating,"
             "$mainMod, P, exec, $menu"
             "$mainMod, J, togglesplit,"
+
+            ", PRINT, exec, hyprshot -m region --clipboard-only"
 
             "$mainMod, left, movefocus, l"
             "$mainMod, right, movefocus, r"
@@ -232,9 +242,17 @@
 
           windowrule = [
             "suppressevent maximize, class:.*"
-            "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-
+            "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0" # fixes dragging issues with xwayland
+            "suppressevent maximize, class:.*" # ignore maximise requests from apps
             "noborder, onworkspace:w[t1]" # no border when there's only one window
+
+            # https://wiki.hypr.land/Useful-Utilities/Screen-Sharing/#xwayland
+            "opacity 0.0 override, class:^(xwaylandvideobridge)$"
+            "noanim, class:^(xwaylandvideobridge)$"
+            "noinitialfocus, class:^(xwaylandvideobridge)$"
+            "maxsize 1 1, class:^(xwaylandvideobridge)$"
+            "noblur, class:^(xwaylandvideobridge)$"
+            "nofocus, class:^(xwaylandvideobridge)$"
           ];
         };
       };

@@ -17,6 +17,9 @@
     pkgs.nixd # nix language server
     pkgs.spotify
     pkgs.tree
+    # pkgs.kdePackages.xwaylandvideobridge
+    pkgs.discord
+    pkgs.pinta # paint.net on linux
   ];
 
   fonts.packages = [
