@@ -20,6 +20,7 @@
     # pkgs.kdePackages.xwaylandvideobridge
     pkgs.discord
     pkgs.pinta # paint.net on linux
+    pkgs.pavucontrol
   ];
 
   fonts.packages = [
