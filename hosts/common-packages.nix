@@ -21,6 +21,7 @@
     pkgs.discord
     pkgs.pinta # paint.net on linux
     pkgs.pavucontrol
+    pkgs.sbctl # cli tool for secureboot
   ];
 
   fonts.packages = [
