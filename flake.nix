@@ -12,11 +12,17 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
     sf-mono-nerd-font.url = "github:austinliuigi/sf-mono-nerd-font";
+
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
+    lanzaboote,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -25,6 +31,7 @@
         modules = [
           ./hosts/laptop/configuration.nix
           inputs.home-manager.nixosModules.default
+          lanzaboote.nixosModules.lanzaboote
         ];
       };
 
@@ -33,6 +40,7 @@
         modules = [
           ./hosts/pc/configuration.nix
           inputs.home-manager.nixosModules.default
+          lanzaboote.nixosModules.lanzaboote
         ];
       };
     };
