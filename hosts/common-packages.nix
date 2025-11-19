@@ -22,6 +22,9 @@
     pkgs.pinta # paint.net on linux
     pkgs.pavucontrol
     pkgs.sbctl # cli tool for secureboot
+
+    # development
+    pkgs.rustup
   ];
 
   fonts.packages = [

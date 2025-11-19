@@ -13,6 +13,7 @@
 
     sf-mono-nerd-font.url = "github:austinliuigi/sf-mono-nerd-font";
 
+    # secure boot
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.3";
       inputs.nixpkgs.follows = "nixpkgs";
