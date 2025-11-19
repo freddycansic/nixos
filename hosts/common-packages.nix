@@ -22,15 +22,19 @@
     pkgs.pinta # paint.net on linux
     pkgs.pavucontrol
     pkgs.sbctl # cli tool for secureboot
-
-    # development
-    pkgs.rustup
   ];
 
   fonts.packages = [
     pkgs.nerd-fonts.fira-code
     inputs.sf-mono-nerd-font.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      wayland
+    ];
+  };
 
   programs.git = {
     enable = true;
