@@ -34,6 +34,11 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/London";
 
