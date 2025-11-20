@@ -38,6 +38,7 @@
       pkgs.wofi # run menu
       pkgs.hyprcursor
       pkgs.hyprshot
+      pkgs.hyprprop
     ];
 
     programs.hyprland = {
