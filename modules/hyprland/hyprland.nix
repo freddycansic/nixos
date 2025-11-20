@@ -180,11 +180,11 @@
           bind = [
             "$mainMod, Return, exec, $terminal"
             "$mainMod, Q, killactive,"
-            "$mainMod, M, exit,"
             "$mainMod, E, exec, $fileManager"
             "$mainMod, V, togglefloating,"
             "$mainMod, P, exec, $menu"
             "$mainMod, J, togglesplit,"
+            "$mainMod, F, fullscreen"
 
             ", PRINT, exec, hyprshot -m region --clipboard-only"
 
