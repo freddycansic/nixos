@@ -18,6 +18,7 @@
         buffer_font_size = 13;
         buffer_font_family = "SFMono Nerd Font";
         theme = {
+          mode = "system";
           light = "One Light";
           dark = "One Dark";
         };
@@ -62,6 +63,12 @@
           };
         };
         lsp = {
+          rust-analyzer = {
+            binary = {
+              path = "/usr/bin/nix";
+              arguments = ["develop" "--command" "rust-analyzer"];
+            };
+          };
           ruby-lsp = {
             initialization_options = {
               enabledFeatures = {
