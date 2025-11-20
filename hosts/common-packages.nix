@@ -22,6 +22,7 @@
     pkgs.pinta # paint.net on linux
     pkgs.pavucontrol
     pkgs.sbctl # cli tool for secureboot
+    pkgs.mesa-demos # opengl examples for testing
   ];
 
   fonts.packages = [

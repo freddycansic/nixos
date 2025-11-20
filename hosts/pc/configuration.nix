@@ -20,9 +20,13 @@
     sensitivity = -0.7;
   };
 
-  services.xserver.xkb = lib.mkForce {
-    layout = "us";
-    variant = "";
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = lib.mkForce "us";
+      variant = "";
+    };
+    videoDrivers = ["amdgpu"];
   };
 
   home-manager = {
