@@ -13,7 +13,6 @@
       enable = true;
       extensions = ["fish" "rust"];
       userSettings = {
-        load_direnv = "shell_hook";
         ui_font_size = 16;
         ui_font_family = "SFMono Nerd Font";
         buffer_font_size = 13;
