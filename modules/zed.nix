@@ -66,7 +66,7 @@
         lsp = {
           rust-analyzer = {
             binary = {
-              path = "${pkgs.nix.outPath}";
+              path = "${pkgs.nix.outPath}/bin/nix";
               arguments = ["develop" "--command" "rust-analyzer"];
             };
           };
