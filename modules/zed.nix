@@ -18,7 +18,6 @@
         buffer_font_size = 13;
         buffer_font_family = "SFMono Nerd Font";
         theme = {
-          mode = "light";
           light = "One Light";
           dark = "One Dark";
         };
