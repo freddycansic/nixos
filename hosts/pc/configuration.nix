@@ -13,11 +13,11 @@
     ./hardware-configuration.nix
   ];
 
-  hyprland = {
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+
+  boot.lanzaboote = {
     enable = true;
-    kb_layout = "us";
-    monitor = "DP-2, 1920x1080@144, 0x0, 1";
-    sensitivity = -0.7;
+    pkiBundle = "/var/lib/sbctl";
   };
 
   services.xserver = {
@@ -27,6 +27,13 @@
       variant = "";
     };
     videoDrivers = ["amdgpu"];
+  };
+
+  hyprland = {
+    enable = true;
+    kb_layout = "us";
+    monitor = "DP-2, 1920x1080@144, 0x0, 1";
+    sensitivity = -0.7;
   };
 
   home-manager = {
