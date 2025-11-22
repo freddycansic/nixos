@@ -13,6 +13,10 @@
     ./hardware-configuration.nix
   ];
 
+  environment.systemPackages = [
+    pkgs.brightnessctl
+  ];
+
   hyprland = {
     enable = true;
     kb_layout = "gb";
