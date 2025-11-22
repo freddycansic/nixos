@@ -54,7 +54,7 @@
         recursive = true;
       };
 
-      xdg.dataFile."icons/Bibata-Modern-Ice" = {
+      home.file."${config.users.users.freddy.home}/.icons/Bibata-Modern-Ice" = {
         source = ./Bibata-Modern-Ice;
         recursive = true;
       };
