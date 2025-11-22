@@ -24,6 +24,7 @@
     pkgs.sbctl # cli tool for secureboot
     pkgs.mesa-demos # opengl examples for testing
     pkgs.nwg-look # theme options editor
+    pkgs.renderdoc
   ];
 
   fonts.packages = [
