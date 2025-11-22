@@ -54,6 +54,11 @@
         recursive = true;
       };
 
+      xdg.dataFile."icons/Bibata-Modern-Ice" = {
+        source = ./Bibata-Modern-Ice;
+        recursive = true;
+      };
+
       services.hyprsunset = {
         enable = true;
         settings = {
