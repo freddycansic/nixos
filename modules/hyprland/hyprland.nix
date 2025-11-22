@@ -99,10 +99,12 @@
           "$menu" = "wofi --show drun";
 
           env = [
+            "XCURSOR_THEME,Bibata-Modern-Ice"
+            "HYPRCURSOR_THEME,Bibata-Modern-Ice"
             "XCURSOR_SIZE,24"
             "HYPRCURSOR_SIZE,24"
-            "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-            "XCURSOR_THEME,Bibata-Modern-Ice"
+            "XDG_CURRENT_DESKTOP,Hyprland"
+            "XDG_SESSION_TYPE,wayland"
           ];
 
           general = {
