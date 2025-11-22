@@ -17,6 +17,7 @@
         ui_font_family = "SFMono Nerd Font";
         buffer_font_size = 13;
         buffer_font_family = "SFMono Nerd Font";
+        lsp_replace_mode = "replace"; # replace current word with autocomplete
         theme = {
           mode = "system";
           light = "One Light";
