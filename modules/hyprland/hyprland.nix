@@ -101,7 +101,7 @@
 
           "$terminal" = "alacritty";
           "$fileManager" = "dolphin";
-          "$menu" = "wofi --show drun";
+          "$menu" = "wofi --show drun --insensitive";
 
           env = [
             "XCURSOR_THEME,Bibata-Modern-Ice"
