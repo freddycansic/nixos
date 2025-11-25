@@ -11,7 +11,7 @@
   home-manager.users.freddy = {
     programs.zed-editor = {
       enable = true;
-      extensions = ["fish" "rust"];
+      extensions = ["fish" "rust" "glsl" "toml"];
       userSettings = {
         ui_font_size = 16;
         ui_font_family = "SFMono Nerd Font";
