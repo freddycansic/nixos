@@ -19,7 +19,7 @@
         buffer_font_family = "SFMono Nerd Font";
         lsp_replace_mode = "replace"; # replace current word with autocomplete
         theme = {
-          mode = "system";
+          mode = "dark";
           light = "One Light";
           dark = "One Dark";
         };
