@@ -252,19 +252,19 @@
 
           windowrule = [
             "match:class .*, suppress_event maximize"
-            "match:class ^$ match:title ^$ match:xwayland true match:floating true match:fullscreen false match:pinned false, no_focus" # fixes dragging issues with xwayland
+            "match:class ^$ match:title ^$ match:xwayland true match:floating true match:fullscreen false match:pinned false, no_focus true" # fixes dragging issues with xwayland
             "match:class .*, suppress_event maximize" # ignore maximise requests from apps
-            "match:workspace w[t1], no_border" # no border when there's only one window
+            "match:workspace w[t1], no_border true" # no border when there's only one window
 
             # https://wiki.hypr.land/Useful-Utilities/Screen-Sharing/#xwayland
             "match:class ^(xwaylandvideobridge)$, opacity 0.0 override"
-            "match:class ^(xwaylandvideobridge)$, no_anim"
-            "match:class ^(xwaylandvideobridge)$, no_initial_focus"
+            "match:class ^(xwaylandvideobridge)$, no_anim true"
+            "match:class ^(xwaylandvideobridge)$, no_initial_focus true"
             "match:class ^(xwaylandvideobridge)$, max_size 1 1"
-            "match:class ^(xwaylandvideobridge)$, no_blur"
-            "match:class ^(xwaylandvideobridge)$, no_focus"
+            "match:class ^(xwaylandvideobridge)$, no_blur true"
+            "match:class ^(xwaylandvideobridge)$, no_focus true"
 
-            "match:class ^(shooter-game-editor)$, float"
+            "match:class ^(shooter-game-editor)$, float true"
           ];
         };
       };
