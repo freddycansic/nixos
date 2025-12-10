@@ -103,7 +103,7 @@
 
       style = ''
         @define-color foreground #eeeeee;
-        @define-color foreground-inactive #aaaaaa;
+        @define-color foreground-inactive #666666;
         @define-color background #000000;
 
         * {
