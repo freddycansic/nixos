@@ -27,6 +27,8 @@
     pkgs.renderdoc
     pkgs.sourcegit
     pkgs.ripgrep
+    pkgs.direnv # automatic shell activation on cd to directory
+    pkgs.nix-direnv
   ];
 
   fonts.packages = [
