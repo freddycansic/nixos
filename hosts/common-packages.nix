@@ -28,6 +28,7 @@
     pkgs.sourcegit
     pkgs.ripgrep
     pkgs.jetbrains.rust-rover
+    pkgs.devenv
   ];
 
   fonts.packages = [
