@@ -27,8 +27,6 @@
     pkgs.renderdoc
     pkgs.sourcegit
     pkgs.ripgrep
-    pkgs.direnv # automatic shell activation on cd to directory
-    pkgs.nix-direnv
   ];
 
   fonts.packages = [
@@ -76,6 +74,12 @@
           };
         };
       };
+    };
+
+    programs.direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+      # enableFishIntegration = true; # happens automatically
     };
 
     programs.fastfetch = {
