@@ -27,6 +27,7 @@
     pkgs.renderdoc
     pkgs.sourcegit
     pkgs.ripgrep
+    pkgs.jetbrains.rust-rover
   ];
 
   fonts.packages = [
