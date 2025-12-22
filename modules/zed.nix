@@ -6,6 +6,7 @@
 }: {
   environment.systemPackages = [
     pkgs.vulkan-tools # dependency of zed
+    pkgs.lldb # debugger
   ];
 
   home-manager.users.freddy = {

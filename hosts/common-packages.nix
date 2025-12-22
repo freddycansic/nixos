@@ -26,6 +26,7 @@
     pkgs.nwg-look # theme options editor
     pkgs.renderdoc
     pkgs.sourcegit
+    pkgs.ripgrep
   ];
 
   fonts.packages = [
