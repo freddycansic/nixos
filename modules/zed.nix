@@ -31,6 +31,7 @@
           folds = false;
           # code_actions = false;
         };
+        load_direnv = "shell_hook";
         format_on_save = "on";
         soft_wrap = "editor_width";
         tab_size = 4;
