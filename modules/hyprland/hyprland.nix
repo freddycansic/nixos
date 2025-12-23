@@ -4,7 +4,10 @@
   inputs,
   lib,
   ...
-}: {
+}: let
+  cursor = "Bibata-Modern-Ice";
+  cursor_size = 24;
+in {
   imports = [
     ../waybar/waybar.nix
     ../mako.nix
@@ -49,13 +52,13 @@
     };
 
     home-manager.users.freddy = {
-      home.file."${config.users.users.freddy.home}/.local/share/icons/Bibata-Modern-Ice" = {
-        source = ./Bibata-Modern-Ice;
+      home.file."${config.users.users.freddy.home}/.local/share/icons/${cursor}" = {
+        source = ./${cursor};
         recursive = true;
       };
 
-      home.file."${config.users.users.freddy.home}/.icons/Bibata-Modern-Ice" = {
-        source = ./Bibata-Modern-Ice;
+      home.file."${config.users.users.freddy.home}/.icons/${cursor}" = {
+        source = ./${cursor};
         recursive = true;
       };
 
@@ -95,6 +98,7 @@
           "exec-once" = [
             "waybar &"
             "mako &"
+            "hyprctl setcursor ${cursor} ${builtins.toString cursor_size}"
           ];
 
           monitor = config.hyprland.monitor;
@@ -104,10 +108,10 @@
           "$menu" = "wofi --show drun --insensitive";
 
           env = [
-            "XCURSOR_THEME,Bibata-Modern-Ice"
-            "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-            "XCURSOR_SIZE,24"
-            "HYPRCURSOR_SIZE,24"
+            "XCURSOR_THEME,${cursor}"
+            "HYPRCURSOR_THEME,${cursor}"
+            "XCURSOR_SIZE,${builtins.toString cursor_size}"
+            "HYPRCURSOR_SIZE,${builtins.toString cursor_size}"
             "XDG_CURRENT_DESKTOP,Hyprland"
             "XDG_SESSION_TYPE,wayland"
           ];
