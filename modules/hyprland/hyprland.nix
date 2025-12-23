@@ -49,19 +49,10 @@
     };
 
     home-manager.users.freddy = {
-      # home.pointerCursor = {
-      #   gtk.enable = true;
-      #   package = pkgs.bibata-cursors;
-      #   name = "Bibata-Modern-Ice";
-      #   size = 24;
-      # };
-      # gtk.enable = true;
-
       home.pointerCursor = {
         gtk.enable = true;
-        # x11.enable = true;
         package = pkgs.bibata-cursors;
-        name = "Bibata-Modern-Classic";
+        name = "Bibata-Modern-Ice";
         size = 16;
       };
 
@@ -70,7 +61,7 @@
 
         theme = {
           package = pkgs.flat-remix-gtk;
-          name = "Flat-Remix-GTK-Grey-Darkest";
+          name = "Flat-Remix-GTK-Cyan-Dark";
         };
 
         iconTheme = {

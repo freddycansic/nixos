@@ -15,7 +15,6 @@
     pkgs.alejandra # nix formatter
     pkgs.psmisc # includes killall
     pkgs.nixd # nix language server
-    pkgs.spotify
     pkgs.tree
     # pkgs.kdePackages.xwaylandvideobridge
     pkgs.discord
@@ -30,6 +29,8 @@
     pkgs.jetbrains.rust-rover
     pkgs.devenv
   ];
+
+  services.flatpak.enable = true;
 
   fonts.packages = [
     pkgs.nerd-fonts.fira-code
