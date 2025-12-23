@@ -4,10 +4,7 @@
   inputs,
   lib,
   ...
-}: let
-  cursor = "Bibata-Modern-Ice";
-  cursor_size = 24;
-in {
+}: {
   imports = [
     ../waybar/waybar.nix
     ../mako.nix
@@ -52,15 +49,13 @@ in {
     };
 
     home-manager.users.freddy = {
-      home.file."${config.users.users.freddy.home}/.local/share/icons/${cursor}" = {
-        source = ./${cursor};
-        recursive = true;
-      };
-
-      home.file."${config.users.users.freddy.home}/.icons/${cursor}" = {
-        source = ./${cursor};
-        recursive = true;
-      };
+      # home.pointerCursor = {
+      #   gtk.enable = true;
+      #   package = pkgs.bibata-cursors;
+      #   name = "Bibata-Modern-Ice";
+      #   size = 24;
+      # };
+      # gtk.enable = true;
 
       services.hyprsunset = {
         enable = true;
@@ -98,7 +93,6 @@ in {
           "exec-once" = [
             "waybar &"
             "mako &"
-            "hyprctl setcursor ${cursor} ${builtins.toString cursor_size}"
           ];
 
           monitor = config.hyprland.monitor;
@@ -108,10 +102,6 @@ in {
           "$menu" = "wofi --show drun --insensitive";
 
           env = [
-            "XCURSOR_THEME,${cursor}"
-            "HYPRCURSOR_THEME,${cursor}"
-            "XCURSOR_SIZE,${builtins.toString cursor_size}"
-            "HYPRCURSOR_SIZE,${builtins.toString cursor_size}"
             "XDG_CURRENT_DESKTOP,Hyprland"
             "XDG_SESSION_TYPE,wayland"
           ];
