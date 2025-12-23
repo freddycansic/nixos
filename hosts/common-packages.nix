@@ -29,6 +29,7 @@
     pkgs.ripgrep
     pkgs.jetbrains.rust-rover
     pkgs.devenv
+    pkgs.vlc
   ];
 
   fonts.packages = [
