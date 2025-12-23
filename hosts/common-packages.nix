@@ -9,6 +9,7 @@
     ../modules/zed.nix
     ../modules/networkmanager-dmenu/networkmanager-dmenu.nix
     ../modules/hyprland/hyprland.nix
+    ../modules/flatpak.nix
   ];
 
   environment.systemPackages = [
@@ -29,8 +30,6 @@
     pkgs.jetbrains.rust-rover
     pkgs.devenv
   ];
-
-  services.flatpak.enable = true;
 
   fonts.packages = [
     pkgs.nerd-fonts.fira-code
