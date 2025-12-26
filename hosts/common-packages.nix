@@ -30,6 +30,7 @@
     pkgs.jetbrains.rust-rover
     pkgs.devenv
     pkgs.vlc
+    pkgs.cliphist # clipboard history
   ];
 
   fonts.packages = [
