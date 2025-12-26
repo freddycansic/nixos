@@ -200,7 +200,7 @@
             "$mainMod, Return, exec, $terminal"
             "$mainMod, Q, killactive,"
             "$mainMod, E, exec, $fileManager"
-            "$mainMod, V, togglefloating,"
+            "$mainMod, B, togglefloating,"
             "$mainMod, P, exec, $menu"
             "$mainMod, J, togglesplit,"
             "$mainMod, F, fullscreen"
