@@ -30,7 +30,6 @@
     pkgs.jetbrains.rust-rover
     pkgs.devenv
     pkgs.vlc
-    pkgs.cliphist # clipboard history
   ];
 
   fonts.packages = [
@@ -61,6 +60,14 @@
   };
 
   home-manager.users.freddy = {
+    services.cliphist = {
+      enable = true;
+      systemdTargets = [
+        "config.wayland.systemd.target"
+      ];
+      allowImages = true;
+    };
+
     home.packages = [
       pkgs.brave
       pkgs.meld
