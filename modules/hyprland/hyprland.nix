@@ -111,13 +111,11 @@
           "exec-once" = [
             "waybar &"
             "mako &"
+            "wl-paste --type text --watch cliphist store"
+            "wl-paste --type image --watch cliphist store"
           ];
 
           monitor = config.hyprland.monitor;
-
-          "$terminal" = "alacritty";
-          "$fileManager" = "dolphin";
-          "$menu" = "wofi --show drun --insensitive";
 
           env = [
             "XDG_CURRENT_DESKTOP,Hyprland"
@@ -197,13 +195,14 @@
           "$mainMod" = "SUPER";
 
           bind = [
-            "$mainMod, Return, exec, $terminal"
+            "$mainMod, Return, exec, alacritty"
             "$mainMod, Q, killactive,"
-            "$mainMod, E, exec, $fileManager"
+            "$mainMod, E, exec, dolphin"
             "$mainMod, B, togglefloating,"
-            "$mainMod, P, exec, $menu"
+            "$mainMod, P, exec, wofi --show drun --insensitive"
             "$mainMod, J, togglesplit,"
             "$mainMod, F, fullscreen"
+            "$mainMod, V, exec, cliphist list | wofi -dmenu | cliphist decode | wl-copy"
 
             ", PRINT, exec, hyprshot -m region --clipboard-only"
 

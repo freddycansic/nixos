@@ -30,6 +30,7 @@
     pkgs.jetbrains.rust-rover
     pkgs.devenv
     pkgs.vlc
+    pkgs.wl-clipboard # cmdline clipboard utils
   ];
 
   fonts.packages = [
