@@ -20,6 +20,13 @@
     pkiBundle = "/var/lib/sbctl";
   };
 
+  # add windows to systemd-boot
+  fileSystems."/boot/windows" = {
+    device = "/dev/disk/by-uuid/7282-5868";
+    fsType = "vfat";
+    options = ["noatime"];
+  };
+
   services.xserver = {
     enable = true;
     xkb = {
