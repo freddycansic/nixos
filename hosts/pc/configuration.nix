@@ -19,7 +19,7 @@
     extraEntries = ''
       /Windows
           protocol: efi
-          path: uuid(a116eb84-3cfe-419a-89d8-c14761aeed9d):/EFI/Microsoft/Boot/bootmgfw.efi
+          path: uuid(19f4fa70-d949-481e-8a35-e46a8a6e1158):/EFI/Microsoft/Boot/bootmgfw.efi
     '';
   };
 
