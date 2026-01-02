@@ -28,7 +28,10 @@
     pkgs.renderdoc
     pkgs.sourcegit
     pkgs.ripgrep
-    (pkgs.jetbrains.plugins.addPlugins pkgs.jetbrains.rust-rover [inputs.nix-jetbrains-plugins.plugins."${pkgs.stdenv.hostPlatform.system}".rust-rover."2025.2"."systems.fehn.intellijdirenv"])
+    (pkgs.jetbrains.plugins.addPlugins pkgs.jetbrains.rust-rover [
+      inputs.nix-jetbrains-plugins.plugins."${pkgs.stdenv.hostPlatform.system}".rust-rover."2025.2"."systems.fehn.intellijdirenv"
+      inputs.nix-jetbrains-plugins.plugins."${pkgs.stdenv.hostPlatform.system}".rust-rover."2025.2"."nix-idea"
+    ])
     pkgs.devenv
     pkgs.vlc
     pkgs.wl-clipboard # cmdline clipboard utils
