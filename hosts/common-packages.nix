@@ -31,7 +31,7 @@
     pkgs.devenv
     pkgs.vlc
     pkgs.wl-clipboard # cmdline clipboard utils
-    pkgs.gnupg
+    pkgs.pinentry-gtk2 # password entering utility for gnupg
   ];
 
   fonts.packages = [
@@ -59,6 +59,13 @@
       push.autoSetupRemote = true;
       pull.rebase = true;
     };
+  };
+
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-gtk2;
+    enableSSHSupport = true;
   };
 
   home-manager.users.freddy = {
