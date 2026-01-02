@@ -13,23 +13,26 @@
   #   '';
   # };
 
-  services.flatpak.packages = [
-    "com.spotify.Client"
-  ];
-
-  home-manager.users.freddy = {
-    # add flatpak to path
-    home.file.".profile".text = ''
-      XDG_DATA_DIRS = "$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
-    '';
-
-    xdg.desktopEntries.spotify-flatpak = {
-      name = "Spotify";
-      genericName = "Music Player";
-      exec = "flatpak run com.spotify.Client";
-      icon = "com.spotify.Client";
-      terminal = false;
-      categories = ["Audio" "Music" "Player"];
-    };
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "com.spotify.Client"
+    ];
   };
+
+  # home-manager.users.freddy = {
+  #   # add flatpak to path
+  #   home.file.".profile".text = ''
+  #     XDG_DATA_DIRS = "$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
+  #   '';
+
+  #   xdg.desktopEntries.spotify-flatpak = {
+  #     name = "Spotify";
+  #     genericName = "Music Player";
+  #     exec = "flatpak run com.spotify.Client";
+  #     icon = "com.spotify.Client";
+  #     terminal = false;
+  #     categories = ["Audio" "Music" "Player"];
+  #   };
+  # };
 }
