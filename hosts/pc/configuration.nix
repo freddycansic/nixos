@@ -13,7 +13,10 @@
     ./hardware-configuration.nix
   ];
 
-  boot.loader.limine.enable = true;
+  boot.loader.limine = {
+    enable = true;
+    secureBoot.enable = true;
+  };
 
   services.xserver = {
     enable = true;
