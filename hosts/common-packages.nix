@@ -29,8 +29,9 @@
     pkgs.sourcegit
     pkgs.ripgrep
     (pkgs.jetbrains.plugins.addPlugins pkgs.jetbrains.rust-rover [
-      inputs.nix-jetbrains-plugins.plugins."${pkgs.stdenv.hostPlatform.system}".rust-rover."2025.2"."systems.fehn.intellijdirenv"
-      inputs.nix-jetbrains-plugins.plugins."${pkgs.stdenv.hostPlatform.system}".rust-rover."2025.2"."nix-idea"
+      inputs.nix-jetbrains-plugins.plugins."${pkgs.stdenv.hostPlatform.system}".rust-rover."2025.2"."systems.fehn.intellijdirenv" # direnv
+      inputs.nix-jetbrains-plugins.plugins."${pkgs.stdenv.hostPlatform.system}".rust-rover."2025.2"."nix-idea" # nix
+      inputs.nix-jetbrains-plugins.plugins."${pkgs.stdenv.hostPlatform.system}".rust-rover."2025.2"."OpenGL-Plugin" # glsl
     ])
     pkgs.devenv
     pkgs.vlc

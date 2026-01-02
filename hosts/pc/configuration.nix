@@ -13,9 +13,16 @@
     ./hardware-configuration.nix
   ];
 
+  environment.systemPackages = [
+    pkgs.blender
+  ];
+
   boot.loader.limine = {
     enable = true;
     secureBoot.enable = true;
+    extraConfig = ''
+      timeout 30
+    '';
     extraEntries = ''
       /Windows
           protocol: efi
