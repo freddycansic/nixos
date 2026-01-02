@@ -15,7 +15,7 @@
 
   boot.loader.limine = {
     enable = true;
-    secureBoot.enable = true;
+    secureBoot.enable = false;
     extraEntries = ''
       /Windows
           protocol: efi
