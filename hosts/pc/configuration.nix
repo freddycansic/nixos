@@ -13,13 +13,9 @@
     ./hardware-configuration.nix
   ];
 
-  environment.systemPackages = [
-    pkgs.limine-full
-  ];
-
   boot.loader.limine = {
     enable = true;
-    secureBoot.enable = false;
+    secureBoot.enable = true;
     extraEntries = ''
       /Windows
           protocol: efi
