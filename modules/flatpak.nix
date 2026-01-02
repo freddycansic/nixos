@@ -1,18 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
-  # services.flatpak.enable = true;
-  # systemd.services.flatpak-repo = {
-  #   wantedBy = ["multi-user.target"];
-  #   path = [pkgs.flatpak];
-  #   script = ''
-  #     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-  #   '';
-  # };
-
+{...}: {
   services.flatpak = {
     enable = true;
     packages = [
@@ -20,19 +6,10 @@
     ];
   };
 
-  # home-manager.users.freddy = {
-  #   # add flatpak to path
-  #   home.file.".profile".text = ''
-  #     XDG_DATA_DIRS = "$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
-  #   '';
-
-  #   xdg.desktopEntries.spotify-flatpak = {
-  #     name = "Spotify";
-  #     genericName = "Music Player";
-  #     exec = "flatpak run com.spotify.Client";
-  #     icon = "com.spotify.Client";
-  #     terminal = false;
-  #     categories = ["Audio" "Music" "Player"];
-  #   };
-  # };
+  home-manager.users.freddy = {
+    # add flatpak programs to path
+    home.file.".profile".text = ''
+      XDG_DATA_DIRS = "$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/applications:$HOME/.local/share/flatpak/exports/share/applications"
+    '';
+  };
 }
