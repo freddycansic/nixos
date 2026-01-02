@@ -13,6 +13,10 @@
     ./hardware-configuration.nix
   ];
 
+  environment.systemPackages = [
+    pkgs.limine
+  ];
+
   boot.loader.limine = {
     enable = true;
     secureBoot.enable = false;
