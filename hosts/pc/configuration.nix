@@ -14,7 +14,7 @@
   ];
 
   environment.systemPackages = [
-    pkgs.limine
+    pkgs.limine-full
   ];
 
   boot.loader.limine = {
