@@ -14,6 +14,8 @@
     sf-mono-nerd-font.url = "github:austinliuigi/sf-mono-nerd-font";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    nix-jetbrains-plugins.url = "github:nix-community/nix-jetbrains-plugins";
   };
 
   outputs = {
@@ -23,7 +25,10 @@
     ...
   } @ inputs: {
     nixosConfigurations = let
-      common-modules = [inputs.home-manager.nixosModules.default nix-flatpak.nixosModules.nix-flatpak];
+      common-modules = [
+        inputs.home-manager.nixosModules.default
+        nix-flatpak.nixosModules.nix-flatpak
+      ];
     in {
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};

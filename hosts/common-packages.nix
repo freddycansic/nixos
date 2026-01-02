@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  system,
   ...
 }: {
   imports = [
@@ -27,7 +28,7 @@
     pkgs.renderdoc
     pkgs.sourcegit
     pkgs.ripgrep
-    pkgs.jetbrains.rust-rover
+    (pkgs.jetbrains.plugins.addPlugins pkgs.jetbrains.rust-rover [inputs.nix-jetbrains-plugins.plugins."${pkgs.stdenv.hostPlatform.system}".rust-rover."2025.2"."systems.fehn.intellijdirenv"])
     pkgs.devenv
     pkgs.vlc
     pkgs.wl-clipboard # cmdline clipboard utils
