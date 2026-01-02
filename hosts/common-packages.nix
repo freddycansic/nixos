@@ -31,6 +31,7 @@
     pkgs.devenv
     pkgs.vlc
     pkgs.wl-clipboard # cmdline clipboard utils
+    pkgs.gpg-tui
   ];
 
   fonts.packages = [
