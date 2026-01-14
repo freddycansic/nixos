@@ -17,17 +17,16 @@
     pkgs.blender
   ];
 
-  boot.loader.limine = {
-    enable = true;
-    secureBoot.enable = true;
-    extraConfig = ''
-      timeout 30
-    '';
-    extraEntries = ''
-      /Windows
-          protocol: efi
-          path: uuid(19f4fa70-d949-481e-8a35-e46a8a6e1158):/EFI/Microsoft/Boot/bootmgfw.efi
-    '';
+  boot.loader = {
+    systemd-boot.enable = false;
+
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      useOSProber = true;
+      enableCryptodisk = false;
+    };
   };
 
   services.xserver = {
