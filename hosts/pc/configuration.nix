@@ -17,20 +17,6 @@
     pkgs.blender
   ];
 
-  boot.loader = {
-    systemd-boot.enable = false;
-
-    efi.canTouchEfiVariables = true;
-
-    grub = {
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
-      useOSProber = true;
-      enableCryptodisk = false;
-    };
-  };
-
   services.xserver = {
     enable = true;
     xkb = {
