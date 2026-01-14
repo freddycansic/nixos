@@ -37,6 +37,7 @@
     pkgs.vlc
     pkgs.wl-clipboard # cmdline clipboard utils
     pkgs.pinentry-gtk2 # password entering utility for gnupg
+    pkgs.efibootmgr # boot manager utility
   ];
 
   fonts.packages = [
