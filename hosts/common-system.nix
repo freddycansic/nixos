@@ -26,7 +26,7 @@
         menuentry "Windows Boot Manager" {
           insmod part_gpt
           insmod fat
-          search --no-floppy --fs-uuid --set=root 7282-5868
+          search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3 7282-5868
           chainloader /EFI/Microsoft/Boot/bootmgfw.efi
         }
       '';
