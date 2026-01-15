@@ -21,8 +21,15 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
-      useOSProber = true;
       enableCryptodisk = false;
+      extraEntries = ''
+        menuentry "Windows Boot Manager" {
+          insmod part_gpt
+          insmod fat
+          search --no-floppy --fs-uuid --set=root 7282-5868
+          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+        }
+      '';
     };
   };
 
