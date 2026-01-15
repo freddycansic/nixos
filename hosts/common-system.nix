@@ -13,25 +13,24 @@
   ];
 
   boot.loader = {
-    systemd-boot.enable = false;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = null;
+    };
 
     efi.canTouchEfiVariables = true;
-
-    grub = {
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
-      enableCryptodisk = false;
-      extraEntries = ''
-        menuentry "Windows Boot Manager" {
-          insmod part_gpt
-          insmod fat
-          search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3 7282-5868
-          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-        }
-      '';
-    };
   };
+
+  environment.etc."loader/loader.conf".text = ''
+    timeout 30
+    console-mode max
+    editor no
+  '';
+
+  environment.etc."loader/entries/windows.conf".text = ''
+    title   Windows 11
+    efi     /EFI/Microsoft/Boot/bootmgfw.efi
+  '';
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
