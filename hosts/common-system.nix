@@ -12,25 +12,35 @@
     ./common-packages.nix
   ];
 
+  # boot.loader = {
+  #   systemd-boot = {
+  #     enable = true;
+  #     configurationLimit = null;
+  #   };
+
+  #   efi.canTouchEfiVariables = true;
+  # };
+
+  # environment.etc."loader/loader.conf".text = ''
+  #   timeout 30
+  #   console-mode max
+  #   editor no
+  # '';
+
+  # environment.etc."loader/entries/windows.conf".text = ''
+  #   title   Windows 11
+  #   efi     /EFI/Microsoft/Boot/bootmgfw.efi
+  # '';
+
   boot.loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = null;
-    };
-
     efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      efiSupport = true;
+      devices = ["nodev"];
+      useOSProber = true;
+    };
   };
-
-  environment.etc."loader/loader.conf".text = ''
-    timeout 30
-    console-mode max
-    editor no
-  '';
-
-  environment.etc."loader/entries/windows.conf".text = ''
-    title   Windows 11
-    efi     /EFI/Microsoft/Boot/bootmgfw.efi
-  '';
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
