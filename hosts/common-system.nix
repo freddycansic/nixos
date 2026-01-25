@@ -143,6 +143,18 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
+    #
+
+    extraConfig.pipewire."30-stability" = {
+      "context.properties" = {
+        "default.clock.rate" = 48000;
+        "default.clock.allowed-rates" = [48000];
+        "default.clock.quantum" = 256;
+        "default.clock.min-quantum" = 256;
+        "default.clock.max-quantum" = 256;
+        "resample.quality" = 10;
+      };
+    };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
