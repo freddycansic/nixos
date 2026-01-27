@@ -9,6 +9,7 @@
     enable = true;
     xdgOpenUsePortal = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config.common.default = ["gtk"];
   };
 
   services.xserver.updateDbusEnvironment = true;
