@@ -48,6 +48,17 @@
       withUWSM = true;
     };
 
+    # The included uwsm one has the same desktop name as the default hyprland one, so it is ignored
+    environment.etc."xdg/wayland-sessions/hyprland-uwsm.desktop".text = ''
+      [Desktop Entry]
+      Name=Hyprland (uwsm)
+      Comment=Hyprland via UWSM
+      Exec=uwsm start -e -D Hyprland hyprland.desktop
+      TryExec=uwsm
+      Type=Application
+      DesktopNames=HyprlandUwsm
+    '';
+
     home-manager.users.freddy = {
       home.pointerCursor = {
         gtk.enable = true;
