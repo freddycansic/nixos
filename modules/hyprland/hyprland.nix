@@ -49,7 +49,7 @@
     };
 
     # The included uwsm one has the same desktop name as the default hyprland one, so it is ignored
-    environment.etc."xdg/wayland-sessions/hyprland-uwsm.desktop".text = ''
+    environment.etc."xdg/wayland-sessions/hyprland-uwsm2.desktop".text = ''
       [Desktop Entry]
       Name=Hyprland (uwsm)
       Comment=Hyprland via UWSM
