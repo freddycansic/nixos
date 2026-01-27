@@ -48,16 +48,19 @@
       withUWSM = true;
     };
 
-    # The included uwsm one has the same desktop name as the default hyprland one, so it is ignored
-    environment.etc."xdg/wayland-sessions/hyprland-uwsm2.desktop".text = ''
-      [Desktop Entry]
-      Name=Hyprland (uwsm)
-      Comment=Hyprland via UWSM
-      Exec=uwsm start -e -D Hyprland hyprland.desktop
-      TryExec=uwsm
-      Type=Application
-      DesktopNames=HyprlandUwsm
-    '';
+    # FIXME: https://github.com/NixOS/nixpkgs/issues/484328
+    services.displayManager.defaultSession = "hyprland-uwsm";
+
+    programs.uwsm = {
+      enable = true;
+      waylandCompositors = {
+        hyprland = {
+          prettyName = "Hyprland";
+          comment = "Hyprland compositor managed by UWSM";
+          binPath = "/run/current-system/sw/bin/start-hyprland";
+        };
+      };
+    };
 
     home-manager.users.freddy = {
       home.pointerCursor = {
