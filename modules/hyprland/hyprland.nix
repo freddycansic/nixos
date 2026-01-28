@@ -290,6 +290,8 @@
             "match:class ^(xwaylandvideobridge)$, no_focus true"
 
             "match:class ^(shooter-game-editor)$, float true"
+
+            "match:class ^(blender)$ match:title ^(Blender File View)$, min_size 800 600"
           ];
         };
       };
