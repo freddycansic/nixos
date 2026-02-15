@@ -291,7 +291,7 @@
 
             "match:class ^(shooter-game-editor)$, float true"
 
-            "match:class ^(blender)$ match:title ^(Blender File View)$, min_size 800 600"
+            "match:class ^(blender)$ match:floating true, min_size 800 600"
           ];
         };
       };
