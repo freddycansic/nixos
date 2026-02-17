@@ -2,11 +2,15 @@
 
 # Rebuild script that commits on a successful build
 
-if test (count $argv) -eq 0
-    echo "Usage: $0 <host>"
-    exit 1
+set machine_id (cat /etc/machine-id)
+
+switch $machine_id
+    case "dc1082ffd8ac44c99b9d83101c3cd51f"
+        set host pc
+    case '*'
+        echo "Unknown machine-id: $machine_id"
+        exit 1
 end
-set host $argv[1]
 
 pushd /home/freddy/nixos/
 
