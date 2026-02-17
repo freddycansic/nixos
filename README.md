@@ -1,9 +1,6 @@
 # Switch
 
-Run `./pc-switch.fish` on pc
-Run `./laptop-switch.fish` on laptop
-
-TODO: automatic host determination
+Run `./switch.fish`
 
 # Update
 

@@ -12,6 +12,8 @@ switch $machine_id
         exit 1
 end
 
+echo "On host: $host"
+
 pushd /home/freddy/nixos/
 
 # Autoformat nix files
