@@ -7,6 +7,8 @@ set machine_id (cat /etc/machine-id)
 switch $machine_id
     case "dc1082ffd8ac44c99b9d83101c3cd51f"
         set host pc
+    case "b9b5b0df6d6640a7a64134b87956c17b"
+        set host laptop
     case '*'
         echo "Unknown machine-id: $machine_id"
         exit 1

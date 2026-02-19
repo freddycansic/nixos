@@ -24,6 +24,13 @@
     sensitivity = 0.0;
   };
 
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024; # 16 gb
+    }
+  ];
+
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
