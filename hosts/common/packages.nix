@@ -39,6 +39,8 @@
     pkgs.pinentry-gtk2 # password entering utility for gnupg
     pkgs.efibootmgr # boot manager utility
     pkgs.unzip
+    pkgs.wlprop # xprop for wayland
+    pkgs.btop
   ];
 
   fonts.packages = [
