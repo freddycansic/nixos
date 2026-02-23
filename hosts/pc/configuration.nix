@@ -11,6 +11,7 @@
   imports = [
     ../common-system.nix
     ./hardware-configuration.nix
+    ../../modules/gaming/minecraft.nix
   ];
 
   environment.systemPackages = [
