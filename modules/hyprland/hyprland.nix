@@ -291,7 +291,10 @@
 
             "match:class ^(shooter-game-editor)$, float true"
 
+            # blender file open dialog
             "match:class ^(blender)$, match:float true, size 800 600"
+
+            "match:class ^(SourceGit)$, border_size 0"
           ];
         };
       };
