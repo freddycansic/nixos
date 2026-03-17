@@ -140,8 +140,8 @@
             gaps_in = 0;
             gaps_out = 0;
             border_size = 2;
-            "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-            "col.inactive_border" = "rgba(aa5959aa)";
+            "col.active_border" = "rgba(33ccffff) rgba(00ff99ff) 45deg";
+            "col.inactive_border" = "rgba(595959ff)";
             resize_on_border = false;
             allow_tearing = false;
             layout = "master";
