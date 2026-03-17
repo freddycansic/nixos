@@ -277,7 +277,7 @@
 
           windowrule = [
             "match:class .*, suppress_event maximize"
-            "match:class ^$ match:title ^$ match:xwayland true match:floating true match:fullscreen false match:pinned false, no_focus true" # fixes dragging issues with xwayland
+            "match:class ^$, match:title ^$, match:xwayland true, match:floating true, match:fullscreen false, match:pinned false, no_focus true" # fixes dragging issues with xwayland
             "match:class .*, suppress_event maximize" # ignore maximise requests from apps
             "match:workspace w[t1], border_size 0" # no border when there's only one window
 
@@ -291,7 +291,7 @@
 
             "match:class ^(shooter-game-editor)$, float true"
 
-            "match:class ^(blender)$ match:floating true, size 800 600"
+            "match:class ^(blender)$, match:floating true, size 800 600"
           ];
         };
       };
