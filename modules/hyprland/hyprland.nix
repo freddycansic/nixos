@@ -277,7 +277,7 @@
 
           windowrule = [
             "match:class .*, suppress_event maximize"
-            "match:class ^$, match:title ^$, match:xwayland true, match:float true, match:fullscreen false, match:pinned false, no_focus true" # fixes dragging issues with xwayland
+            "match:class ^$, match:title ^$, match:xwayland true, match:float true, match:fullscreen false, match:pin false, no_focus true" # fixes dragging issues with xwayland
             "match:class .*, suppress_event maximize" # ignore maximise requests from apps
             "match:workspace w[t1], border_size 0" # no border when there's only one window
 
