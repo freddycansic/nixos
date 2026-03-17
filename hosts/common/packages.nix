@@ -6,11 +6,11 @@
   ...
 }: {
   imports = [
-    ../modules/fish/fish.nix
-    ../modules/zed.nix
-    ../modules/networkmanager-dmenu/networkmanager-dmenu.nix
-    ../modules/hyprland/hyprland.nix
-    ../modules/flatpak.nix
+    ../../modules/fish/fish.nix
+    ../../modules/zed.nix
+    ../../modules/networkmanager-dmenu/networkmanager-dmenu.nix
+    ../../modules/hyprland/hyprland.nix
+    ../../modules/flatpak.nix
   ];
 
   environment.systemPackages = [
@@ -39,7 +39,6 @@
     pkgs.pinentry-gtk2 # password entering utility for gnupg
     pkgs.efibootmgr # boot manager utility
     pkgs.unzip
-    pkgs.wlprop # xprop for wayland
   ];
 
   fonts.packages = [

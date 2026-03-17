@@ -9,7 +9,7 @@
   ...
 }: {
   imports = [
-    ../common-system.nix
+    ../common/system.nix
     ./hardware-configuration.nix
     ../../modules/gaming/minecraft.nix
   ];

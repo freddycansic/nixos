@@ -16,6 +16,9 @@ echo "On host: $host"
 
 pushd /home/freddy/nixos/
 
+# nix won't recognise files which aren't added to the git repo
+git add .
+
 # Autoformat nix files
 alejandra . &>/dev/null
 if test $status -ne 0
