@@ -111,7 +111,7 @@
       services.hyprpaper = {
         enable = true;
         settings = {
-          ipc = "off"; # turns off cli communication
+          # ipc = "off"; # turns off cli communication
           preload = [(builtins.toPath ./wallpaper/nixos-background.png)];
           # the , here omits the monitor, meaning put the wallpaper on the primary monitor
           wallpaper = [",${builtins.toPath ./wallpaper/nixos-background.png}"];
