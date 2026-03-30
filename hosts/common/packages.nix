@@ -41,6 +41,7 @@
     pkgs.unzip
     pkgs.wlprop # xprop for wayland
     pkgs.btop
+    pkgs.obsidian
   ];
 
   fonts.packages = [
