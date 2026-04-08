@@ -42,6 +42,7 @@
     pkgs.wlprop # xprop for wayland
     pkgs.btop
     pkgs.obsidian
+    pkgs.obsidian # with plugins: git, spaced repetition, quickadd
   ];
 
   fonts.packages = [
