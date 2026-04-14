@@ -84,6 +84,12 @@
     variant = "";
   };
 
+  # Wrapper for running privileged operations on external devices like USB
+  services.udisks2.enable = true;
+
+  # Prompt for privilege authentication
+  security.polkit.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
