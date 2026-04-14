@@ -89,6 +89,9 @@
         };
       };
 
+      # Required for polkit to prompt for sudo permissions
+      services.hyprpolkitagent.enable = true;
+
       services.hyprsunset = {
         enable = true;
         settings = {
