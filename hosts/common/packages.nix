@@ -44,6 +44,7 @@
     pkgs.obsidian
     pkgs.obsidian # with plugins: git, spaced repetition, quickadd
     pkgs.arp-scan # scan local network
+    pkgs.rpi-imager # raspberry pi imager
   ];
 
   fonts.packages = [
