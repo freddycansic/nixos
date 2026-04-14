@@ -43,6 +43,7 @@
     pkgs.btop
     pkgs.obsidian
     pkgs.obsidian # with plugins: git, spaced repetition, quickadd
+    pkgs.arp-scan # scan local network
   ];
 
   fonts.packages = [
