@@ -45,7 +45,7 @@
     pkgs.obsidian # with plugins: git, spaced repetition, quickadd
     pkgs.arp-scan # scan local network
     pkgs.qt6.qtwayland
-    pkgs.inkscape
+    pkgs.krita
   ];
 
   fonts.packages = [
