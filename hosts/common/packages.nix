@@ -45,6 +45,7 @@
     pkgs.obsidian # with plugins: git, spaced repetition, quickadd
     pkgs.arp-scan # scan local network
     pkgs.qt6.qtwayland
+    pkgs.inkscape
   ];
 
   fonts.packages = [
@@ -80,6 +81,19 @@
     pinentryPackage = pkgs.pinentry-gtk2;
     enableSSHSupport = true;
   };
+
+  # https://github.com/NixOS/nixpkgs/issues/526914 bitwarden depends on EOL electron
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-39.8.10"
+  ];
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      bitwarden-desktop = prev.bitwarden-desktop.override {
+        electron_39 = final.electron_39-bin;
+      };
+    })
+  ];
 
   home-manager.users.freddy = {
     services.cliphist = {
