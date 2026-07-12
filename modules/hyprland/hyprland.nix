@@ -217,7 +217,7 @@
             "$mainMod, E, exec, dolphin"
             "$mainMod, B, togglefloating,"
             "$mainMod, P, exec, wofi --show drun --insensitive"
-            "$mainMod, J, togglesplit,"
+            "$mainMod, J, layoutmsg, togglesplit"
             "$mainMod, F, fullscreen"
             "$mainMod, V, exec, cliphist list | wofi -dmenu | cliphist decode | wl-copy"
 
