@@ -53,6 +53,7 @@
             format = " {volume}%";
             "max-volume" = 100;
             "scroll-step" = 5;
+            "on-click" = "pavucontrol";
           };
 
           battery = {
@@ -93,6 +94,7 @@
             "tooltip-format" = "{controller_alias}\t{controller_address}";
             "tooltip-format-connected" = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
             "tooltip-format-enumerate-connected" = "{device_alias}\t{device_address}";
+            "onclick" = "blueman-manager";
           };
 
           tray = {
