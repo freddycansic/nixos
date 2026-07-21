@@ -8,7 +8,6 @@
   imports = [
     ../../modules/fish/fish.nix
     ../../modules/zed.nix
-    ../../modules/networkmanager-dmenu/networkmanager-dmenu.nix
     ../../modules/hyprland/hyprland.nix
     ../../modules/flatpak.nix
   ];
@@ -45,7 +44,8 @@
     pkgs.obsidian # with plugins: git, spaced repetition, quickadd
     pkgs.arp-scan # scan local network
     pkgs.qt6.qtwayland
-    pkgs.krita
+    pkgs.krita # drawing app
+    pkgs.dig # dns utility
   ];
 
   fonts.packages = [

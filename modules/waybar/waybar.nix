@@ -83,6 +83,7 @@
             "tooltip-format-wifi" = "{essid} ({signalStrength}%)";
             "tooltip-format-ethernet" = "{ifname}";
             "tooltip-format-disconnected" = "Disconnected";
+            "on-click" = "plasmawindowed org.kde.plasma.networkmanagement";
           };
 
           bluetooth = {
