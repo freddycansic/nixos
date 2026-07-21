@@ -4,7 +4,12 @@
   inputs,
   lib,
   ...
-}: {
+}: let
+  gtk_theme = {
+    package = pkgs.flat-remix-gtk;
+    name = "Flat-Remix-GTK-Cyan-Dark";
+  };
+in {
   imports = [
     ../waybar/waybar.nix
     ../mako.nix
@@ -73,10 +78,8 @@
       gtk = {
         enable = true;
 
-        theme = {
-          package = pkgs.flat-remix-gtk;
-          name = "Flat-Remix-GTK-Cyan-Dark";
-        };
+        theme = gtk_theme;
+        gtk4.theme = gtk_theme;
 
         iconTheme = {
           package = pkgs.adwaita-icon-theme;
@@ -123,6 +126,8 @@
 
       wayland.windowManager.hyprland = {
         enable = true;
+
+        configType = "hyprlang";
 
         settings = {
           "exec-once" = [
