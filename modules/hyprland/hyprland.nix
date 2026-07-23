@@ -116,8 +116,7 @@ in {
         settings = {
           # ipc = "off"; # turns off cli communication
           preload = [(builtins.toPath ./wallpaper/so-hard.jpg)];
-          # the , here omits the monitor, meaning put the wallpaper on the primary monitor
-          wallpaper = [",${builtins.toPath ./wallpaper/so-hard.jpg}"];
+          wallpaper = ["DP-2,${builtins.toPath ./wallpaper/so-hard.jpg}"];
         };
       };
 
