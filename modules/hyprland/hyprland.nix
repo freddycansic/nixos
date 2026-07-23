@@ -115,9 +115,9 @@ in {
         enable = true;
         settings = {
           # ipc = "off"; # turns off cli communication
-          preload = [(builtins.toPath ./wallpaper/nixos-background.png)];
+          preload = [(builtins.toPath ./wallpaper/so-hard.jpg)];
           # the , here omits the monitor, meaning put the wallpaper on the primary monitor
-          wallpaper = [",${builtins.toPath ./wallpaper/nixos-background.png}"];
+          wallpaper = [",${builtins.toPath ./wallpaper/so-hard.jpg}"];
         };
       };
 
