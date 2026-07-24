@@ -82,7 +82,10 @@
     enableSSHSupport = true;
   };
 
+  services.tailscale.enable = true;
+
   # https://github.com/NixOS/nixpkgs/issues/526914 bitwarden depends on EOL electron
+  # FIXME https://github.com/NixOS/nixpkgs/pull/545058
   nixpkgs.config.permittedInsecurePackages = [
     "electron-39.8.10"
   ];
