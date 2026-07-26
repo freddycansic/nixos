@@ -111,14 +111,17 @@ in {
         };
       };
 
-      services.hyprpaper = let
-        wallpaper = toString ./wallpaper/so-hard.jpg;
-      in {
+      services.hyprpaper = {
         enable = true;
         settings = {
           # ipc = "off"; # turns off cli communication
-          preload = [wallpaper];
-          wallpaper = ["DP-2,${wallpaper}"];
+          wallpaper = [
+            {
+              fit_mode = "cover";
+              monitor = "DP-2";
+              path = toString ./wallpaper/so-hard.jpg;
+            }
+          ];
         };
       };
 
