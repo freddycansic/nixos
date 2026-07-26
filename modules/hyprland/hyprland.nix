@@ -111,12 +111,14 @@ in {
         };
       };
 
-      services.hyprpaper = {
+      services.hyprpaper = let
+        wallpaper = toString ./wallpaper/so-hard.jpg;
+      in {
         enable = true;
         settings = {
           # ipc = "off"; # turns off cli communication
-          preload = [(builtins.toPath ./wallpaper/so-hard.jpg)];
-          wallpaper = ["DP-2,${builtins.toPath ./wallpaper/so-hard.jpg}"];
+          preload = [wallpaper];
+          wallpaper = ["DP-2,${wallpaper}"];
         };
       };
 
