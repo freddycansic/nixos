@@ -32,7 +32,6 @@
       inputs.nix-jetbrains-plugins.plugins."${pkgs.stdenv.hostPlatform.system}".rust-rover."2025.3"."nix-idea" # nix
       inputs.nix-jetbrains-plugins.plugins."${pkgs.stdenv.hostPlatform.system}".rust-rover."2025.3"."OpenGL-Plugin" # glsl
     ])
-    pkgs.devenv
     pkgs.vlc
     pkgs.wl-clipboard # cmdline clipboard utils
     pkgs.pinentry-gtk2 # password entering utility for gnupg
@@ -130,6 +129,9 @@
       enable = true;
       nix-direnv.enable = true;
       # enableFishIntegration = true; # happens automatically
+      config = {
+        warn_timeout = "1m";
+      };
     };
 
     programs.fastfetch = {
