@@ -45,6 +45,7 @@
     pkgs.qt6.qtwayland
     pkgs.krita # drawing app
     pkgs.dig # dns utility
+    pkgs.brightnessctl # manage screen brightness
   ];
 
   fonts.packages = [
