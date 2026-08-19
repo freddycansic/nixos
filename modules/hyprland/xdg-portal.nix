@@ -7,8 +7,20 @@
 }: {
   xdg.portal = {
     enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+
+    config = {
+      hyprland = {
+        preferred = [
+          "hyprland"
+          "gtk"
+        ];
+      };
+    };
   };
 
   services.xserver.updateDbusEnvironment = true;
