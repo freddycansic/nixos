@@ -31,7 +31,12 @@
   hyprland = {
     enable = true;
     kb_layout = "us";
-    monitor = "DP-2, 1920x1080@144, 0x0, 1";
+    monitor = {
+      output = "DP-2";
+      mode = "1920x1080@144";
+      position = "0x0";
+      scale = 1.0;
+    };
     sensitivity = -0.7;
   };
 

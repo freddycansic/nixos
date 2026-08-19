@@ -20,7 +20,12 @@
   hyprland = {
     enable = true;
     kb_layout = "gb";
-    monitor = "eDP-1, 1920x1080@60, 0x0, 1";
+    monitor = {
+      output = "eDP-1";
+      mode = "1920x1080@60";
+      position = "0x0";
+      scale = 1.0;
+    };
     sensitivity = 0.0;
   };
 

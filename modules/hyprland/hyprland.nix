@@ -24,14 +24,31 @@ in {
         description = "keyboard layout used by hyprland";
       };
       monitor = lib.mkOption {
-        type = lib.types.str;
-        default = ''
-          output = "eDP-1",
-          mode = "1920x1080@60",
-          position = "0x0",
-          scale = "1",
-        '';
         description = "monitor used by hyprland";
+
+        type = lib.types.submodule {
+          options = {
+            output = lib.mkOption {
+              type = lib.types.str;
+            };
+            mode = lib.mkOption {
+              type = lib.types.str;
+            };
+            position = lib.mkOption {
+              type = lib.types.str;
+            };
+            scale = lib.mkOption {
+              type = lib.types.float;
+            };
+          };
+        };
+
+        default = {
+          output = "eDP-1";
+          mode = "1920x1080@60";
+          position = "0x0";
+          scale = 1.0;
+        };
       };
       sensitivity = lib.mkOption {
         type = lib.types.float;
@@ -182,7 +199,12 @@ in {
         configType = "lua";
 
         extraConfig = ''
-          hl.monitor({${config.hyprland.monitor}})
+          hl.monitor({
+              output = "${config.hyprland.monitor.output}",
+              mode = "${config.hyprland.monitor.mode}",
+              position = "${config.hyprland.monitor.position}",
+              scale = ${lib.strings.floatToString config.hyprland.monitor.scale},
+          })
 
           hl.on("hyprland.start", function ()
               hl.exec_cmd("waybar &")
