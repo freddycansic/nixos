@@ -13,7 +13,6 @@ in {
   imports = [
     ../waybar/waybar.nix
     ../mako.nix
-    ./xdg-portal.nix
   ];
 
   options = {
@@ -54,6 +53,25 @@ in {
       # make sure to also set the portal package, so that they are in sync
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       xwayland.enable = true;
+    };
+
+    xdg.portal = {
+      enable = true;
+      extraPortals = [
+        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
+        pkgs.xdg-desktop-portal-gtk
+      ];
+      xdgOpenUsePortal = true;
+      configPackages = [config.programs.hyprland.package];
+      config.hyprland = {
+        default = [
+          "hyprland"
+          "gtk"
+        ];
+        "org.freedesktop.impl.portal.OpenURI" = "gtk";
+        "org.freedesktop.impl.portal.FileChooser" = "gtk";
+        "org.freedesktop.impl.portal.Print" = "gtk";
+      };
     };
 
     home-manager.users.freddy = {
