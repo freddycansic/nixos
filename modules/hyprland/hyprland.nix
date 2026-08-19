@@ -302,10 +302,10 @@ in {
 
           hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
-          hl.bind(mainMod .. " + left", hl.dps.focus({ direction = "left" }))
-          hl.bind(mainMod .. " + right", hl.dps.focus({ direction = "right" }))
-          hl.bind(mainMod .. " + up", hl.dps.focus({ direction = "up" }))
-          hl.bind(mainMod .. " + down", hl.dps.focus({ direction = "down" }))
+          hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
+          hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
+          hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
+          hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
           for i = 1, 10 do
               local key = i % 10 -- 10 maps to key 0
