@@ -77,6 +77,17 @@ in {
       xwayland.enable = true;
     };
 
+    nixpkgs.overlays = [
+      (self: super: {
+        xdg-desktop-portal-gtk = super.xdg-desktop-portal-gtk.overrideAttrs {
+          postInstall = ''
+            sed -i 's/UseIn=gnome/UseIn=gnome;hyprland/' \
+              $out/share/xdg-desktop-portal/portals/gtk.portal
+          '';
+        };
+      })
+    ];
+
     xdg.portal = {
       enable = true;
       extraPortals = [
