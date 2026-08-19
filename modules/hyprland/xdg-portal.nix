@@ -6,22 +6,23 @@
   ...
 }: {
   home-manager.users.freddy = {
-    xdg.portal = {
-        enable = true;
-        extraPortals = [
+    xdg.portal = lib.mkForce {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-hyprland
         pkgs.xdg-desktop-portal-gtk
-        ];
-        xdgOpenUsePortal = true;
-        configPackages = [config.programs.hyprland.package];
-        config.hyprland = {
+      ];
+      xdgOpenUsePortal = true;
+      configPackages = [config.programs.hyprland.package];
+      config.hyprland = {
         default = [
-            "hyprland"
-            "gtk"
+          "hyprland"
+          "gtk"
         ];
         "org.freedesktop.impl.portal.OpenURI" = "gtk";
         "org.freedesktop.impl.portal.FileChooser" = "gtk";
         "org.freedesktop.impl.portal.Print" = "gtk";
-        };
+      };
     };
   };
 
