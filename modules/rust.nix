@@ -44,7 +44,7 @@ in {
   };
 
   home-manager.users.freddy = {
-    # give rustrover a stable path to find rust stdlib source
-    home.file.".local/share/rust/rust-src".source = "${rustToolchain}/lib/rustlib/src/rust";
+    # give rustrover a stable path to find rust toolchain + stdlib source
+    home.file.".local/share/rust/rust-toolchain".source = "${rustToolchain}";
   };
 }
