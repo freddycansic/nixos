@@ -6,8 +6,8 @@
   ...
 }: let
   gtk_theme = {
-    package = pkgs.flat-remix-gtk;
-    name = "Flat-Remix-GTK-Cyan-Dark";
+    package = pkgs.orchis-theme;
+    name = "Orchis-Dark";
   };
 in {
   imports = [
@@ -76,6 +76,7 @@ in {
 
     home-manager.users.freddy = {
       home.pointerCursor = {
+        enable = true;
         gtk.enable = true;
         package = pkgs.bibata-cursors;
         name = "Bibata-Modern-Ice";
