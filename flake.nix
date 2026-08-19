@@ -16,6 +16,11 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     nix-jetbrains-plugins.url = "github:nix-community/nix-jetbrains-plugins";
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

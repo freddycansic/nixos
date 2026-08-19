@@ -10,6 +10,7 @@
     ../../modules/zed.nix
     ../../modules/hyprland/hyprland.nix
     ../../modules/flatpak.nix
+    ../../modules/rust.nix
   ];
 
   environment.systemPackages = [
@@ -30,7 +31,7 @@
     (inputs.nix-jetbrains-plugins.lib.buildIdeWithPlugins pkgs "rust-rover" [
       "al.aoli.intellijdirenv" # direnv
       "nix-idea" # nix
-      "OpenGL-Plugin" # glsl
+      "GLSL"
     ])
     pkgs.vlc
     pkgs.wl-clipboard # cmdline clipboard utils
