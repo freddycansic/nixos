@@ -18,7 +18,6 @@
     pkgs.psmisc # includes killall
     pkgs.nixd # nix language server
     pkgs.tree
-    # pkgs.kdePackages.xwaylandvideobridge
     pkgs.discord
     pkgs.pinta # paint.net on linux
     pkgs.pavucontrol
@@ -28,11 +27,6 @@
     pkgs.renderdoc
     pkgs.sourcegit
     pkgs.ripgrep
-    (inputs.nix-jetbrains-plugins.lib.buildIdeWithPlugins pkgs "rust-rover" [
-      "al.aoli.intellijdirenv" # direnv
-      "nix-idea" # nix
-      "GLSL"
-    ])
     pkgs.vlc
     pkgs.wl-clipboard # cmdline clipboard utils
     pkgs.pinentry-gnome3 # password entering utility for gnupg
