@@ -77,6 +77,7 @@ in {
       xwayland.enable = true;
     };
 
+    # TODO FIXME https://discourse.nixos.org/t/portals-dont-work-on-hyprland-after-update-to-0-55-2-from-0-54-3/77816/18
     nixpkgs.overlays = [
       (self: super: {
         xdg-desktop-portal-gtk = super.xdg-desktop-portal-gtk.overrideAttrs {
