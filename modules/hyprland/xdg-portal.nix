@@ -5,10 +5,14 @@
   lib,
   ...
 }: {
+  environment.systemPackages = [
+    pkgs.xdg-desktop-portal-gtk
+  ];
+
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
     ];
     xdgOpenUsePortal = true;
     configPackages = [config.programs.hyprland.package];
