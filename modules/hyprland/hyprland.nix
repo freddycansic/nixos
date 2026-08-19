@@ -222,7 +222,7 @@ in {
                   gaps_out = 0,
                   border_size = 2,
                   col = {
-                      active_border = { colors = {"rgba(33ccffff),  rgba(00ff99ff)}, angle = 45 },
+                      active_border = { colors = {"rgba(33ccffff)", "rgba(00ff99ff)"}, angle = 45 },
                       inactive_border = "rgba(595959ff)",
                   },
                   resize_on_border = false,
