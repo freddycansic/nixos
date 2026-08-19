@@ -18,19 +18,18 @@
     rust-overlay,
     ...
   }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [(import rust-overlay)];
-        };
-      in {
-        devShells.default = pkgs.mkShell {
-          packages = [
-            pkgs.rust-bin.stable.latest.default
-            pkgs.pkg-config
-            pkgs.wayland
-          ];
-        };
-      });
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [(import rust-overlay)];
+      };
+    in {
+      devShells.default = pkgs.mkShell {
+        packages = [
+          pkgs.rust-bin.stable.latest.default
+          pkgs.pkg-config
+          pkgs.wayland
+        ];
+      };
+    });
 }

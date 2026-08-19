@@ -25,7 +25,6 @@
         fastfetch
       '';
       shellAliases = {
-        logout = "loginctl kill-user $USER";
         l = "ls -la";
       };
     };
