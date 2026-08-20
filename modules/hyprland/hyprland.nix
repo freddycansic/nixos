@@ -392,7 +392,7 @@ in {
               name = "nested-godot-outer-float",
               match = {
                   class = "^(Godot)$",
-                  class = "^(Nested)",
+                  title = "^(Nested)",
               },
               float = true,
           })
