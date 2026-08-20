@@ -41,6 +41,7 @@
     pkgs.krita # drawing app
     pkgs.dig # dns utility
     pkgs.brightnessctl # manage screen brightness
+    pkgs.godot
   ];
 
   fonts.packages = [
