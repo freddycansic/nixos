@@ -386,7 +386,6 @@ in {
               match = {
                   initial_class = "^(org.godotengine.Editor)$",
                   initial_title = "^(Nested)",
-                  xwayland = true,
               },
               float = true,
               tile = false,
