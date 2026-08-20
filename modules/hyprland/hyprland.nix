@@ -385,7 +385,7 @@ in {
               name = "nested-godot-outer-float",
               match = {
                   initial_class = "^(org.godotengine.Editor)$",
-                  initial_title = "^(Nested)",
+                  initial_title = "^Nested",
               },
               float = true,
               tile = false,
