@@ -382,9 +382,17 @@ in {
           })
 
           hl.window_rule({
-              name = "nested-godot-float",
+              name = "nested-godot-inner-float",
               match = {
                   class = "^(Nested)$",
+              },
+              float = true,
+          })
+          hl.window_rule({
+              name = "nested-godot-outer-float",
+              match = {
+                  class = "^(Godot)$",
+                  class = "^(Nested)",
               },
               float = true,
           })
