@@ -380,6 +380,14 @@ in {
 
               float = true,
           })
+
+          hl.window_rule({
+              name = "nested-godot-float",
+              match = {
+                  class = "^(Nested)$",
+              },
+              float = true,
+          })
         '';
       };
     };
