@@ -386,7 +386,7 @@ in {
                   return
               end
 
-              if w.class == "Godot"
+              if w.class == "Nested"
                   and w.title == "Nested (DEBUG)"
               then
                   hl.dispatch(
