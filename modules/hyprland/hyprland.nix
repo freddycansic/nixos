@@ -381,15 +381,22 @@ in {
               float = true,
           })
 
-          hl.window_rule({
-              name = "nested-godot-outer-float",
-              match = {
-                  class = "^(org.godotengine.Editor)$",
-                  title = "^Nested",
-              },
-              float = true,
-              tile = false,
-          })
+          hl.on("window.title", function(w)
+              if w == nil then
+                  return
+              end
+
+              if w.class == "org.godotengine.Editor"
+                  and w.title == "Nested (DEBUG)"
+              then
+                  hl.dispatch(
+                      hl.dsp.window.float({
+                          action = "enable",
+                          window = w,
+                      })
+                  )
+              end
+          end)
         '';
       };
     };
