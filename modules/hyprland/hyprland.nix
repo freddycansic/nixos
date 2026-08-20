@@ -381,28 +381,14 @@ in {
               float = true,
           })
 
-          hl.on("window.title", function(w)
-              if w == nil then
-                  return
-              end
+          hl.window_rule({
+              name = "godot-float",
+              match = {
+                  class = "^(Godot|Nested)$",
+              },
 
-              if w.class == "Nested"
-                  and w.title == "Nested (DEBUG)"
-              then
-                  hl.dispatch(
-                      hl.dsp.window.float({
-                          action = "enable",
-                          window = w,
-                      })
-                  )
-
-                  hl.dispatch(
-                      hl.dsp.focus({
-                          window = w,
-                      })
-                  )
-              end
-          end)
+              float = true,
+          })
         '';
       };
     };
