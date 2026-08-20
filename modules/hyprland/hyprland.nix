@@ -384,8 +384,8 @@ in {
           hl.window_rule({
               name = "nested-godot-outer-float",
               match = {
-                  initial_class = "^(org.godotengine.Editor)$",
-                  initial_title = "^Nested",
+                  class = "^(org.godotengine.Editor)$",
+                  title = "^Nested",
               },
               float = true,
               tile = false,
