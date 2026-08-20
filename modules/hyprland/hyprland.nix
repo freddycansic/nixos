@@ -397,7 +397,7 @@ in {
                   )
 
                   hl.dispatch(
-                      hl.dsp.window.focus({
+                      hl.dsp.focus({
                           window = w,
                       })
                   )
