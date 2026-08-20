@@ -386,12 +386,18 @@ in {
                   return
               end
 
-              if w.class == "org.godotengine.Editor"
+              if w.class == "Godot"
                   and w.title == "Nested (DEBUG)"
               then
                   hl.dispatch(
                       hl.dsp.window.float({
                           action = "enable",
+                          window = w,
+                      })
+                  )
+
+                  hl.dispatch(
+                      hl.dsp.window.focus({
                           window = w,
                       })
                   )
