@@ -382,19 +382,10 @@ in {
           })
 
           hl.window_rule({
-              name = "nested-godot-inner-float",
-              match = {
-                  class = "^(Nested)$",
-                  xwayland = true,
-              },
-              float = true,
-              tile = false,
-          })
-          hl.window_rule({
               name = "nested-godot-outer-float",
               match = {
-                  class = "^(Godot)$",
-                  title = "^(Nested)",
+                  initial_class = "^(org.godotengine.Editor)$",
+                  initial_title = "^(Nested)",
                   xwayland = true,
               },
               float = true,
