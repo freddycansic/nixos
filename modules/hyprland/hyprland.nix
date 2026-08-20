@@ -385,16 +385,20 @@ in {
               name = "nested-godot-inner-float",
               match = {
                   class = "^(Nested)$",
+                  xwayland = true,
               },
               float = true,
+              tile = false,
           })
           hl.window_rule({
               name = "nested-godot-outer-float",
               match = {
                   class = "^(Godot)$",
                   title = "^(Nested)",
+                  xwayland = true,
               },
               float = true,
+              tile = false,
           })
         '';
       };
