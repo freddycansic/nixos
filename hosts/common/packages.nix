@@ -92,7 +92,7 @@
     };
 
     home.packages = [
-      pkgs.brave
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       pkgs.meld
       pkgs.bitwarden-desktop
     ];
