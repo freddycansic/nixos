@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   inputs,
   system,
   ...
@@ -41,7 +42,8 @@
     pkgs.krita # drawing app
     pkgs.dig # dns utility
     pkgs.brightnessctl # manage screen brightness
-    pkgs.godot
+    pkgs-unstable.godot # TODO FIXME at the time, there was a bug in 4.7.1 which made godot crash when editing tilemaps
+    # it was fixed in 4.7.2 which was not available on nixos-unstable, but was on nixpkgs-unstable
   ];
 
   fonts.packages = [

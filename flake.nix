@@ -2,7 +2,11 @@
   description = "Nixos config flake";
 
   inputs = {
+    # Unstable packages which have been tested specifically for NixOs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Unstable packages which have been tested for Nix
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -30,28 +34,30 @@
     ...
   } @ inputs: {
     nixosConfigurations = let
+      system = "x86_64-linux";
+
       common-modules = [
         inputs.home-manager.nixosModules.default
         nix-flatpak.nixosModules.nix-flatpak
       ];
-    in {
-      laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules =
-          [
-            ./hosts/laptop/configuration.nix
-          ]
-          ++ common-modules;
+
+      pkgs-unstable = import inputs.nixpkgs-unstable {
+        inherit system;
       };
 
-      pc = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules =
-          [
-            ./hosts/pc/configuration.nix
-          ]
-          ++ common-modules;
-      };
+      mkSystem = configFile:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          specialArgs = {
+            inherit inputs pkgs-unstable;
+          };
+
+          modules = [configFile] ++ common-modules;
+        };
+    in {
+      pc = mkSystem ./hosts/pc/configuration.nix;
+      laptop = mkSystem ./hosts/laptop/configuration.nix;
     };
   };
 }
