@@ -95,6 +95,7 @@
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       pkgs.meld
       pkgs.bitwarden-desktop
+      pkgs.aseprite
     ];
 
     programs.alacritty = {
