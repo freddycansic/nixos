@@ -5,6 +5,11 @@
   lib,
   ...
 }: {
+  environment.systemPackages = [
+    pkgs.pavucontrol
+    pkgs.alsa-utils
+  ];
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
