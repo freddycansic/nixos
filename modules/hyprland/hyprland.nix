@@ -219,9 +219,8 @@ in {
           })
 
           hl.monitor({
-              output = "HDMI-A-1",
+              output = "desc:LG Electronics LG TV SSCR2 0x01010101",
               mode = "3840x2160@60",
-              desc = "LG Electronics LG TV SSCR2 0x01010101",
               scale = "2.0",
           })
 
