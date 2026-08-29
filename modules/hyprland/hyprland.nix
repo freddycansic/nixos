@@ -218,6 +218,13 @@ in {
               scale = ${lib.strings.floatToString config.hyprland.monitor.scale},
           })
 
+          hl.monitor({
+              output = "HDMI-A-1",
+              mode = "3840x2160@60",
+              desc = "LG Electronics LG TV SSCR2 0x01010101",
+              scale = "2.0",
+          })
+
           hl.on("hyprland.start", function ()
               hl.exec_cmd("waybar &")
               hl.exec_cmd("mako &")
