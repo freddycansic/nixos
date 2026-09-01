@@ -8,7 +8,7 @@
 
     xdg.desktopEntries.jeff-reaper = {
       name = "REAPER";
-      exec = "${pkgs.pipewire}/bin/pw-jack ${pkgs.reaper}/bin/reaper";
+      exec = "${pkgs.pipewire.jack}/bin/pw-jack ${pkgs.reaper}/bin/reaper";
     };
   };
 }
