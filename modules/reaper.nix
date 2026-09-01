@@ -1,23 +1,16 @@
-{pkgs, ...}: let
-  reaper = pkgs.reaper.overrideAttrs (old: {
-    postInstall =
-      (old.postInstall or "")
-      + ''
-        rm -f $out/share/applications/REAPER.desktop
-      '';
-  });
-
-  desktopItem = pkgs.makeDesktopItem {
-    name = "pw-jack reaper";
-    desktopName = "REAPER";
-    exec = "${pkgs.pipewire.jack}/bin/pw-jack ${reaper}/bin/reaper";
-  };
-in {
+{pkgs, ...}: {
   environment.systemPackages = [
     pkgs.pipewire.jack
   ];
 
   home-manager.users.freddy = {
-    home.packages = [reaper desktopItem];
+    home.packages = [pkgs.reaper];
+
+    xdg.desktopEntries."REAPER" = {
+      name = "Reaper";
+      exec = "${pkgs.pipewire}/bin/pw-jack ${pkgs.reaper}/bin/reaper";
+      terminal = false;
+      type = "Application";
+    };
   };
 }
