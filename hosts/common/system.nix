@@ -91,7 +91,7 @@
   users.users.freddy = {
     isNormalUser = true;
     description = "Freddy Cansick";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "pipewire"];
     packages = with pkgs; [
       #  thunderbird
     ];
