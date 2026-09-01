@@ -12,7 +12,12 @@ in {
   ];
 
   home-manager.users.freddy = {
-    home.packages = [reaper-no-desktop];
+    home.packages = [
+      reaper-no-desktop
+
+      # plugins
+      pkgs.helm # synth
+    ];
 
     xdg.desktopEntries.cockos-reaper = {
       name = "REAPER";
