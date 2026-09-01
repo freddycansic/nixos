@@ -19,6 +19,8 @@ in {
       pkgs.helm # synth
     ];
 
+    home.file.".vst/helm".source = "${pkgs.helm}";
+
     xdg.desktopEntries.cockos-reaper = {
       name = "REAPER";
       exec = "${pkgs.pipewire.jack}/bin/pw-jack ${reaper-no-desktop}/bin/reaper";
