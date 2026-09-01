@@ -21,6 +21,7 @@ in {
     ];
 
     home.file.".vst/helm".source = "${pkgs.helm}";
+    home.file.".vst/lsp-plugins".source = "${pkgs.lsp-plugins}";
 
     xdg.desktopEntries.cockos-reaper = {
       name = "REAPER";
