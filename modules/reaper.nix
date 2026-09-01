@@ -17,6 +17,7 @@ in {
 
       # plugins
       pkgs.helm # synth
+      pkgs.lsp-plugins # whole bunch of plugins
     ];
 
     home.file.".vst/helm".source = "${pkgs.helm}";
