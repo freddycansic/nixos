@@ -30,6 +30,11 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    waybar = {
+      url = "github:alexays/waybar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

@@ -7,6 +7,8 @@
   home-manager.users.freddy = {
     programs.waybar = {
       enable = true;
+      package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
       systemd.enableDebug = true;
       # based on https://github.com/mechakotik/dots/tree/c91b980c3bd1bb6792df9ba21fe537f0242c42aa
       settings = [
