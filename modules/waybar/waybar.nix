@@ -116,7 +116,7 @@
             "menu-file" = "~/.config/waybar/power_menu.xml";
             "menu-actions" = {
               "lock" = "hyprlock";
-              "logout" = "hyprctl dispatch exit";
+              "logout" = "hyprctl dispatch 'hl.dsp.exit()'";
               "shutdown" = "shutdown";
               "reboot" = "reboot";
               "sleep" = "systemctl suspend";
