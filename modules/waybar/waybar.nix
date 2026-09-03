@@ -5,6 +5,8 @@
   ...
 }: {
   home-manager.users.freddy = {
+    home.file.".config/waybar/power_menu.xml".source = ./power_menu.xml;
+
     programs.waybar = {
       enable = true;
       package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
@@ -19,7 +21,7 @@
 
           "modules-left" = ["hyprland/workspaces"];
           "modules-center" = ["clock"];
-          "modules-right" = ["wireplumber" "battery" "network" "bluetooth" "tray"];
+          "modules-right" = ["tray" "wireplumber" "battery" "network" "bluetooth" "custom/power"];
 
           "hyprland/workspaces" = {
             "sort-by" = "number";
@@ -105,6 +107,20 @@
           tray = {
             "icon-size" = 16;
             spacing = 16;
+          };
+
+          "custom/power" = {
+            "format" = "⏻ ";
+            "tooltip" = false;
+            "menu" = "on-click";
+            "menu-file" = "~/.config/waybar/power_menu.xml";
+            "menu-actions" = {
+              "lock" = "hyprlock";
+              "logout" = "hyprctl dispatch exit";
+              "shutdown" = "shutdown";
+              "reboot" = "reboot";
+              "sleep" = "systemctl suspend";
+            };
           };
         }
       ];
