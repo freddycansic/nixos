@@ -117,7 +117,7 @@
             "menu-actions" = {
               "lock" = "hyprlock";
               "logout" = "hyprctl dispatch 'hl.dsp.exit()'";
-              "shutdown" = "shutdown";
+              "shutdown" = "shutdown 0";
               "reboot" = "reboot";
               "sleep" = "systemctl suspend";
             };
