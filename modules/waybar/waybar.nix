@@ -20,14 +20,17 @@
           "modules-right" = ["wireplumber" "battery" "network" "bluetooth" "tray"];
 
           "hyprland/workspaces" = {
-            "on-click" = "activate";
-            "sort-by-number" = true;
+            "sort-by" = "number";
             "persistent-workspaces" = {
               "1" = [];
               "2" = [];
               "3" = [];
               "4" = [];
               "5" = [];
+              "6" = [];
+              "7" = [];
+              "8" = [];
+              "9" = [];
             };
           };
 
