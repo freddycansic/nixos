@@ -11,8 +11,7 @@
     ../../modules/zed.nix
     ../../modules/hyprland/hyprland.nix
     ../../modules/flatpak.nix
-    ../../modules/programming/rust.nix
-    ../../modules/programming/cpp.nix
+    ../../modules/programming/default.nix
     ../../modules/reaper.nix
   ];
 
