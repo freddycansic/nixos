@@ -42,6 +42,11 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  security.pam.services.kwallet = {
+    name = "kwallet";
+    enableKwallet = true;
+  };
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
