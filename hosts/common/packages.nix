@@ -13,6 +13,7 @@
     ../../modules/flatpak.nix
     ../../modules/programming/default.nix
     ../../modules/reaper.nix
+    ../../modules/zen.nix
   ];
 
   environment.systemPackages = [
