@@ -47,6 +47,7 @@
     # it was fixed in 4.7.2 which was not available on nixos-unstable, but was on nixpkgs-unstable
     pkgs.pangolin-cli
     pkgs._7zz
+    pkgs.jq # command line json parsing
   ];
 
   fonts.packages = [

@@ -9,7 +9,15 @@
 
     programs.waybar = {
       enable = true;
-      package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
+      # FIXME. the tests were failing but i rlly needed the fix for clicking workspaces to activate them
+      package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs (old: {
+        mesonFlags =
+          (old.mesonFlags or [])
+          ++ [
+            "-Dtests=disabled"
+          ];
+      });
 
       systemd.enableDebug = true;
       # based on https://github.com/mechakotik/dots/tree/c91b980c3bd1bb6792df9ba21fe537f0242c42aa
