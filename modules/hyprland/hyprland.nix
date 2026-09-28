@@ -228,8 +228,7 @@ in {
               hl.exec_cmd("waybar &")
               hl.exec_cmd("mako &")
               hl.exec_cmd("wl-paste --type text --watch cliphist store")
-              hl.exec_cmd("wl-paste --type image --watch cliphist store")
-          end)
+              shut          end)
 
           hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
           hl.env("XDG_SESSION_TYPE", "wayland")
@@ -263,7 +262,7 @@ in {
               },
 
               input = {
-                kb_layout = ${config.hyprland.kb_layout},
+                kb_layout = "${config.hyprland.kb_layout}",
                 kb_variant = "",
                 kb_model = "",
                 kb_options = "",
