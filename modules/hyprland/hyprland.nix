@@ -228,7 +228,8 @@ in {
               hl.exec_cmd("waybar &")
               hl.exec_cmd("mako &")
               hl.exec_cmd("wl-paste --type text --watch cliphist store")
-              shut          end)
+              hl.exec_cmd("wl-paste --type image --watch cliphist store")
+          end)
 
           hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
           hl.env("XDG_SESSION_TYPE", "wayland")
