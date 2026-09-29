@@ -567,6 +567,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "rust-overlay": "rust-overlay",
         "sf-mono-nerd-font": "sf-mono-nerd-font",
+        "sops-nix": "sops-nix",
         "waybar": "waybar",
         "zen-browser": "zen-browser"
       }
@@ -606,6 +607,26 @@
       "original": {
         "owner": "austinliuigi",
         "repo": "sf-mono-nerd-font",
+        "type": "github"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790498116,
+        "narHash": "sha256-rs9meAYxW3zzrh43yaW7htrqCD+X9+pupDPHN86fumI=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "5efb5a6f4f5ab192817d28557dd4d650fa14d866",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
         "type": "github"
       }
     },
