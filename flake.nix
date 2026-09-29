@@ -35,11 +35,6 @@
       url = "github:alexays/waybar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -74,9 +69,9 @@
         inputs.home-manager.nixosModules.default
         nix-flatpak.nixosModules.nix-flatpak
       ];
-      server = mkSystem ./hosts/server/configuration.nix [
-        inputs.sops-nix.nixosModules.sops
-      ];
+      server =
+        mkSystem ./hosts/server/configuration.nix [
+        ];
     };
   };
 }

@@ -15,10 +15,9 @@
           "/data/obsidian-livesync/etc:/opt/couchdb/etc/local.d"
         ];
 
-        environment = {
-          COUCHDB_USER = "obsidian_user";
-          COUCHDB_PASSWORD = "CHANGE_ME";
-        };
+        environmentFiles = [
+          "/etc/obsidian-livesync.env"
+        ];
 
         autoStart = true;
       };
