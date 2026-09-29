@@ -48,6 +48,7 @@ in {
     cargo-tarpaulin
     clang
     mold
+    wayland
   ];
 
   environment.variables = {
