@@ -9,7 +9,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./services/cockpit.nix
+    ./services/incus.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
