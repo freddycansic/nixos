@@ -46,16 +46,11 @@
     nixosConfigurations = let
       system = "x86_64-linux";
 
-      common-modules = [
-        inputs.home-manager.nixosModules.default
-        nix-flatpak.nixosModules.nix-flatpak
-      ];
-
       pkgs-unstable = import inputs.nixpkgs-unstable {
         inherit system;
       };
 
-      mkSystem = configFile:
+      mkSystem = configFile: extraModules:
         nixpkgs.lib.nixosSystem {
           inherit system;
 
@@ -63,11 +58,18 @@
             inherit inputs pkgs-unstable;
           };
 
-          modules = [configFile] ++ common-modules;
+          modules = [configFile] ++ extraModules;
         };
     in {
-      pc = mkSystem ./hosts/pc/configuration.nix;
-      laptop = mkSystem ./hosts/laptop/configuration.nix;
+      pc = mkSystem ./hosts/pc/configuration.nix [
+        inputs.home-manager.nixosModules.default
+        nix-flatpak.nixosModules.nix-flatpak
+      ];
+      laptop = mkSystem ./hosts/laptop/configuration.nix [
+        inputs.home-manager.nixosModules.default
+        nix-flatpak.nixosModules.nix-flatpak
+      ];
+      server = mkSystem ./hosts/server/configuration.nix [];
     };
   };
 }

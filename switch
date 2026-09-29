@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+# Rebuild script that commits on a successful build
+
+set -e
+
+machine_id=$(cat /etc/machine-id)
+
+case "$machine_id" in
+    "dc1082ffd8ac44c99b9d83101c3cd51f")
+        host="pc"
+        ;;
+    "b9b5b0df6d6640a7a64134b87956c17b")
+        host="laptop"
+        ;;
+    "b722f879a1474db58a6f4b487ca925a5")
+        host="server"
+        ;;
+    *)
+        echo "Unknown machine-id: $machine_id"
+        exit 1
+        ;;
+esac
+
+echo "On host: $host"
+
+pushd /home/freddy/nixos/ > /dev/null
+
+# nix won't recognise files which aren't added to the git repo
+git add .
+
+# Autoformat nix files
+if ! alejandra . &>/dev/null; then
+    alejandra .
+    echo "formatting failed!"
+    exit 1
+fi
+
+if ! nh os switch . -H "$host"; then
+    echo "Failed to rebuild"
+    exit 1
+fi
+
+info=$(nh os info | grep current)
+timestamp=$(echo "$info" | cut -d' ' -f5-6 | xargs) # timestamp
+metadata=$(echo "$info" | cut -d' ' -f7- | xargs) # nix version, kernel version
+
+echo "Enter optional commit message (press Enter to skip):"
+read -r description
+
+if [[ -n "$description" ]]; then
+    message="$timestamp - $description"$'\n\n'"$metadata"
+else
+    message="$timestamp"$'\n\n'"$metadata"
+fi
+
+git add .
+git commit -m "$message"
+
+# Back to where you were
+popd > /dev/null
+
+# Notify success
+notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
