@@ -49,6 +49,7 @@
     pkgs.pangolin-cli
     pkgs._7zz
     pkgs.jq # command line json parsing
+    pkgs.nmap
   ];
 
   fonts.packages = [
