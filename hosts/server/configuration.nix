@@ -9,6 +9,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./services/cockpit.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -120,8 +121,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  services.cockpit.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
