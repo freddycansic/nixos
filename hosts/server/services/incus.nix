@@ -4,7 +4,7 @@
     ui.enable = true;
 
     preseed.config = {
-      "core.https_address" = "8443";
+      "core.https_address" = ":8443";
     };
   };
 
