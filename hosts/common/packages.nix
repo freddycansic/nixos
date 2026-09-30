@@ -37,8 +37,7 @@
     pkgs.unzip
     pkgs.wlprop # xprop for wayland
     pkgs.btop
-    pkgs.obsidian
-    pkgs.obsidian # with plugins: git, spaced repetition, quickadd
+    pkgs.obsidian # with plugins: git, spaced repetition, quickadd, livesync
     pkgs.arp-scan # scan local network
     pkgs.qt6.qtwayland
     pkgs.krita # drawing app
