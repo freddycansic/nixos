@@ -1,8 +1,7 @@
-{ ... } :
-{
+{...}: {
   virtualisation.oci-containers = {
     containers = {
-      prometheus = { 
+      prometheus = {
         image = "docker.io/prom/prometheus:latest";
 
         ports = [
