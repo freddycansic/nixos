@@ -1,6 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   environment.systemPackages = [
     pkgs.jogl
-    pkgs.intellij-idea
+
+    (inputs.nix-jetbrains-plugins.lib.buildIdeWithPlugins pkgs "idea" [
+      "io.github.salatmaster.direnv" # direnv
+    ])
   ];
 }
