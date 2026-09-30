@@ -10,6 +10,14 @@
       pkgs.libGL
       pkgs.libXxf86vm
       pkgs.jogl
+      pkgs.libX11
+      pkgs.libXext
+      pkgs.libXi
+      pkgs.libXrender
+      pkgs.libXfixes
+      pkgs.libxcb
+      pkgs.libdrm
+      pkgs.mesa
     ];
   };
 }
