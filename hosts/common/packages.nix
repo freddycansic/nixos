@@ -14,6 +14,7 @@
     ../../modules/programming/default.nix
     ../../modules/reaper.nix
     ../../modules/zen.nix
+    ../../modules/uni/default.nix
   ];
 
   environment.systemPackages = [
