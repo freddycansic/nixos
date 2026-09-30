@@ -8,7 +8,8 @@
     enable = true;
     libraries = [
       pkgs.libGL
-      pkgs.xorg.libXxf86vm
+      pkgs.libXxf86vm
+      pkgs.jogl
     ];
   };
 }
