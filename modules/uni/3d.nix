@@ -20,4 +20,8 @@
       pkgs.mesa
     ];
   };
+
+  environment.sessionVariables.LD_LIBRARY_PATH = [
+    "${pkgs.libglvnd}/lib"
+  ];
 }
