@@ -55,6 +55,7 @@
     #   ];
     # })
     pkgs.texstudio
+    pkgs.texliveBasic
   ];
 
   fonts.packages = [
