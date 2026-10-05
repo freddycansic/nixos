@@ -55,7 +55,7 @@
     #   ];
     # })
     pkgs.texstudio
-    pkgs.texliveBasic
+    pkgs.texliveSmall # contains latex engine needed by texstudio
   ];
 
   fonts.packages = [
