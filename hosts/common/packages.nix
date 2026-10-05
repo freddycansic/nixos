@@ -49,6 +49,12 @@
     pkgs._7zz
     pkgs.jq # command line json parsing
     pkgs.nmap
+    # (pkgs.vscode-with-extensions.override {
+    #   vscodeExtensions = with pkgs.vscode-extensions; [
+    #     james-yu.latex-workshop
+    #   ];
+    # })
+    pkgs.texstudio
   ];
 
   fonts.packages = [
