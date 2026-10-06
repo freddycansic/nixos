@@ -56,6 +56,7 @@
     # })
     pkgs.texstudio
     pkgs.texliveSmall # contains latex engine needed by texstudio
+    pkgs.texlivePackages.biblatex
   ];
 
   fonts.packages = [
