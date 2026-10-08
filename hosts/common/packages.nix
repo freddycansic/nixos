@@ -56,6 +56,7 @@
       ps.pgfgantt
       ps.adjustbox
     ]))
+    pkgs.exfatprogs # create exFAT partitions
   ];
 
   fonts.packages = [
