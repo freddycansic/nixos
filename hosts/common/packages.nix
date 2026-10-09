@@ -59,6 +59,7 @@
       ps.biblatex
       ps.biber
       ps.pgfgantt
+      ps.adjustbox
     ]))
   ];
 
