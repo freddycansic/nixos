@@ -58,6 +58,7 @@
     (pkgs.texliveSmall.withPackages (ps: [
       ps.biblatex
       ps.biber
+      ps.pgfgantt
     ]))
   ];
 
