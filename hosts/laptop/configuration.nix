@@ -16,6 +16,7 @@
 
   environment.systemPackages = [
     pkgs.brightnessctl
+    pkgs.mixxx
   ];
 
   hyprland = {
