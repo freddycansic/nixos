@@ -56,6 +56,7 @@
       ps.pgfgantt
       ps.adjustbox
     ]))
+    pkgs.parabolic # downloader for youtube
     pkgs.exfatprogs # create exFAT partitions
   ];
 
