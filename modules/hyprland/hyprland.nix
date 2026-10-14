@@ -181,6 +181,7 @@ in {
           # Indicator shape and sizing
           indicator-radius = 120;
           indicator-thickness = 12;
+          indicator-idle-visible = true;
 
           # -------------------------------------------------------------
           # Color Scheme (Dark theme with distinct state indicators)
