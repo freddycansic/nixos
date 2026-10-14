@@ -65,7 +65,6 @@ in {
       pkgs.hyprcursor
       pkgs.hyprshot
       pkgs.hyprprop
-      pkgs.hyprlock
     ];
 
     programs.hyprland = {
@@ -170,11 +169,13 @@ in {
         };
       };
 
+      programs.swaylock.enable = true;
+
       services.hypridle = {
         enable = true;
         settings = {
           general = {
-            lock_cmd = "pidof hyprlock || hyprlock"; # avoid starting multiple hyprlock instances.
+            lock_cmd = "pidof swaylock || swaylock"; # avoid starting multiple locking instances.
             before_sleep_cmd = "loginctl lock-session"; # lock before suspend.
             after_sleep_cmd = "hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"; # to avoid having to press a key twice to turn on the display.
           };
