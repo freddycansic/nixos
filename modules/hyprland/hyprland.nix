@@ -176,41 +176,28 @@ in {
           show-failed-attempts = true;
 
           image = toString ./wallpaper/brocolli.jpg;
-          # scaling=fill
 
-          # Indicator shape and sizing
           indicator-radius = 120;
           indicator-thickness = 12;
           indicator-idle-visible = true;
 
-          # -------------------------------------------------------------
-          # Color Scheme (Dark theme with distinct state indicators)
-          # Formatting uses Hex codes: RRGGBBAA (with alpha transparency)
-          # -------------------------------------------------------------
-
-          # Ring boundaries (set to completely transparent)
           line-color = "00000000";
 
-          # Normal State (Waiting for input)
           inside-color = "2d2d2dcc";
           ring-color = "6699ccff";
           text-color = "f2f2f2ff";
 
-          # Typing State (Highlighted segments as you type)
           key-hl-color = "99cc99ff";
           bs-hl-color = "f99157ff";
 
-          # Verifying State (Checking your password)
           inside-ver-color = "6699ccff";
           ring-ver-color = "66aa99ff";
           text-ver-color = "2d2d2dff";
 
-          # Clear/Backspace State (Flashing when password cleared)
           inside-clear-color = "f99157ff";
           ring-clear-color = "f99157ff";
           text-clear-color = "2d2d2dff";
 
-          # Wrong State (Incorrect password attempt)
           inside-wrong-color = "f2777aff";
           ring-wrong-color = "f2777aff";
           text-wrong-color = "2d2d2dff";
