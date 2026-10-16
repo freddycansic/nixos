@@ -58,6 +58,7 @@
     ]))
     pkgs.parabolic # downloader for youtube
     pkgs.exfatprogs # create exFAT partitions
+    pkgs.poppler-utils # provies pdftotext cli tool
   ];
 
   fonts.packages = [
