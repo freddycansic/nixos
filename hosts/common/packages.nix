@@ -130,7 +130,7 @@
     programs.direnv = {
       enable = true;
       nix-direnv.enable = true;
-      # enableFishIntegration = true; # happens automatically
+      enableFishIntegration = true;
       config = {
         warn_timeout = "1m";
       };
