@@ -133,6 +133,7 @@
       enableFishIntegration = true;
       config = {
         warn_timeout = "1m";
+        hide_env_diff = true;
       };
     };
 
