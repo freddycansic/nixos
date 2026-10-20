@@ -17,6 +17,7 @@
   environment.systemPackages = [
     pkgs.brightnessctl
     pkgs.mixxx
+    pkgs.rsgain # replaygain tagging cli tool
   ];
 
   hyprland = {
