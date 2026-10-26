@@ -40,12 +40,18 @@
       url = "github:aksiksi/compose2nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     nix-flatpak,
+    sops-nix,
     ...
   } @ inputs: {
     nixosConfigurations = let
@@ -74,9 +80,9 @@
         inputs.home-manager.nixosModules.default
         nix-flatpak.nixosModules.nix-flatpak
       ];
-      server =
-        mkSystem ./hosts/server/configuration.nix [
-        ];
+      server = mkSystem ./hosts/server/configuration.nix [
+        sops-nix.nixosModules.sops
+      ];
     };
   };
 }
