@@ -35,6 +35,11 @@
       url = "github:alexays/waybar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    compose2nix = {
+      url = "github:aksiksi/compose2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
