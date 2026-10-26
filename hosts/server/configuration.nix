@@ -124,6 +124,12 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  fileSystems."/data" = {
+    device = "/dev/disk/by-uuid/c410fb81-2e9d-4655-8428-e132ac757050";
+    fsType = "ext4";
+    options = ["nofail"];
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
