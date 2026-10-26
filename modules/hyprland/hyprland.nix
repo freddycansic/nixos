@@ -163,7 +163,7 @@ in {
             {
               fit_mode = "cover";
               monitor = "DP-2";
-              path = toString ./wallpaper/so-hard.jpg;
+              path = "${./wallpaper/so-hard.jpg}";
             }
           ];
         };
@@ -175,7 +175,7 @@ in {
           ignore-empty-password = true;
           show-failed-attempts = true;
 
-          image = toString ./wallpaper/brocolli.jpg;
+          image = "${./wallpaper/brocolli.jpg}";
 
           indicator-radius = 120;
           indicator-thickness = 12;
