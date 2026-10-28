@@ -18,6 +18,7 @@
   environment.systemPackages = [
     pkgs.blender
     pkgs.libreoffice
+    pkgs.rgp
   ];
 
   services.xserver = {
