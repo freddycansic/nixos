@@ -19,6 +19,27 @@
     pkgs.blender
     pkgs.libreoffice
     pkgs.rgp
+
+    (pkgs.makeDesktopItem {
+      name = "radeon-developer-panel";
+      desktopName = "Radeon Developer Panel";
+      exec = "${pkgs.rgp}/bin/RadeonDeveloperPanel";
+      categories = ["Development" "Graphics"];
+    })
+
+    (pkgs.makeDesktopItem {
+      name = "radeon-gpu-profiler";
+      desktopName = "Radeon GPU Profiler";
+      exec = "${pkgs.rgp}/bin/RadeonGPUProfiler";
+      categories = ["Development" "Graphics"];
+    })
+
+    (pkgs.makeDesktopItem {
+      name = "radeon-gpu-analyzer";
+      desktopName = "Radeon GPU Analyzer";
+      exec = "${pkgs.rgp}/bin/RadeonGPUAnalyzer";
+      categories = ["Development" "Graphics"];
+    })
   ];
 
   services.xserver = {
