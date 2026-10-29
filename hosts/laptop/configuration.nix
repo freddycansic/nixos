@@ -32,6 +32,19 @@
     sensitivity = 0.0;
   };
 
+  fileSystems."/mnt/usb" = {
+    device = "/dev/disk/by-uuid/EEF3-DEF6";
+    fsType = "exfat";
+    options = [
+      "nofail"
+      "uid=1000"
+      "gid=100"
+      "fmask=0022"
+      "dmask=0022"
+      "rw"
+    ];
+  };
+
   swapDevices = [
     {
       device = "/var/lib/swapfile";
