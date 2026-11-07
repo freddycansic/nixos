@@ -31,6 +31,12 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  # Enable networking
+  networking.networkmanager = {
+    enable = true;
+    ethernet.macAddress = "preserve";
+  };
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nix.gc = {
@@ -38,9 +44,6 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   security.pam.services.kwallet = {
     name = "kwallet";
