@@ -34,7 +34,7 @@
   # Enable networking
   networking.networkmanager = {
     enable = true;
-    ethernet.macAddress = "preserve";
+    ethernet.macAddress = "stable";
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
