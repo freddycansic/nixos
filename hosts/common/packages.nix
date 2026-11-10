@@ -58,6 +58,7 @@
       ps.hyphenat
       ps.appendix
       ps.circuitikz
+      ps.pgfplots
     ]))
     pkgs.parabolic # downloader for youtube
     pkgs.exfatprogs # create exFAT partitions
