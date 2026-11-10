@@ -110,7 +110,6 @@
     alejandra
     inputs.compose2nix.packages.x86_64-linux.default
     age
-    tailscale
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -125,6 +124,8 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  services.tailscale.enable = true;
 
   fileSystems."/data" = {
     device = "/dev/disk/by-uuid/c410fb81-2e9d-4655-8428-e132ac757050";
