@@ -110,6 +110,7 @@
     alejandra
     inputs.compose2nix.packages.x86_64-linux.default
     age
+    sops
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
