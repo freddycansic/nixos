@@ -2,7 +2,7 @@ keys:
   - &server age1wm7dhx975z0xfg90mlehlkmgghv5yw8pq8pdk76gvdwd0ewt33xq4yzv7v
 
 creation_rules:
-  - path_regex: secrets/.*\.yaml$
+  - path_regex: hosts/server/services/immich/secrets.yaml$
     key_groups:
       - age:
           - *server

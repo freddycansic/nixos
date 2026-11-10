@@ -111,6 +111,7 @@
     inputs.compose2nix.packages.x86_64-linux.default
     age
     sops
+    ripgrep
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -127,6 +128,11 @@
   services.openssh.enable = true;
 
   services.tailscale.enable = true;
+
+  sops.age = {
+    keyFile = "/home/freddy/.config/sops/age/keys.txt";
+    generateKey = false;
+  };
 
   fileSystems."/data" = {
     device = "/dev/disk/by-uuid/c410fb81-2e9d-4655-8428-e132ac757050";
