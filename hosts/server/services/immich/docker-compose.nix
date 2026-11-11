@@ -36,9 +36,15 @@
       "TZ" = "GB";
       "UPLOAD_LOCATION" = "/data/immich/library";
     };
+    environmentFiles = [
+      config.sops.secrets."immich-secrets".path
+    ];
     volumes = [
       "immich_model-cache:/cache:rw"
     ];
+    labels = {
+      "compose2nix.settings.sops.secrets" = "immich-secrets";
+    };
     log-driver = "journald";
     extraOptions = [
       "--network-alias=immich-machine-learning"
@@ -73,9 +79,15 @@
       "POSTGRES_PASSWORD" = "";
       "POSTGRES_USER" = "postgres";
     };
+    environmentFiles = [
+      config.sops.secrets."immich-secrets".path
+    ];
     volumes = [
       "/data/immich/postgres:/var/lib/postgresql/data:rw"
     ];
+    labels = {
+      "compose2nix.settings.sops.secrets" = "immich-secrets";
+    };
     log-driver = "journald";
     extraOptions = [
       "--network-alias=database"
@@ -138,6 +150,9 @@
       "TZ" = "GB";
       "UPLOAD_LOCATION" = "/data/immich/library";
     };
+    environmentFiles = [
+      config.sops.secrets."immich-secrets".path
+    ];
     volumes = [
       "/data/immich/library:/data:rw"
       "/etc/localtime:/etc/localtime:ro"
@@ -145,6 +160,9 @@
     ports = [
       "2283:2283/tcp"
     ];
+    labels = {
+      "compose2nix.settings.sops.secrets" = "immich-secrets";
+    };
     dependsOn = [
       "immich_postgres"
       "immich_redis"
