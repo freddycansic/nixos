@@ -5,6 +5,13 @@ Remove DB_PASSWORD from .env file
 
 This should be specified in the encrypted secrets.yaml file
 
+Edit docker-compose.yml and add
+```yaml
+labels:
+    - "compose2nix.settings.sops.secrets=immich-secrets"
+```
+to each container that needs database
+
 Run this to make nix file
 
 ```bash
