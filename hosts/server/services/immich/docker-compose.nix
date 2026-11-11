@@ -32,18 +32,13 @@
       "DB_DATA_LOCATION" = "/data/immich/postgres";
       "DB_USERNAME" = "postgres";
       "IMMICH_VERSION" = "v3";
+      "MACHINE_LEARNING_MODEL_REVISION" = "v2";
       "TZ" = "GB";
       "UPLOAD_LOCATION" = "/data/immich/library";
     };
-    environmentFiles = [
-      config.sops.secrets."immich-secrets".path
-    ];
     volumes = [
       "immich_model-cache:/cache:rw"
     ];
-    labels = {
-      "compose2nix.settings.sops.secrets" = "immich-secrets";
-    };
     log-driver = "journald";
     extraOptions = [
       "--network-alias=immich-machine-learning"
@@ -78,15 +73,9 @@
       "POSTGRES_PASSWORD" = "";
       "POSTGRES_USER" = "postgres";
     };
-    environmentFiles = [
-      config.sops.secrets."immich-secrets".path
-    ];
     volumes = [
       "/data/immich/postgres:/var/lib/postgresql/data:rw"
     ];
-    labels = {
-      "compose2nix.settings.sops.secrets" = "immich-secrets";
-    };
     log-driver = "journald";
     extraOptions = [
       "--network-alias=database"
@@ -113,7 +102,7 @@
     ];
   };
   virtualisation.oci-containers.containers."immich_redis" = {
-    image = "docker.io/valkey/valkey:9@sha256:c123e3715db63d06d4ad6964884037aa0d5d4d703939b9929954112889708e1d";
+    image = "docker.io/valkey/valkey:9@sha256:418652cfb58ef879d4978c33553735d7147016032d5aefaa14c828e611eb9dfd";
     log-driver = "journald";
     extraOptions = [
       "--health-cmd=redis-cli ping | grep -q PONG || exit 1"
@@ -149,9 +138,6 @@
       "TZ" = "GB";
       "UPLOAD_LOCATION" = "/data/immich/library";
     };
-    environmentFiles = [
-      config.sops.secrets."immich-secrets".path
-    ];
     volumes = [
       "/data/immich/library:/data:rw"
       "/etc/localtime:/etc/localtime:ro"
@@ -159,9 +145,6 @@
     ports = [
       "2283:2283/tcp"
     ];
-    labels = {
-      "compose2nix.settings.sops.secrets" = "immich-secrets";
-    };
     dependsOn = [
       "immich_postgres"
       "immich_redis"
