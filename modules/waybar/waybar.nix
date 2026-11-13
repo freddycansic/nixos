@@ -123,7 +123,7 @@
             "menu" = "on-click";
             "menu-file" = "~/.config/waybar/power_menu.xml";
             "menu-actions" = {
-              "lock" = "swaylock";
+              "lock" = "hyprlock";
               "logout" = "hyprctl dispatch 'hl.dsp.exit()'";
               "shutdown" = "shutdown 0";
               "reboot" = "reboot";

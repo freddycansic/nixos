@@ -107,6 +107,8 @@ in {
       };
     };
 
+    security.pam.services.hyprlock = {};
+
     home-manager.users.freddy = {
       home.pointerCursor = {
         enable = true;
@@ -169,46 +171,13 @@ in {
         };
       };
 
-      programs.swaylock = {
-        enable = true;
-        settings = {
-          ignore-empty-password = true;
-          show-failed-attempts = true;
-
-          image = "${./wallpaper/brocolli.jpg}";
-
-          indicator-radius = 120;
-          indicator-thickness = 12;
-          indicator-idle-visible = true;
-
-          line-color = "00000000";
-
-          inside-color = "2d2d2dcc";
-          ring-color = "6699ccff";
-          text-color = "f2f2f2ff";
-
-          key-hl-color = "99cc99ff";
-          bs-hl-color = "f99157ff";
-
-          inside-ver-color = "6699ccff";
-          ring-ver-color = "66aa99ff";
-          text-ver-color = "2d2d2dff";
-
-          inside-clear-color = "f99157ff";
-          ring-clear-color = "f99157ff";
-          text-clear-color = "2d2d2dff";
-
-          inside-wrong-color = "f2777aff";
-          ring-wrong-color = "f2777aff";
-          text-wrong-color = "2d2d2dff";
-        };
-      };
+      programs.hyprlock.enable = true;
 
       services.hypridle = {
         enable = true;
         settings = {
           general = {
-            lock_cmd = "pidof swaylock || swaylock"; # avoid starting multiple locking instances.
+            lock_cmd = "pidof hyprlock || hyprlock"; # avoid starting multiple locking instances.
             before_sleep_cmd = "loginctl lock-session"; # lock before suspend.
             after_sleep_cmd = "hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"; # to avoid having to press a key twice to turn on the display.
           };
@@ -292,6 +261,7 @@ in {
               },
 
               misc = {
+                allow_session_lock_restore = true; -- TODO disable when https://github.com/hyprwm/hyprlock/issues/793 gets resolved
                 disable_hyprland_logo = true,
                 disable_splash_rendering = true,
               },
