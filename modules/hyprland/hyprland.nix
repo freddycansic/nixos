@@ -172,6 +172,9 @@ in {
       };
 
       home.packages = [pkgs.hyprlock.debug pkgs.gdb];
+      # ON NEXT CRASH:
+      # coredumpctl debug hyprlock
+      # Inside gdb: thread apply all bt full
       programs.hyprlock.enable = true;
 
       services.hypridle = {
