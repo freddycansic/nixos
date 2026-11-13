@@ -171,6 +171,7 @@ in {
         };
       };
 
+      home.packages = [pkgs.hyprlock.debug pkgs.gdb];
       programs.hyprlock.enable = true;
 
       services.hypridle = {
