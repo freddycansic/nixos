@@ -13,6 +13,7 @@
     ./hardware-configuration.nix
     ../../modules/gaming/minecraft.nix
     ../../modules/gaming/steam.nix
+    ../../modules/llm.nix
   ];
 
   environment.systemPackages = [
