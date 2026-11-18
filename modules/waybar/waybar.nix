@@ -10,14 +10,7 @@
     programs.waybar = {
       enable = true;
 
-      # FIXME. the tests were failing but i rlly needed the fix for clicking workspaces to activate them
-      package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs (old: {
-        mesonFlags =
-          (old.mesonFlags or [])
-          ++ [
-            "-Dtests=disabled"
-          ];
-      });
+      package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
       systemd.enableDebug = true;
       # based on https://github.com/mechakotik/dots/tree/c91b980c3bd1bb6792df9ba21fe537f0242c42aa
@@ -125,9 +118,9 @@
             "menu-actions" = {
               "lock" = "hyprlock";
               "logout" = "hyprctl dispatch 'hl.dsp.exit()'";
-              "shutdown" = "shutdown 0";
-              "reboot" = "reboot";
               "sleep" = "systemctl suspend";
+              "reboot" = "reboot";
+              "shutdown" = "shutdown 0";
             };
           };
         }
