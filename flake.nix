@@ -45,6 +45,8 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    forticlient-nixos.url = "github:jplana/forticlient-nixos";
   };
 
   outputs = {
@@ -52,6 +54,7 @@
     nixpkgs,
     nix-flatpak,
     sops-nix,
+    forticlient-nixos,
     ...
   } @ inputs: {
     nixosConfigurations = let
@@ -75,10 +78,12 @@
       pc = mkSystem ./hosts/pc/configuration.nix [
         inputs.home-manager.nixosModules.default
         nix-flatpak.nixosModules.nix-flatpak
+        forticlient-nixos.nixosModules.forticlient
       ];
       laptop = mkSystem ./hosts/laptop/configuration.nix [
         inputs.home-manager.nixosModules.default
         nix-flatpak.nixosModules.nix-flatpak
+        forticlient-nixos.nixosModules.forticlient
       ];
       server = mkSystem ./hosts/server/configuration.nix [
         sops-nix.nixosModules.sops

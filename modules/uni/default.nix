@@ -1,3 +1,3 @@
 {...}: {
-  imports = [./3d.nix ./mobile-dev.nix];
+  imports = [./3d.nix ./mobile-dev.nix ./forticlient.nix];
 }
