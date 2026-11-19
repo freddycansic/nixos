@@ -13,4 +13,6 @@
   '';
 in {
   environment.systemPackages = [pkgs.openfortivpn connect-uni-vpn];
+
+  networking.firewall.checkReversePath = "loose";
 }
