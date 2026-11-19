@@ -1,18 +1,12 @@
 {pkgs, ...}: let
-  connect-uni-vpn = pkgs.writeShellScriptBin "connect-uni-vpn" ''
-    set -euo pipefail
-
-    read -rp "MUSE username: " USERNAME
-    read -rsp "MUSE password: " PASSWORD
-    echo
-
-    exec sudo ${pkgs.openfortivpn}/bin/openfortivpn \
-      remoteaccess.shef.ac.uk:443 \
-      --username="$USERNAME" \
-      --password="$PASSWORD"
-  '';
+  connect-uni-vpn = pkgs.writeShellApplication {
+    name = "connect-uni-vpn";
+    text = ''
+      exec sudo ${pkgs.openconnect}/bin/openconnect \
+        --protocol=fortinet \
+        remoteaccess.shef.ac.uk
+    '';
+  };
 in {
-  environment.systemPackages = [pkgs.openfortivpn connect-uni-vpn];
-
-  networking.firewall.checkReversePath = "loose";
+  environment.systemPackages = [pkgs.openconnect connect-uni-vpn];
 }
