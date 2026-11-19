@@ -164,7 +164,7 @@ in {
           wallpaper = [
             {
               fit_mode = "cover";
-              monitor = "DP-2";
+              monitor = "";
               path = "${./wallpaper/so-hard.jpg}";
             }
           ];
