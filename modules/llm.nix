@@ -4,7 +4,7 @@ let
   models = pkgs.writeText "models.ini" ''
     [Qwen3.5-9B]
     hf-repo = bartowski/Qwen_Qwen3.5-9B-GGUF
-    hf-file = Qwen3.5-9B-Q8_0.gguf
+    hf-file = Qwen_Qwen3.5-9B-Q8_0.gguf
     alias = Qwen3.5-9B
     temp = 1.0
     top-p = 0.95
