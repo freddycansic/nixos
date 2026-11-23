@@ -15,6 +15,7 @@
     ../../modules/reaper.nix
     ../../modules/zen.nix
     ../../modules/uni/default.nix
+    ../../modules/texstudio.nix
   ];
 
   environment.systemPackages = [
@@ -49,17 +50,6 @@
     pkgs._7zz
     pkgs.jq # command line json parsing
     pkgs.nmap
-    pkgs.texstudio
-    (pkgs.texliveSmall.withPackages (ps: [
-      ps.biblatex
-      ps.biber
-      ps.pgfgantt
-      ps.adjustbox
-      ps.hyphenat
-      ps.appendix
-      ps.circuitikz
-      ps.pgfplots
-    ]))
     pkgs.parabolic # downloader for youtube
     pkgs.exfatprogs # create exFAT partitions
     pkgs.poppler-utils # provies pdftotext cli tool
