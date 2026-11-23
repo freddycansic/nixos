@@ -21,8 +21,6 @@
 
         autoStart = true;
 
-        restart = "unless-stopped";
-
         extraOptions = [
             "--health-cmd=curl --fail -s -u :  http://localhost:5984/_up | grep -Eo '\\\"status\\\":\\\"ok\\\"' || exit 1"
             "--health-interval=30s"
