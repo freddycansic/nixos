@@ -22,12 +22,12 @@
         autoStart = true;
 
         extraOptions = [
-            "--health-cmd=curl --fail -s -u :  http://localhost:5984/_up | grep -Eo '\\\"status\\\":\\\"ok\\\"' || exit 1"
-            "--health-interval=30s"
-            "--health-retries=3"
-            "--health-timeout=10s"
-            "--network-alias=obsidian-livesync"
-            "--network=obsidian-livesync_default"
+          "--health-cmd=curl --fail -s -u :  http://localhost:5984/_up | grep -Eo '\\\"status\\\":\\\"ok\\\"' || exit 1"
+          "--health-interval=30s"
+          "--health-retries=3"
+          "--health-timeout=10s"
+          "--network-alias=obsidian-livesync"
+          "--network=obsidian-livesync_default"
         ];
       };
     };

@@ -14,11 +14,11 @@
     ../../modules/gaming/minecraft.nix
     ../../modules/gaming/steam.nix
     ../../modules/llm.nix
+    ../../modules/libreoffice.nix
   ];
 
   environment.systemPackages = [
     pkgs.blender
-    pkgs.libreoffice
     pkgs.rgp
 
     (pkgs.makeDesktopItem {
