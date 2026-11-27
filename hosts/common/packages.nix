@@ -15,7 +15,8 @@
     ../../modules/reaper.nix
     ../../modules/zen.nix
     ../../modules/uni/default.nix
-    ../../modules/texstudio.nix
+    ../../modules/latex/tikzeditor/default.nix
+    ../../modules/latex/texstudio.nix
   ];
 
   environment.systemPackages = [
