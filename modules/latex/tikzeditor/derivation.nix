@@ -16,6 +16,21 @@ pkgs.appimageTools.wrapType2 {
       libsoup_3
     ];
 
+  extraInstallCommands = ''
+    mkdir -p $out/share/applications
+
+    cat > $out/share/applications/tikz-editor.desktop <<EOF
+    [Desktop Entry]
+    Type=Application
+    Name=TikZ Editor
+    Comment=Visual TikZ editor
+    Exec=tikz-editor %F
+    Terminal=false
+    Categories=Education;Graphics;
+    StartupNotify=true
+    EOF
+  '';
+
   meta = {
     description = "Visual TikZ editor";
     homepage = "https://github.com/DominikPeters/tikz-editor";
