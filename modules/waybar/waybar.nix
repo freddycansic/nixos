@@ -125,17 +125,19 @@
           };
 
           "custom/hyprsunset" = {
-            format = "{}";
-            exec = "${pkgs.writeShellScript "waybar-hyprsunset" ''
-              if systemctl --user is-active --quiet hyprsunset.service; then
-                echo "󰖙"
-              fi
-            ''}";
+            format = "󰖙";
+            exec = ''
+              systemctl --user is-active --quiet hyprsunset.service && echo active
+            '';
             interval = 2;
             hide-empty-text = true;
             tooltip = false;
 
-            on-click-right = "systemctl --user stop hyprsunset.service";
+            menu = "on-click-right";
+            menu-file = "${./hyprsunset_menu.xml}";
+            menu-actions = {
+              "turn-off" = "systemctl --user stop hyprsunset.service";
+            };
           };
         }
       ];
