@@ -22,7 +22,7 @@
 
           "modules-left" = ["hyprland/workspaces"];
           "modules-center" = ["clock"];
-          "modules-right" = ["tray" "wireplumber" "battery" "network" "bluetooth" "custom/power"];
+          "modules-right" = ["tray" "custom/hyprsunset" "wireplumber" "battery" "network" "bluetooth" "custom/power"];
 
           "hyprland/workspaces" = {
             "sort-by" = "number";
@@ -122,6 +122,20 @@
               "reboot" = "reboot";
               "shutdown" = "shutdown 0";
             };
+          };
+
+          "custom/hyprsunset" = {
+            format = "{}";
+            exec = "${pkgs.writeShellScript "waybar-hyprsunset" ''
+              if systemctl --user is-active --quiet hyprsunset.service; then
+                echo "󰖙"
+              fi
+            ''}";
+            interval = 2;
+            hide-empty-text = true;
+            tooltip = false;
+
+            on-click-right = "systemctl --user stop hyprsunset.service";
           };
         }
       ];
