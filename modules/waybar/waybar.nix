@@ -5,8 +5,6 @@
   ...
 }: {
   home-manager.users.freddy = {
-    home.file.".config/waybar/power_menu.xml".source = ./power_menu.xml;
-
     programs.waybar = {
       enable = true;
 
@@ -114,7 +112,7 @@
             "format" = "⏻ ";
             "tooltip" = false;
             "menu" = "on-click";
-            "menu-file" = "~/.config/waybar/power_menu.xml";
+            "menu-file" = "${./power_menu.xml}";
             "menu-actions" = {
               "lock" = "hyprlock";
               "logout" = "hyprctl dispatch 'hl.dsp.exit()'";
@@ -125,7 +123,7 @@
           };
 
           "custom/hyprsunset" = {
-            format = "󰖙 ";
+            format = "󰖙  ";
             # when hyprsunset is doing nothing, identity = true
             exec = ''
               hyprctl hyprsunset identity get | grep -q false && echo active
