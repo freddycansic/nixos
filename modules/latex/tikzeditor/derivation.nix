@@ -14,6 +14,7 @@ pkgs.appimageTools.wrapType2 {
       gtk3
       glib
       libsoup_3
+      libgpg-error
     ];
 
   extraInstallCommands = ''
