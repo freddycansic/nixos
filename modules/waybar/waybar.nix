@@ -125,9 +125,10 @@
           };
 
           "custom/hyprsunset" = {
-            format = "󰖙";
+            format = "󰖙 ";
+            # when hyprsunset is doing nothing, identity = true
             exec = ''
-              systemctl --user is-active --quiet hyprsunset.service && echo active
+              hyprctl hyprsunset identity get | grep -q false && echo active
             '';
             interval = 2;
             hide-empty-text = true;
